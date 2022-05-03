@@ -20,7 +20,7 @@
                 combo_a_grave {
                         timeout-ms = <50>;
                         key-positions = <13 14>;
-                        bindings = <&kp LA(GRAVE)>, <&kp A>;
+                        bindings = <&kp LA(GRAVE) &kp A>;
                 };
         };
         behaviors {
