@@ -15,6 +15,15 @@
 #define ADJ 3
 
 / {
+        behaviors {
+                td0: tap_dance_0 {
+                        compatible = "zmk,behavior-tap-dance";
+                        label = "TAP_DANCE_0";
+                        #binding-cells = <0>;
+                        tapping-term-ms = <200>;
+                        bindings = <&sk LSHFT>, <&caps_word>;
+                };
+        };
         keymap {
                 compatible = "zmk,keymap";
 
@@ -24,7 +33,7 @@
 &kp ESC   &kp Q       &kp W       &kp E       &kp R      &kp T         &kp Y       &kp U          &kp I          &kp O         &kp P          &kp MINUS
 &kp TAB   &kp A       &kp S       &kp D       &kp F      &kp G         &kp H       &kp J          &kp K          &kp L         &kp SEMI       &kp SQT
 &kp GRAVE &mt LSHFT Z &mt LCTRL X &mt LALT C  &mt LCMD V &kp B         &kp N       &mt RCMD M     &mt RALT COMMA &mt RCTRL DOT &mt RSHFT FSLH &kp BSLH
-                                  &to SYM     &sk LSHFT  &lt NUM SPACE &lt SYM RET &mt LCTRL BSPC &sk RCTRL
+                                  &to SYM     &td0       &lt NUM SPACE &lt SYM RET &mt LCTRL BSPC &sk RCTRL
                         >;
                 };
                 num_layer {
