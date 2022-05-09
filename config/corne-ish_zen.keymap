@@ -15,7 +15,8 @@
 #define ADJ 3
 
 &mt {
-        quick-tap-ms = <125>;
+        flavor = "balanced";
+        quick-tap-ms = <200>;
 };
 
 / {
