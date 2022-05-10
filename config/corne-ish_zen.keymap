@@ -19,6 +19,10 @@
         quick-tap-ms = <200>;
 };
 
+&sk {
+        quick-release;
+};
+
 / {
         combos {
                 compatible = "zmk,combos";
