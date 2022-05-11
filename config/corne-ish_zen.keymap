@@ -26,6 +26,7 @@
 / {
         combos {
                 compatible = "zmk,combos";
+
                 combo_oelig { key-positions = < 1  2>; bindings = <&kp LA(Q)     >; layers = <DFT>; timeout-ms = <50>; };
                 combo_euro  { key-positions = < 3  4>; bindings = <&kp LS(LA(N2))>; layers = <DFT>; timeout-ms = <50>; };
                 combo_uml   { key-positions = < 7  8>; bindings = <&kp LA(U)     >; layers = <DFT>; timeout-ms = <50>; };
@@ -33,6 +34,8 @@
                 combo_acute { key-positions = <19 20>; bindings = <&kp LA(E)     >; layers = <DFT>; timeout-ms = <50>; };
                 combo_grave { key-positions = <20 21>; bindings = <&kp LA(GRAVE) >; layers = <DFT>; timeout-ms = <50>; };
                 combo_tilde { key-positions = <30 31>; bindings = <&kp LA(N)     >; layers = <DFT>; timeout-ms = <50>; };
+
+                combo_adjust { key-positions = <11 23 35>; bindings = <&to ADJ>; layers = <DFT>; timeout-ms = <50>; };
         };
         behaviors {
                 td_shft: tap_dance_shift {
@@ -46,8 +49,8 @@
         keymap {
                 compatible = "zmk,keymap";
 
-                default_layer {
-                        label = "DFT";
+                alpha {
+                        label = "alpha";
                         bindings = <
 &kp ESC   &kp Q       &kp W       &kp E      &kp R      &kp T         &kp Y       &kp U          &kp I          &kp O         &kp P          &kp MINUS
 &kp TAB   &kp A       &kp S       &kp D      &kp F      &kp G         &kp H       &kp J          &kp K          &kp L         &kp SEMI       &kp SQT
@@ -55,31 +58,31 @@
                                   &to SYM    &td_shft   &lt NUM SPACE &lt SYM RET &mt LCTRL BSPC &sk RCTRL
                         >;
                 };
-                num_layer {
-                        label = "NUM";
+                numrow {
+                        label = "numr";
                         bindings = <
-&to ADJ &kp EXCL      &kp AT       &kp HASH    &kp DLLR    &kp PRCNT &kp CARET &kp AMPS    &kp KP_MULTIPLY &kp PLUS      &kp EQUAL     &trans
+&to DFT &kp EXCL      &kp AT       &kp HASH    &kp DLLR    &kp PRCNT &kp CARET &kp AMPS    &kp KP_MULTIPLY &kp PLUS      &kp EQUAL     &trans
 &trans  &kp N1        &kp N2       &kp N3      &kp N4      &kp N5    &kp N6    &kp N7      &kp N8          &kp N9        &kp N0        &trans
 &kp F1  &mt LSHFT F2  &mt LCTRL F3 &mt LALT F4 &mt LCMD F5 &kp F6    &kp F7    &mt RCMD F8 &mt RALT F9     &mt RCTRL F10 &mt RSHFT F11 &kp F12
                                    &to SYM     &trans      &kp SPACE &trans    &trans      &trans
                         >;
                 };
-                sym_layer {
-                        label = "SYM";
+                symbol {
+                        label = "sym";
                         bindings = <
-&to DFT   &trans &kp HOME &kp UP   &kp END   &kp PG_UP &trans  &kp LPAR &kp RPAR &trans &trans &trans
-&trans    &trans &kp LEFT &kp DOWN &kp RIGHT &kp PG_DN &trans  &kp LBRC &kp RBRC &trans &trans &trans
-&kp TILDE &trans &trans   &trans   &trans    &trans    &trans  &kp LBKT &kp RBKT &trans &trans &trans
+&to DFT   &none  &kp HOME &kp UP   &kp END   &kp PG_UP &none   &kp LPAR &kp RPAR &none  &none  &none 
+&trans    &none  &kp LEFT &kp DOWN &kp RIGHT &kp PG_DN &none   &kp LBRC &kp RBRC &none  &none  &none 
+&kp TILDE &none  &none    &none    &none     &none     &none   &kp LBKT &kp RBKT &none  &none  &none 
                           &to NUM  &trans    &trans    &kp RET &trans   &trans
                         >;
                 };
-                adj_layer {
-                        label = "ADJ";
+                adjust {
+                        label = "adj";
                         bindings = <
-&to DFT    &trans       &trans       &trans       &trans       &trans       &trans &trans &trans &trans &trans &trans
-&trans     &trans       &trans       &trans       &trans       &trans       &trans &trans &trans &trans &trans &trans
-&bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4 &trans &trans &trans &trans &trans &trans
-                                     &trans       &trans       &trans       &trans &trans &trans
+&to DFT &none &none &none &none &none &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4 &none 
+&none   &none &none &none &none &none &none        &none        &none        &none        &none        &none 
+&none   &none &none &none &none &none &bt BT_CLR   &none        &none        &none        &none        &none 
+                   &none  &none &none &none        &none        &none
                         >;
                 };
         };
