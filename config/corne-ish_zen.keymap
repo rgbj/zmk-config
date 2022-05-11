@@ -13,6 +13,7 @@
 #define NUM 1
 #define SYM 2
 #define ADJ 3
+#define MED 4
 
 &mt {
         flavor = "balanced";
@@ -36,6 +37,7 @@
                 combo_tilde { key-positions = <30 31>; bindings = <&kp LA(N)     >; layers = <DFT>; timeout-ms = <50>; };
 
                 combo_adjust { key-positions = <11 23 35>; bindings = <&to ADJ>; layers = <DFT>; timeout-ms = <50>; };
+                combo_media  { key-positions = <33 34 35>; bindings = <&to MED>; layers = <DFT>; timeout-ms = <50>; };
         };
         behaviors {
                 td_shft: tap_dance_shift {
@@ -54,7 +56,7 @@
                         bindings = <
 &kp ESC   &kp Q       &kp W       &kp E      &kp R      &kp T         &kp Y       &kp U          &kp I          &kp O         &kp P          &kp MINUS
 &kp TAB   &kp A       &kp S       &kp D      &kp F      &kp G         &kp H       &kp J          &kp K          &kp L         &kp SEMI       &kp SQT
-&kp GRAVE &mt LSHFT Z &mt LCTRL X &mt LALT C &mt LCMD V &kp B         &kp N       &mt RCMD M     &mt RALT COMMA &mt RCTRL DOT &mt RSHFT FSLH &kp BSLH
+&kp GRAVE &mt LSHFT Z &mt LCTRL X &mt LALT C &mt LGUI V &kp B         &kp N       &mt RGUI M     &mt RALT COMMA &mt RCTRL DOT &mt RSHFT FSLH &kp BSLH
                                   &to SYM    &td_shft   &lt NUM SPACE &lt SYM RET &mt LCTRL BSPC &sk RCTRL
                         >;
                 };
@@ -63,7 +65,7 @@
                         bindings = <
 &to DFT &kp EXCL      &kp AT       &kp HASH    &kp DLLR    &kp PRCNT &kp CARET &kp AMPS    &kp KP_MULTIPLY &kp PLUS      &kp EQUAL     &trans
 &trans  &kp N1        &kp N2       &kp N3      &kp N4      &kp N5    &kp N6    &kp N7      &kp N8          &kp N9        &kp N0        &trans
-&kp F1  &mt LSHFT F2  &mt LCTRL F3 &mt LALT F4 &mt LCMD F5 &kp F6    &kp F7    &mt RCMD F8 &mt RALT F9     &mt RCTRL F10 &mt RSHFT F11 &kp F12
+&kp F1  &mt LSHFT F2  &mt LCTRL F3 &mt LALT F4 &mt LGUI F5 &kp F6    &kp F7    &mt RGUI F8 &mt RALT F9     &mt RCTRL F10 &mt RSHFT F11 &kp F12
                                    &to SYM     &trans      &kp SPACE &trans    &trans      &trans
                         >;
                 };
@@ -83,6 +85,15 @@
 &none   &none &none &none &none &none &none        &none        &none        &none        &none        &none 
 &none   &none &none &none &none &none &bt BT_CLR   &none        &none        &none        &none        &none 
                    &none  &none &none &none        &none        &none
+                        >;
+                };
+                media {
+                        label = "media";
+                        bindings = <
+&none &none &kp I    &kp O     &kp UP   &kp C_VOL_UP &kp C_VOL_UP &kp UP   &none   &kp LG(W) &kp I    &kp O
+&none &none &kp J    &kp K     &kp DOWN &kp C_VOL_DN &kp C_VOL_DN &kp DOWN &none   &none     &kp J    &kp K 
+&none &none &kp LEFT &kp RIGHT &none    &kp C_MUTE   &kp C_MUTE   &to DFT  &none   &none     &kp LEFT &kp RIGHT 
+                     &kp RET   &kp ESC  &kp SPACE    &kp SPACE    &kp ESC  &kp RET
                         >;
                 };
         };
