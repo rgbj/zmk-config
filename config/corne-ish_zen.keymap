@@ -26,31 +26,13 @@
 / {
         combos {
                 compatible = "zmk,combos";
-                combo_uml {
-                        timeout-ms = <50>;
-                        key-positions = <6 7>;
-                        bindings = <&kp LA(U)>;
-                };
-                combo_acute {
-                        timeout-ms = <50>;
-                        key-positions = <7 8>;
-                        bindings = <&kp LA(E)>;
-                };
-                combo_grave {
-                        timeout-ms = <50>;
-                        key-positions = <8 9>;
-                        bindings = <&kp LA(GRAVE)>;
-                };
-                combo_circ {
-                        timeout-ms = <50>;
-                        key-positions = <9 10>;
-                        bindings = <&kp LA(I)>;
-                };
-                combo_tilde {
-                        timeout-ms = <50>;
-                        key-positions = <30 31>;
-                        bindings = <&kp LA(N)>;
-                };
+                combo_oelig { key-positions = < 1  2>; bindings = <&kp LA(Q)     >; layers = <DFT>; timeout-ms = <50>; };
+                combo_euro  { key-positions = < 3  4>; bindings = <&kp LS(LA(N2))>; layers = <DFT>; timeout-ms = <50>; };
+                combo_uml   { key-positions = < 7  8>; bindings = <&kp LA(U)     >; layers = <DFT>; timeout-ms = <50>; };
+                combo_circ  { key-positions = < 8  9>; bindings = <&kp LA(I)     >; layers = <DFT>; timeout-ms = <50>; };
+                combo_acute { key-positions = <19 20>; bindings = <&kp LA(E)     >; layers = <DFT>; timeout-ms = <50>; };
+                combo_grave { key-positions = <20 21>; bindings = <&kp LA(GRAVE) >; layers = <DFT>; timeout-ms = <50>; };
+                combo_tilde { key-positions = <30 31>; bindings = <&kp LA(N)     >; layers = <DFT>; timeout-ms = <50>; };
         };
         behaviors {
                 td_shft: tap_dance_shift {
