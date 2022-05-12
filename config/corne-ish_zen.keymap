@@ -57,7 +57,7 @@
 &kp ESC   &kp Q       &kp W       &kp E      &kp R      &kp T         &kp Y       &kp U          &kp I          &kp O         &kp P          &kp MINUS
 &kp TAB   &kp A       &kp S       &kp D      &kp F      &kp G         &kp H       &kp J          &kp K          &kp L         &kp SEMI       &kp SQT
 &kp GRAVE &mt LSHFT Z &mt LCTRL X &mt LALT C &mt LGUI V &kp B         &kp N       &mt RGUI M     &mt RALT COMMA &mt RCTRL DOT &mt RSHFT FSLH &kp BSLH
-                                  &to SYM    &td_shft   &lt NUM SPACE &lt SYM RET &mt LCTRL BSPC &sk RCTRL
+                                  &to SYM    &td_shft   &lt NUM SPACE &lt SYM RET &kp BSPC       &sk RCTRL
                         >;
                 };
                 numrow {
