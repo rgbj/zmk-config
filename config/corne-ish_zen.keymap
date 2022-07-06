@@ -58,8 +58,8 @@
                         bindings = <
 &kp ESC   &kp Q       &kp W       &kp E      &kp R      &kp T         &kp Y   &kp U      &kp I          &kp O         &kp P          &kp MINUS
 &kp TAB   &kp A       &kp S       &kp D      &kp F      &kp G         &kp H   &kp J      &kp K          &kp L         &kp SEMI       &kp SQT
-&kp GRAVE &mt LSHFT Z &mt LCTRL X &mt LALT C &mt LGUI V &kp B         &kp N   &mt RGUI M &mt RALT COMMA &mt RCTRL DOT &mt RSHFT FSLH &kp RET
-                                  &tog PAD   &td_shft   &lt NUM SPACE &mo SYM &sk RCTRL  &sk RSHFT
+&kp GRAVE &mt LSHFT Z &mt LCTRL X &mt LALT C &mt LGUI V &kp B         &kp N   &mt RGUI M &mt RALT COMMA &mt RCTRL DOT &mt RSHFT FSLH &sk RCTRL
+                                  &tog PAD   &td_shft   &lt NUM SPACE &mo SYM &kp BSPC    &kp DEL
                         >;
                 };
                 numrow {
@@ -68,7 +68,7 @@
 &trans &kp EXCL      &kp AT       &kp HASH    &kp DLLR    &kp PRCNT &kp CARET &kp AMPS    &kp STAR    &kp PLUS      &kp EQUAL     &trans
 &trans &kp N1        &kp N2       &kp N3      &kp N4      &kp N5    &kp N6    &kp N7      &kp N8      &kp N9        &kp N0        &trans
 &kp F1 &mt LSHFT F2  &mt LCTRL F3 &mt LALT F4 &mt LGUI F5 &kp F6    &kp F7    &mt RGUI F8 &mt RALT F9 &mt RCTRL F10 &mt RSHFT F11 &kp F12
-                                  &trans      &trans      &kp SPACE &kp RET   &kp BSPC    &kp DEL
+                                  &trans      &trans      &kp SPACE &kp RET   &trans      &trans
                         >;
                 };
                 numpad {
