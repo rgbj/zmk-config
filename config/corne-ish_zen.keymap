@@ -83,10 +83,10 @@
                 symbol {
                         label = "sym";
                         bindings = <
-&trans    &none    &kp HOME &kp UP   &kp END   &kp PG_UP &none    &kp LPAR &kp RPAR &none  &none  &none 
-&trans    &kp PIPE &kp LEFT &kp DOWN &kp RIGHT &kp PG_DN &kp PIPE &kp LBRC &kp RBRC &none  &none  &none 
-&kp TILDE &kp BSLH &none    &none    &none     &none     &kp BSLH &kp LBKT &kp RBKT &none  &none  &none 
-                            &trans   &trans    &trans    &kp RET  &trans   &trans
+&trans &kp ESC   &kp HOME  &kp UP   &kp END   &kp PG_UP &none    &kp LPAR &kp RPAR &kp MINUS &kp UNDER &none 
+&trans &kp TAB   &kp LEFT  &kp DOWN &kp RIGHT &kp PG_DN &kp PIPE &kp LBRC &kp RBRC &kp SQT   &kp DQT   &none 
+&trans &kp GRAVE &kp TILDE &none    &none     &none     &kp BSLH &kp LBKT &kp RBKT &none     &none     &none 
+                           &trans   &trans    &trans    &kp RET  &trans   &trans
                         >;
                 };
                 adjust {
