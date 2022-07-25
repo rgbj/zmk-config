@@ -26,6 +26,10 @@
         quick-release;
 };
 
+&caps_word {
+    continue-list = <MINUS UNDER BSPC DEL>;
+};
+
 / {
         combos {
                 compatible = "zmk,combos";
