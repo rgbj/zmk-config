@@ -87,10 +87,10 @@
                 symbol {
                         label = "sym";
                         bindings = <
-&trans &kp ESC   &kp HOME  &kp UP   &kp END   &kp PG_UP &none    &kp LPAR &kp RPAR &none     &none     &none 
-&trans &kp TAB   &kp LEFT  &kp DOWN &kp RIGHT &kp PG_DN &kp PIPE &kp LBRC &kp RBRC &kp MINUS &kp UNDER &none 
-&trans &kp GRAVE &kp TILDE &none    &none     &none     &kp BSLH &kp LBKT &kp RBKT &kp SQT   &kp DQT   &none 
-                           &trans   &trans    &trans    &kp RET  &trans   &trans
+&trans &kp ESC &kp HOME &kp UP    &kp END   &kp PG_UP &none     &kp LPAR &kp PIPE  &kp BSLH  &kp RPAR &none 
+&trans &kp TAB &kp LEFT &kp DOWN  &kp RIGHT &kp PG_DN &kp QMARK &kp LBRC &kp MINUS &kp UNDER &kp RBRC &none 
+&trans &kp ESC &kp TAB  &kp TILDE &kp GRAVE &none     &kp FSLH  &kp LBKT &kp SQT   &kp DQT   &kp RBKT &none
+                        &trans    &trans    &trans    &kp RET   &trans   &trans
                         >;
                 };
                 adjust {
