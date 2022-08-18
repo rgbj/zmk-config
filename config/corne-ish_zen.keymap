@@ -16,6 +16,7 @@
 #define SYM 3
 #define ADJ 4
 #define MED 5
+#define ACC 6
 
 &mt {
         flavor = "balanced";
@@ -41,6 +42,8 @@
                 combo_acute { key-positions = <19 20>; bindings = <&kp LA(E)     >; layers = <DFT>; timeout-ms = <50>; };
                 combo_grave { key-positions = <20 21>; bindings = <&kp LA(GRAVE) >; layers = <DFT>; timeout-ms = <50>; };
                 combo_tilde { key-positions = <30 31>; bindings = <&kp LA(N)     >; layers = <DFT>; timeout-ms = <50>; };
+
+                combo_accents { key-positions = <15 16>; bindings = <&sl ACC>; layers = <DFT>; timeout-ms = <50>; };
 
                 combo_adjust { key-positions = <11 23 35>; bindings = <&to ADJ>; layers = <DFT>; timeout-ms = <50>; };
                 combo_media  { key-positions = <33 34 35>; bindings = <&to MED>; layers = <DFT>; timeout-ms = <50>; };
@@ -109,6 +112,15 @@
 &none &none &kp J    &kp K     &kp DOWN &kp C_VOL_DN &kp C_VOL_DN &kp DOWN &none   &none     &kp J    &kp K 
 &none &none &kp LEFT &kp RIGHT &none    &kp C_MUTE   &kp C_MUTE   &to DFT  &none   &none     &kp LEFT &kp RIGHT 
                      &kp RET   &kp ESC  &kp SPACE    &kp SPACE    &kp ESC  &kp RET
+                        >;
+                };
+                accents {
+                        label = "éêë";
+                        bindings = <
+&none &kp LA(Q) &none &kp LS(LA(N2)) &none &none &none     &kp LA(U) &kp LA(I)     &none &none &none
+&none &none     &none &none          &none &none &none     &kp LA(E) &kp LA(GRAVE) &none &none &none
+&none &none     &none &none          &none &none &kp LA(N) &none     &none         &none &none &none
+                      &none          &none &none &none     &none     &none
                         >;
                 };
         };
