@@ -6,6 +6,7 @@ manifest:
     - name: zmk
       remote: zmkfirmware
       revision: Board-Corne-ish-Zen-dedicated-work-queue
+      #revision: corne-ish-zen-v2
       import: app/west.yml
   self:
     path: config
