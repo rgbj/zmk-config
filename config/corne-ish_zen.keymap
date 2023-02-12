@@ -44,7 +44,7 @@
                         label = "num";
                         bindings = <
 &none        &kp EXCL &kp AT &kp HASH &kp DLLR &kp PRCNT        &kp CARET &kp AMPS &kp STAR &kp PLUS  &kp EQUAL        &none
-&none        &kp   N1 &kp N2 &kp   N3 &kp   N4 &kp    N5        &none     &sk RGUI &sk RALT &sk RCTRL &sk RSHFT        &none
+&none        &kp   N1 &kp N2 &kp   N3 &kp   N4 &kp    N5        &none     &sk LGUI &sk LALT &sk LCTRL &sk LSHFT        &none
 &none        &kp   N6 &kp N7 &kp   N8 &kp   N9 &kp    N0        &none     &none    &none    &none     &none            &none
                              &trans   &trans   &trans           &trans    &trans   &trans
                         >;
@@ -53,7 +53,7 @@
                         label = "sym";
                         bindings = <
 &none        &none     &none     &none     &none     &none         &kp LA(BKSP) &kp LPAR &kp  PIPE &kp  BSLH &kp RPAR        &none
-&none        &sk RSHFT &sk RCTRL &sk  RALT &sk  RGUI &none         &kp     BKSP &kp LBRC &kp MINUS &kp UNDER &kp RBRC        &none
+&none        &sk LSHFT &sk LCTRL &sk  LALT &sk  LGUI &none         &kp     BKSP &kp LBRC &kp MINUS &kp UNDER &kp RBRC        &none
 &none        &kp   ESC &kp   TAB &kp TILDE &kp GRAVE &none         &kp      DEL &kp LBKT &kp   SQT &kp   DQT &kp RBKT        &none
                                  &trans    &trans    &trans        &kp      RET &trans   &trans
                         >;
@@ -62,7 +62,7 @@
                         label = "nav";
                         bindings = <
 &none         &none  &kp HOME &kp   UP &kp   END &kp PG_UP        &none  &none    &none    &none     &none            &none
-&none         &none  &kp LEFT &kp DOWN &kp RIGHT &kp PG_DN        &none  &sk RGUI &sk RALT &sk RCTRL &sk RSHFT        &none
+&none         &none  &kp LEFT &kp DOWN &kp RIGHT &kp PG_DN        &none  &sk LGUI &sk LALT &sk LCTRL &sk LSHFT        &none
 &kp F1        &kp F2 &kp   F3 &kp   F4 &kp    F5 &kp    F6        &kp F7 &kp   F8 &kp   F9 &kp   F10 &kp   F11        &kp F12
                               &trans   &trans    &trans           &trans &trans   &trans
                         >;
