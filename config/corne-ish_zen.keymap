@@ -43,10 +43,10 @@
                 num {
                         label = "num";
                         bindings = <
-&none        &kp EXCL &kp AT &kp HASH &kp DLLR &kp PRCNT        &kp CARET &kp AMPS &kp STAR &kp PLUS  &kp EQUAL        &none
-&none        &kp   N1 &kp N2 &kp   N3 &kp   N4 &kp    N5        &none     &sk LGUI &sk LALT &sk LCTRL &sk LSHFT        &none
-&none        &kp   N6 &kp N7 &kp   N8 &kp   N9 &kp    N0        &none     &none    &none    &none     &none            &none
-                             &trans   &trans   &trans           &trans    &trans   &trans
+&none        &kp EXCL &kp AT &kp HASH &kp DLLR &kp PRCNT        &kp CARET &kp     AMPS &kp STAR &kp PLUS  &kp EQUAL        &none
+&none        &kp   N1 &kp N2 &kp   N3 &kp   N4 &kp    N5        &kp  BKSP &sk     LGUI &sk LALT &sk LCTRL &sk LSHFT        &none
+&none        &kp   N6 &kp N7 &kp   N8 &kp   N9 &kp    N0        &kp   DEL &kp LA(BKSP) &none    &none     &none            &none
+                             &trans   &trans   &trans           &trans    &trans       &trans
                         >;
                 };
                 sym {
