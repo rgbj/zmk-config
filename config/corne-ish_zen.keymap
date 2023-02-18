@@ -10,8 +10,8 @@
 #define SYR 3
 #define NAV 4
 #define ACC 5
-#define ADJ 6
-#define MED 7
+#define MED 6
+#define ADJ 7
 
 &sk {
     quick-release;
@@ -102,15 +102,6 @@
                              &none          &none &none        &none     &none     &none
             >;
         };
-        adjust {
-            label = "adj";
-            bindings = <
-&none        &none        &out OUT_USB &out     OUT_TOG &out      OUT_BLE &bt        BT_CLR        &none &none &none &none  &none              &none 
-&none        &bt BT_SEL 0 &bt BT_SEL 1 &bt     BT_SEL 2 &bt      BT_SEL 3 &bt      BT_SEL 4        &none &none &none &none  &none              &none 
-&none        &bootloader  &reset       &ext_power EP_ON &ext_power EP_TOG &ext_power EP_OFF        &none &none &none &reset &bootloader        &to MED
-                                       &none            &none             &none                    &none &none &none
-            >;
-        };
         media {
             label = "media";
             bindings = <
@@ -118,6 +109,15 @@
 &none          &none &kp    J &kp     K &kp DOWN &kp C_VOL_DN        &kp C_VOL_DN &kp DOWN &none   &none     &kp    J        &kp     K 
 &none          &none &kp LEFT &kp RIGHT &none    &kp   C_MUTE        &kp   C_MUTE &to  DFT &none   &none     &kp LEFT        &kp RIGHT 
                               &kp   RET &kp  ESC &kp    SPACE        &kp    SPACE &kp  ESC &kp RET
+            >;
+        };
+        adjust {
+            label = "adj";
+            bindings = <
+&none        &none        &out OUT_USB &out     OUT_TOG &out      OUT_BLE &bt        BT_CLR        &none &none &none &none  &none              &none 
+&none        &bt BT_SEL 0 &bt BT_SEL 1 &bt     BT_SEL 2 &bt      BT_SEL 3 &bt      BT_SEL 4        &none &none &none &none  &none              &none 
+&none        &bootloader  &reset       &ext_power EP_ON &ext_power EP_TOG &ext_power EP_OFF        &none &none &none &reset &bootloader        &to MED
+                                       &none            &none             &none                    &none &none &none
             >;
         };
     };
