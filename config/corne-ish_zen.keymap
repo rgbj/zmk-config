@@ -5,11 +5,14 @@
 #include <dt-bindings/zmk/ext_power.h>
 
 #define DFT 0
-#define NUM 1
-#define SYM 2
-#define NAV 3
-#define ACC 4
-#define ADJ 5
+
+#define ACC 1
+#define ADJ 2
+
+#define NUM 3
+#define SYM 4
+#define NAV 5
+
 #define MED 6
 
 &caps_word {
@@ -34,6 +37,24 @@
 &kp TAB        &kp A &kp S &kp   D &kp   F &kp     G        &kp     H &kp   J &kp     K &kp   L &kp SEMI        &caps_word
 &sl ACC        &kp Z &kp X &kp   C &kp   V &kp     B        &kp     N &kp   M &kp COMMA &kp DOT &kp FSLH        &kp LG(LC(SPACE))
                            &sl ACC &mo SYM &kp SPACE        &kp LSHFT &mo NUM &mo   NAV
+            >;
+        };
+        accents {
+            label = "acc";
+            bindings = <
+&none        &kp LA(Q) &none &kp LS(LA(N2)) &none  &none        &none     &kp LA(U) &kp     LA(I) &none &none        &none
+&none        &none     &none &none          &none  &none        &none     &kp LA(E) &kp LA(GRAVE) &none &none        &none
+&none        &none     &none &kp      LA(C) &none  &none        &kp LA(N) &none     &none         &none &none        &none
+                             &trans         &trans &trans       &trans    &trans    &trans
+            >;
+        };
+        adjust {
+            label = "adj";
+            bindings = <
+&to DFT      &none        &out OUT_USB &out     OUT_TOG &out      OUT_BLE &bt        BT_CLR        &none  &none  &none &none  &none              &none 
+&none        &bt BT_SEL 0 &bt BT_SEL 1 &bt     BT_SEL 2 &bt      BT_SEL 3 &bt      BT_SEL 4        &none  &none  &none &none  &none              &none 
+&none        &bootloader  &reset       &ext_power EP_ON &ext_power EP_TOG &ext_power EP_OFF        &none  &none  &none &reset &bootloader        &to MED
+                                       &trans           &trans            &trans                   &trans &trans &trans
             >;
         };
         num {
@@ -61,24 +82,6 @@
 &none         &none  &kp LEFT &kp DOWN &kp RIGHT &kp PG_DN        &none  &kp LGUI &kp LALT &kp LCTRL &kp LSHFT        &none
 &kp F1        &kp F2 &kp   F3 &kp   F4 &kp    F5 &kp    F6        &kp F7 &kp   F8 &kp   F9 &kp   F10 &kp   F11        &kp F12
                               &trans   &trans    &trans           &trans &trans   &trans
-            >;
-        };
-        accents {
-            label = "acc";
-            bindings = <
-&none        &kp LA(Q) &none &kp LS(LA(N2)) &none &none        &none     &kp LA(U) &kp     LA(I) &none &none        &none
-&none        &none     &none &none          &none &none        &none     &kp LA(E) &kp LA(GRAVE) &none &none        &none
-&none        &none     &none &kp      LA(C) &none &none        &kp LA(N) &none     &none         &none &none        &none
-                             &none          &none &none        &none     &none     &none
-            >;
-        };
-        adjust {
-            label = "adj";
-            bindings = <
-&to DFT      &none        &out OUT_USB &out     OUT_TOG &out      OUT_BLE &bt        BT_CLR        &none &none &none &none  &none              &none 
-&none        &bt BT_SEL 0 &bt BT_SEL 1 &bt     BT_SEL 2 &bt      BT_SEL 3 &bt      BT_SEL 4        &none &none &none &none  &none              &none 
-&none        &bootloader  &reset       &ext_power EP_ON &ext_power EP_TOG &ext_power EP_OFF        &none &none &none &reset &bootloader        &to MED
-                                       &none            &none             &none                    &none &none &none
             >;
         };
         media {
