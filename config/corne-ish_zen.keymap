@@ -12,8 +12,9 @@
 #define NUM 3
 #define SYM 4
 #define NAV 5
+#define MOV 6
 
-#define MED 6
+#define MED 7
 
 &caps_word {
     continue-list = <MINUS UNDER BSPC DEL>;
@@ -27,16 +28,24 @@
 */
 
 / {
+    macros {
+        kill_word: kill_word {
+            label = "kill_word";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_tap &kp ESC &kp D>;
+        };
+    };
     keymap {
         compatible = "zmk,keymap";
 
         alpha {
             label = "alpha";
             bindings = <
-&kp ESC        &kp Q &kp W &kp   E &kp   R &kp     T        &kp     Y &kp   U &kp     I &kp   O &kp    P        &sl ADJ
-&kp TAB        &kp A &kp S &kp   D &kp   F &kp     G        &kp     H &kp   J &kp     K &kp   L &kp SEMI        &caps_word
-&sl ACC        &kp Z &kp X &kp   C &kp   V &kp     B        &kp     N &kp   M &kp COMMA &kp DOT &kp FSLH        &kp LG(LC(SPACE))
-                           &sl ACC &mo SYM &kp SPACE        &kp LSHFT &mo NUM &mo   NAV
+&kp ESC        &kp Q &kp W &kp   E &kp   R &kp     T        &kp   Y &kp   U &kp     I &kp   O &kp    P        &sl ADJ
+&kp TAB        &kp A &kp S &kp   D &kp   F &kp     G        &kp   H &kp   J &kp     K &kp   L &kp SEMI        &caps_word
+&sl ACC        &kp Z &kp X &kp   C &kp   V &kp     B        &kp   N &kp   M &kp COMMA &kp DOT &kp FSLH        &kp LG(LC(SPACE))
+                           &sl ACC &mo SYM &kp SPACE        &mo MOV &mo NUM &mo   NAV
             >;
         };
         accents {
@@ -82,6 +91,15 @@
 &none         &none  &kp LEFT &kp DOWN &kp RIGHT &kp PG_DN        &none  &kp LGUI &kp LALT &kp LCTRL &kp LSHFT        &none
 &kp F1        &kp F2 &kp   F3 &kp   F4 &kp    F5 &kp    F6        &kp F7 &kp   F8 &kp   F9 &kp   F10 &kp   F11        &kp F12
                               &trans   &trans    &trans           &trans &trans   &trans
+            >;
+        };
+        mov {
+            label = "mov";
+            bindings = <
+&none        &none &none         &none        &kp LC(W)    &kill_word           &none  &none  &none  &none &none        &none
+&none        &none &kp LS(TAB)   &kp TAB      &kp LA(B)    &kp LA(F)            &none  &none  &none  &none &none        &none
+&none        &none &kp LS(GRAVE) &kp GRAVE    &kp LG(LEFT) &kp LG(RIGHT)        &none  &none  &none  &none &none        &none
+                                 &kp LCTRL    &kp LGUI     &caps_word           &trans &trans &trans
             >;
         };
         media {
