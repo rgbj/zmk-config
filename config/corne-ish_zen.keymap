@@ -32,8 +32,8 @@
             bindings = <
 &kp ESC        &kp Q &kp W &kp   E &kp   R &kp     T        &kp     Y &kp   U &kp     I &kp   O &kp    P        &sl ADJ
 &kp TAB        &kp A &kp S &kp   D &kp   F &kp     G        &kp     H &kp   J &kp     K &kp   L &kp SEMI        &caps_word
-&mo ACC        &kp Z &kp X &kp   C &kp   V &kp     B        &kp     N &kp   M &kp COMMA &kp DOT &kp FSLH        &kp LG(LC(SPACE))
-                           &mo ACC &mo SYM &kp SPACE        &kp LSHFT &mo NUM &mo   NAV
+&sl ACC        &kp Z &kp X &kp   C &kp   V &kp     B        &kp     N &kp   M &kp COMMA &kp DOT &kp FSLH        &kp LG(LC(SPACE))
+                           &sl ACC &mo SYM &kp SPACE        &kp LSHFT &mo NUM &mo   NAV
             >;
         };
         num {
