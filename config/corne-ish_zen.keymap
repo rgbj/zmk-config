@@ -96,7 +96,7 @@
         mov {
             label = "mov";
             bindings = <
-&none        &none &none         &none        &kp LC(W)    &kill_word           &kp LG(LA(   LEFT )) &kp LG(LA(   RIGHT )) &kp LG(LA(   F )) &none &none        &none
+&none        &none &none         &kp LC(R)    &kp LC(W)    &kill_word           &kp LG(LA(   LEFT )) &kp LG(LA(   RIGHT )) &kp LG(LA(   F )) &none &none        &none
 &none        &none &kp LS(TAB)   &kp TAB      &kp LA(B)    &kp LA(F)            &kp LG(LA(LC(LEFT))) &kp LG(LA(LC(RIGHT))) &kp LG(LS(SPACE)) &none &none        &none
 &none        &none &kp LS(GRAVE) &kp GRAVE    &kp LG(LEFT) &kp LG(RIGHT)        &none                &none                 &none             &none &none        &none
                                  &kp LCTRL    &kp LGUI     &caps_word           &trans               &trans                &trans
