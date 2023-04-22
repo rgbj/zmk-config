@@ -16,6 +16,8 @@
 
 #define MED 7
 
+#define ___ &none
+
 &caps_word {
     continue-list = <MINUS UNDER BSPC DEL>;
 };
@@ -51,44 +53,44 @@
         accents {
             label = "acc";
             bindings = <
-&none        &kp LA(Q) &none &kp LS(LA(N2)) &none  &none        &none     &kp LA(U) &kp     LA(I) &none &none        &none
-&none        &none     &none &none          &none  &none        &none     &kp LA(E) &kp LA(GRAVE) &none &none        &none
-&none        &none     &none &kp      LA(C) &none  &none        &kp LA(N) &none     &none         &none &none        &none
+___          &kp LA(Q) ___   &kp LS(LA(N2)) ___    ___          ___       &kp LA(U) &kp     LA(I) ___   ___          ___  
+___          ___       ___   ___            ___    ___          ___       &kp LA(E) &kp LA(GRAVE) ___   ___          ___  
+___          ___       ___   &kp      LA(C) ___    ___          &kp LA(N) ___       ___           ___   ___          ___  
                              &trans         &trans &trans       &trans    &trans    &trans
             >;
         };
         adjust {
             label = "adj";
             bindings = <
-&to DFT      &none        &out OUT_USB &out     OUT_TOG &out      OUT_BLE &bt        BT_CLR        &none  &none  &none &none  &none              &none 
-&none        &bt BT_SEL 0 &bt BT_SEL 1 &bt     BT_SEL 2 &bt      BT_SEL 3 &bt      BT_SEL 4        &none  &none  &none &none  &none              &none 
-&none        &bootloader  &reset       &ext_power EP_ON &ext_power EP_TOG &ext_power EP_OFF        &none  &none  &none &reset &bootloader        &to MED
+&to DFT      ___          &out OUT_USB &out     OUT_TOG &out      OUT_BLE &bt        BT_CLR        ___    ___    ___   ___    ___                ___   
+___          &bt BT_SEL 0 &bt BT_SEL 1 &bt     BT_SEL 2 &bt      BT_SEL 3 &bt      BT_SEL 4        ___    ___    ___   ___    ___                ___   
+___          &bootloader  &reset       &ext_power EP_ON &ext_power EP_TOG &ext_power EP_OFF        ___    ___    ___   &reset &bootloader        &to MED
                                        &trans           &trans            &trans                   &trans &trans &trans
             >;
         };
         num {
             label = "num";
             bindings = <
-&none        &kp EXCL &kp AT &kp HASH &kp DLLR &kp PRCNT        &kp CARET &kp     AMPS &kp STAR &kp PLUS  &kp EQUAL        &none
-&none        &kp   N1 &kp N2 &kp   N3 &kp   N4 &kp    N5        &kp  BKSP &kp     LGUI &kp LALT &kp LCTRL &kp LSHFT        &none
-&none        &kp   N6 &kp N7 &kp   N8 &kp   N9 &kp    N0        &kp   DEL &kp LA(BKSP) &none    &none     &none            &none
+___          &kp EXCL &kp AT &kp HASH &kp DLLR &kp PRCNT        &kp CARET &kp     AMPS &kp STAR &kp PLUS  &kp EQUAL        ___  
+___          &kp   N1 &kp N2 &kp   N3 &kp   N4 &kp    N5        &kp  BKSP &kp     LGUI &kp LALT &kp LCTRL &kp LSHFT        ___  
+___          &kp   N6 &kp N7 &kp   N8 &kp   N9 &kp    N0        &kp   DEL &kp LA(BKSP) ___      ___       ___              ___  
                              &trans   &trans   &trans           &trans    &trans       &trans
             >;
         };
         sym {
             label = "sym";
             bindings = <
-&none        &none     &none     &none     &none     &none         &kp LA(BKSP) &kp LPAR &kp  PIPE &kp  BSLH &kp RPAR        &none
-&none        &kp LSHFT &kp LCTRL &kp  LALT &kp  LGUI &none         &kp     BKSP &kp LBRC &kp MINUS &kp UNDER &kp RBRC        &none
-&none        &kp   ESC &kp   TAB &kp TILDE &kp GRAVE &none         &kp      DEL &kp LBKT &kp   SQT &kp   DQT &kp RBKT        &none
+___          ___       ___       ___       ___       ___           &kp LA(BKSP) &kp LPAR &kp  PIPE &kp  BSLH &kp RPAR        ___  
+___          &kp LSHFT &kp LCTRL &kp  LALT &kp  LGUI ___           &kp     BKSP &kp LBRC &kp MINUS &kp UNDER &kp RBRC        ___  
+___          &kp   ESC &kp   TAB &kp TILDE &kp GRAVE ___           &kp      DEL &kp LBKT &kp   SQT &kp   DQT &kp RBKT        ___  
                                  &trans    &trans    &trans        &kp      RET &trans   &trans
             >;
         };
         nav {
             label = "nav";
             bindings = <
-&none         &none  &kp HOME &kp   UP &kp   END &kp PG_UP        &none  &none    &none    &none     &none            &none
-&none         &none  &kp LEFT &kp DOWN &kp RIGHT &kp PG_DN        &none  &kp LGUI &kp LALT &kp LCTRL &kp LSHFT        &none
+___           ___    &kp HOME &kp   UP &kp   END &kp PG_UP        ___    ___      ___      ___       ___              ___  
+___           ___    &kp LEFT &kp DOWN &kp RIGHT &kp PG_DN        ___    &kp LGUI &kp LALT &kp LCTRL &kp LSHFT        ___  
 &kp F1        &kp F2 &kp   F3 &kp   F4 &kp    F5 &kp    F6        &kp F7 &kp   F8 &kp   F9 &kp   F10 &kp   F11        &kp F12
                               &trans   &trans    &trans           &trans &trans   &trans
             >;
@@ -96,18 +98,18 @@
         mov {
             label = "mov";
             bindings = <
-&none        &none &none         &kp LC(R)    &kp LC(W)    &kill_word           &kp LG(LA(   LEFT )) &kp LG(LA(   RIGHT )) &kp LG(LA(   F )) &none &none        &none
-&none        &none &kp LS(TAB)   &kp TAB      &kp LA(B)    &kp LA(F)            &kp LG(LA(LC(LEFT))) &kp LG(LA(LC(RIGHT))) &kp LG(LS(SPACE)) &none &none        &none
-&none        &none &kp LS(GRAVE) &kp GRAVE    &kp LG(LEFT) &kp LG(RIGHT)        &none                &none                 &none             &none &none        &none
+___          ___   ___           &kp LC(R)    &kp LC(W)    &kill_word           &kp LG(LA(   LEFT )) &kp LG(LA(   RIGHT )) &kp LG(LA(   F )) ___   ___          ___  
+___          ___   &kp LS(TAB)   &kp TAB      &kp LA(B)    &kp LA(F)            &kp LG(LA(LC(LEFT))) &kp LG(LA(LC(RIGHT))) &kp LG(LS(SPACE)) ___   ___          ___  
+___          ___   &kp LS(GRAVE) &kp GRAVE    &kp LG(LEFT) &kp LG(RIGHT)        ___                  ___                   ___               ___   ___          ___  
                                  &kp LCTRL    &kp LGUI     &caps_word           &trans               &trans                &trans
             >;
         };
         media {
             label = "media";
             bindings = <
-&to DFT        &none &kp    I &kp     O &kp   UP &kp C_VOL_UP        &kp C_VOL_UP &kp   UP &none   &kp LG(W) &kp    I        &kp     O
-&none          &none &kp    J &kp     K &kp DOWN &kp C_VOL_DN        &kp C_VOL_DN &kp DOWN &none   &none     &kp    J        &kp     K 
-&none          &none &kp LEFT &kp RIGHT &none    &kp   C_MUTE        &kp   C_MUTE &to  DFT &none   &none     &kp LEFT        &kp RIGHT 
+&to DFT        ___   &kp    I &kp     O &kp   UP &kp C_VOL_UP        &kp C_VOL_UP &kp   UP ___     &kp LG(W) &kp    I        &kp     O
+___            ___   &kp    J &kp     K &kp DOWN &kp C_VOL_DN        &kp C_VOL_DN &kp DOWN ___     ___       &kp    J        &kp     K 
+___            ___   &kp LEFT &kp RIGHT ___      &kp   C_MUTE        &kp   C_MUTE &to  DFT ___     ___       &kp LEFT        &kp RIGHT 
                               &kp   RET &kp  ESC &kp    SPACE        &kp    SPACE &kp  ESC &kp RET
             >;
         };
