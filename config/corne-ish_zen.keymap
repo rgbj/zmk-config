@@ -18,6 +18,10 @@
 
 #define ___ &none
 
+&sk {
+    quick-release;
+};
+
 &caps_word {
     continue-list = <MINUS UNDER BSPC DEL>;
 };
@@ -72,7 +76,7 @@ ___          &bootloader  &reset       &ext_power EP_ON &ext_power EP_TOG &ext_p
             label = "num";
             bindings = <
 ___          &kp EXCL &kp AT &kp HASH &kp DLLR &kp PRCNT        &kp CARET &kp     AMPS &kp STAR &kp PLUS  &kp EQUAL        ___  
-___          &kp   N1 &kp N2 &kp   N3 &kp   N4 &kp    N5        &kp  BKSP &kp     LGUI &kp LALT &kp LCTRL &kp LSHFT        ___  
+___          &kp   N1 &kp N2 &kp   N3 &kp   N4 &kp    N5        &kp  BKSP &sk     LGUI &sk LALT &sk LCTRL &sk LSHFT        ___  
 ___          &kp   N6 &kp N7 &kp   N8 &kp   N9 &kp    N0        &kp   DEL &kp LA(BKSP) ___      ___       ___              ___  
                              &trans   &trans   &trans           &trans    &trans       &trans
             >;
@@ -81,7 +85,7 @@ ___          &kp   N6 &kp N7 &kp   N8 &kp   N9 &kp    N0        &kp   DEL &kp LA
             label = "sym";
             bindings = <
 ___          ___       ___       ___       ___       ___           &kp LA(BKSP) &kp LPAR &kp  PIPE &kp  BSLH &kp RPAR        ___  
-___          &kp LSHFT &kp LCTRL &kp  LALT &kp  LGUI ___           &kp     BKSP &kp LBRC &kp MINUS &kp UNDER &kp RBRC        ___  
+___          &sk LSHFT &sk LCTRL &sk  LALT &sk  LGUI ___           &kp     BKSP &kp LBRC &kp MINUS &kp UNDER &kp RBRC        ___  
 ___          &kp   ESC &kp   TAB &kp TILDE &kp GRAVE ___           &kp      DEL &kp LBKT &kp   SQT &kp   DQT &kp RBKT        ___  
                                  &trans    &trans    &trans        &kp      RET &trans   &trans
             >;
@@ -90,7 +94,7 @@ ___          &kp   ESC &kp   TAB &kp TILDE &kp GRAVE ___           &kp      DEL 
             label = "nav";
             bindings = <
 ___           ___    &kp HOME &kp   UP &kp   END &kp PG_UP        ___    ___      ___      ___       ___              ___  
-___           ___    &kp LEFT &kp DOWN &kp RIGHT &kp PG_DN        ___    &kp LGUI &kp LALT &kp LCTRL &kp LSHFT        ___  
+___           ___    &kp LEFT &kp DOWN &kp RIGHT &kp PG_DN        ___    &sk LGUI &sk LALT &sk LCTRL &sk LSHFT        ___  
 &kp F1        &kp F2 &kp   F3 &kp   F4 &kp    F5 &kp    F6        &kp F7 &kp   F8 &kp   F9 &kp   F10 &kp   F11        &kp F12
                               &trans   &trans    &trans           &trans &trans   &trans
             >;
