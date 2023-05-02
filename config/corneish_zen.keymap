@@ -66,9 +66,9 @@ ___          ___       ___   &kp      LA(C) ___    ___          &kp LA(N) ___   
         adjust {
             label = "adj";
             bindings = <
-&to DFT      ___          &out OUT_USB &out     OUT_TOG &out      OUT_BLE &bt        BT_CLR        ___    ___    ___   ___    ___                ___   
-___          &bt BT_SEL 0 &bt BT_SEL 1 &bt     BT_SEL 2 &bt      BT_SEL 3 &bt      BT_SEL 4        ___    ___    ___   ___    ___                ___   
-___          &bootloader  &reset       &ext_power EP_ON &ext_power EP_TOG &ext_power EP_OFF        ___    ___    ___   &reset &bootloader        &to MED
+&to DFT      ___          &out OUT_USB &out     OUT_TOG &out      OUT_BLE &bt        BT_CLR        ___    ___    ___   ___        ___                ___   
+___          &bt BT_SEL 0 &bt BT_SEL 1 &bt     BT_SEL 2 &bt      BT_SEL 3 &bt      BT_SEL 4        ___    ___    ___   ___        ___                ___   
+___          &bootloader  &sys_reset   &ext_power EP_ON &ext_power EP_TOG &ext_power EP_OFF        ___    ___    ___   &sys_reset &bootloader        &to MED
                                        &trans           &trans            &trans                   &trans &trans &trans
             >;
         };
