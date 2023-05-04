@@ -114,9 +114,9 @@ ___           ___    &kp LEFT &kp DOWN &kp RIGHT &kp PG_DN        ___    &sk LGU
         mov {
             label = "mov";
             bindings = <
-___          ___   ___             &kp LC(R)   &kp LC(W)  &kill_word           &kp LG(LA(   LEFT )) &kp LG(LA(   RIGHT )) &kp LG(LA(   F )) ___   ___          ___  
-___          ___   &kp    LS(TAB)  &kp TAB     &kp LA(B)  &kp LA(F)            &kp LG(LA(LC(LEFT))) &kp LG(LA(LC(RIGHT))) &kp LG(LS(SPACE)) ___   ___          ___  
-___          ___   &kp LC(LS(TAB)) &kp LC(TAB) &tmux_prev &tmux_next           ___                  ___                   ___               ___   ___          ___  
+___          ___   ___             ___         &kp LC(W)  &kill_word           &kp LG(LA(   LEFT )) &kp LG(LA(   RIGHT )) &kp LG(LA(   F )) ___       ___          ___  
+___          ___   &kp    LS(TAB)  &kp TAB     &kp LA(B)  &kp LA(F)            &kp LG(LA(LC(LEFT))) &kp LG(LA(LC(RIGHT))) &kp LG(LS(SPACE)) &kp LC(R) ___          ___  
+___          ___   &kp LC(LS(TAB)) &kp LC(TAB) &tmux_prev &tmux_next           ___                  ___                   ___               ___       ___          ___  
                                    ___         &kp LGUI   &caps_word           &trans               &trans                &trans
             >;
         };
