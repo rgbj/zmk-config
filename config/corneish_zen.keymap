@@ -87,10 +87,10 @@ ___          &bootloader  &sys_reset   &ext_power EP_ON &ext_power EP_TOG &ext_p
         num {
             label = "num";
             bindings = <
-___          &kp EXCL &kp AT &kp HASH &kp DLLR &kp PRCNT        &kp CARET &kp     AMPS &kp STAR &kp PLUS  &kp EQUAL        ___  
-___          &kp   N1 &kp N2 &kp   N3 &kp   N4 &kp    N5        &kp  BKSP &sk     LGUI &sk LALT &sk LCTRL &sk LSHFT        ___  
-___          &kp   N6 &kp N7 &kp   N8 &kp   N9 &kp    N0        &kp   DEL &kp LA(BKSP) ___      ___       ___              ___  
-                             &trans   &trans   &trans           &trans    &trans       &trans
+&kp SEMI           &kp EXCL &kp AT &kp HASH &kp DLLR &kp PRCNT        &kp CARET &kp     AMPS &kp STAR &kp PLUS  &kp EQUAL        ___  
+&kp MINUS          &kp   N1 &kp N2 &kp   N3 &kp   N4 &kp    N5        &kp  BKSP &sk     LGUI &sk LALT &sk LCTRL &sk LSHFT        ___  
+&kp UNDER          &kp   N6 &kp N7 &kp   N8 &kp   N9 &kp    N0        &kp   DEL &kp LA(BKSP) &trans   &trans    &trans           ___  
+                                   &trans   &trans   &trans           &trans    &trans       &trans
             >;
         };
         sym {
