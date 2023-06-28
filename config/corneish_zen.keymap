@@ -85,7 +85,7 @@
             bindings = <
 &kp ESC        &kp Q &kp W &kp     E &kp   R &kp     T        &kp   Y &kp   U &kp     I &kp   O &kp    P        &sl ADJ
 &kp TAB        &kp A &kp S &kp     D &kp   F &kp     G        &kp   H &kp   J &kp     K &kp   L &kp SEMI        &caps_word
-&sl ACC        &kp Z &kp X &kp     C &kp   V &kp     B        &kp   N &kp   M &kp COMMA &kp DOT &kp FSLH        &kp LG(LC(SPACE))
+&sl ACC        &kp Z &kp X &kp     C &kp   V &kp     B        &kp   N &kp   M &kp COMMA &kp DOT &kp FSLH        &kp LC(LG(SPACE))
                            &shift    &mo SYM &kp SPACE        &mo MOV &mo NUM &mo   NAV
             >;
         };
@@ -119,9 +119,9 @@ ___           ___    &kp LEFT &kp DOWN &kp RIGHT &kp PG_DN        ___    &sk LGU
         mov {
             label = "mov";
             bindings = <
-___          ___   &kp  LS(GRAVE)  &kp GRAVE   &kp LC(W)  &kill_word           &kp LG(LA(   LEFT )) &kp LG(LA(   RIGHT )) &kp LG(LA(   F )) ___       ___          ___  
-___          ___   &kp    LS(TAB)  &kp TAB     &kp LA(B)  &kp LA(F)            &kp LG(LA(LC(LEFT))) &kp LG(LA(LC(RIGHT))) &kp LG(LS(SPACE)) &kp LC(R) ___          ___  
-___          ___   &kp LC(LS(TAB)) &kp LC(TAB) &tmux_prev &tmux_next           ___                  &kp    LS(TAB)        &swap             ___       ___          ___  
+___          ___   &kp LS( GRAVE)  &kp  GRAVE  &kp  LC(W) &kill_word           &kp    LA(LG(LEFT))  &kp    LA(LG(RIGHT))  &kp     LA(LG(F)) ___       ___          ___  
+___          ___   &kp LS(   TAB)  &kp    TAB  &kp  LA(B) &kp  LA(F)           &kp LC(LA(LG(LEFT))) &kp LC(LA(LG(RIGHT))) &kp LS(LG(SPACE)) &kp LC(R) ___          ___  
+___          ___   &kp LS(LC(TAB)) &kp LC(TAB) &tmux_prev &tmux_next           ___                  &kp    LS(TAB)        &swap             ___       ___          ___  
                                    ___         &kp LGUI   &caps_word           &trans               &trans                &trans
             >;
         };
