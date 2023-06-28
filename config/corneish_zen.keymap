@@ -6,13 +6,13 @@
 
 #define DFT 0
 
-#define ACC 1
-#define ADJ 2
+#define NUM 1
+#define SYM 2
+#define NAV 3
+#define MOV 4
 
-#define NUM 3
-#define SYM 4
-#define NAV 5
-#define MOV 6
+#define ACC 5
+#define ADJ 6
 
 #define MED 7
 
@@ -66,24 +66,6 @@
                            &sk LSHFT &mo SYM &kp SPACE        &mo MOV &mo NUM &mo   NAV
             >;
         };
-        accents {
-            label = "acc";
-            bindings = <
-___          &kp LA(Q) ___   &kp LS(LA(N2)) ___    ___          ___       &kp LA(U) &kp     LA(I) ___   ___          ___  
-___          ___       ___   ___            ___    ___          ___       &kp LA(E) &kp LA(GRAVE) ___   ___          ___  
-___          ___       ___   &kp      LA(C) ___    ___          &kp LA(N) ___       ___           ___   ___          ___  
-                             &trans         &trans &trans       &trans    &trans    &trans
-            >;
-        };
-        adjust {
-            label = "adj";
-            bindings = <
-&to DFT      ___          &out OUT_USB &out     OUT_TOG &out      OUT_BLE &bt        BT_CLR        ___    ___    ___   ___        ___                ___   
-___          &bt BT_SEL 0 &bt BT_SEL 1 &bt     BT_SEL 2 &bt      BT_SEL 3 &bt      BT_SEL 4        ___    ___    ___   ___        ___                ___   
-___          &bootloader  &sys_reset   &ext_power EP_ON &ext_power EP_TOG &ext_power EP_OFF        ___    ___    ___   &sys_reset &bootloader        &to MED
-                                       &trans           &trans            &trans                   &trans &trans &trans
-            >;
-        };
         num {
             label = "num";
             bindings = <
@@ -118,6 +100,24 @@ ___          ___   &kp  LS(GRAVE)  &kp GRAVE   &kp LC(W)  &kill_word           &
 ___          ___   &kp    LS(TAB)  &kp TAB     &kp LA(B)  &kp LA(F)            &kp LG(LA(LC(LEFT))) &kp LG(LA(LC(RIGHT))) &kp LG(LS(SPACE)) &kp LC(R) ___          ___  
 ___          ___   &kp LC(LS(TAB)) &kp LC(TAB) &tmux_prev &tmux_next           ___                  ___                   ___               ___       ___          ___  
                                    ___         &kp LGUI   &caps_word           &trans               &trans                &trans
+            >;
+        };
+        accents {
+            label = "acc";
+            bindings = <
+___          &kp LA(Q) ___   &kp LS(LA(N2)) ___    ___          ___       &kp LA(U) &kp     LA(I) ___   ___          ___  
+___          ___       ___   ___            ___    ___          ___       &kp LA(E) &kp LA(GRAVE) ___   ___          ___  
+___          ___       ___   &kp      LA(C) ___    ___          &kp LA(N) ___       ___           ___   ___          ___  
+                             &trans         &trans &trans       &trans    &trans    &trans
+            >;
+        };
+        adjust {
+            label = "adj";
+            bindings = <
+&to DFT      ___          &out OUT_USB &out     OUT_TOG &out      OUT_BLE &bt        BT_CLR        ___    ___    ___   ___        ___                ___   
+___          &bt BT_SEL 0 &bt BT_SEL 1 &bt     BT_SEL 2 &bt      BT_SEL 3 &bt      BT_SEL 4        ___    ___    ___   ___        ___                ___   
+___          &bootloader  &sys_reset   &ext_power EP_ON &ext_power EP_TOG &ext_power EP_OFF        ___    ___    ___   &sys_reset &bootloader        &to MED
+                                       &trans           &trans            &trans                   &trans &trans &trans
             >;
         };
         media {
