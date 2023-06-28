@@ -126,7 +126,7 @@ ___          ___   &kp LC(LS(TAB)) &kp LC(TAB) &tmux_prev &tmux_next           _
 &kp    I        &kp     O &kp LG(W)  ___     &kp   UP &kp C_VOL_UP        &kp C_VOL_UP &kp   UP ___     &kp LG(W) &kp    I        &kp     O
 &kp    J        &kp     K ___        ___     &kp DOWN &kp C_VOL_DN        &kp C_VOL_DN &kp DOWN ___     ___       &kp    J        &kp     K 
 &kp LEFT        &kp RIGHT ___        ___     &to  DFT &kp   C_MUTE        &kp   C_MUTE &to  DFT ___     ___       &kp LEFT        &kp RIGHT 
-                                     &kp RET &kp  ESC &kp    SPACE        &kp    SPACE &kp  ESC &kp RET
+                                     &kp ESC &kp  RET &kp    SPACE        &kp    SPACE &kp  RET &kp ESC
             >;
         };
     };
