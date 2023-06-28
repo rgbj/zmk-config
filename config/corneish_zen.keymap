@@ -112,10 +112,10 @@ ___          ___   &kp LC(LS(TAB)) &kp LC(TAB) &tmux_prev &tmux_next           _
         accents {
             label = "acc";
             bindings = <
-___          &kp LA(Q) ___   &kp LS(LA(N2)) ___    ___          ___       &kp LA(U) &kp     LA(I) ___   ___          ___  
-___          ___       ___   ___            ___    ___          ___       &kp LA(E) &kp LA(GRAVE) ___   ___          ___  
-___          ___       ___   &kp      LA(C) ___    ___          &kp LA(N) ___       ___           ___   ___          ___  
-                             &trans         &trans &trans       &trans    &trans    &trans
+___          &kp LA(Q)   ___   &kp LS(LA(N2)) ___    ___          ___       &kp LA(U) &kp     LA(I) ___   ___          ___  
+___          &kp LA(SQT) ___   ___            ___    ___          ___       &kp LA(E) &kp LA(GRAVE) ___   ___          ___  
+___          ___         ___   &kp      LA(C) ___    ___          &kp LA(N) ___       ___           ___   ___          ___  
+                               &trans         &trans &trans       &trans    &trans    &trans
             >;
         };
         adjust {
