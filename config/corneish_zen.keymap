@@ -41,6 +41,15 @@
                36  37  38    39  40  41
 */
     };
+    behaviors {
+        shift: shift {
+            compatible = "zmk,behavior-mod-morph";
+            label = "SMART_SHIFT";
+            #binding-cells = <0>;
+            bindings = <&sk LSHFT>, <&caps_word>;
+            mods = <(MOD_LSFT)>;
+        };
+    };
     macros {
         kill_word: kill_word {
             label = "kill_word";
@@ -70,7 +79,7 @@
 &kp ESC        &kp Q &kp W &kp     E &kp   R &kp     T        &kp   Y &kp   U &kp     I &kp   O &kp    P        &sl ADJ
 &kp TAB        &kp A &kp S &kp     D &kp   F &kp     G        &kp   H &kp   J &kp     K &kp   L &kp SEMI        &caps_word
 &sl ACC        &kp Z &kp X &kp     C &kp   V &kp     B        &kp   N &kp   M &kp COMMA &kp DOT &kp FSLH        &kp LG(LC(SPACE))
-                           &sk LSHFT &mo SYM &kp SPACE        &mo MOV &mo NUM &mo   NAV
+                           &shift    &mo SYM &kp SPACE        &mo MOV &mo NUM &mo   NAV
             >;
         };
         num {
