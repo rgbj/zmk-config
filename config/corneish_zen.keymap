@@ -32,6 +32,7 @@
         combo_acc {
             timeout-ms = <50>;
             key-positions = <15 16>;
+            layers = <DFT>;
             bindings = <&sl ACC>;
         };
 /*
