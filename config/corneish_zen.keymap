@@ -109,10 +109,10 @@
         sym {
             label = "sym";
             bindings = <
-___          ___       &gtab     &ctab     &kp LS(TAB) ___           &kp LA(BKSP) &kp LPAR &kp  PIPE &kp  BSLH &kp RPAR        ___  
-___          &sk LSHFT &sk LCTRL &sk  LALT &sk    LGUI ___           &kp     BKSP &kp LBRC &kp MINUS &kp UNDER &kp RBRC        ___  
-___          &kp   ESC &kp   TAB &kp TILDE &kp   GRAVE ___           &kp      DEL &kp LBKT &kp   SQT &kp   DQT &kp RBKT        ___  
-                                 &trans    &trans      &trans        &kp      RET &trans   &trans
+___          &kp LS(LG(GRAVE)) &gtab     &ctab     &kp LS(TAB) &kp LG(GRAVE)           &kp LA(BKSP) &kp LPAR &kp  PIPE &kp  BSLH &kp RPAR        ___  
+___          &sk LSHFT         &sk LCTRL &sk  LALT &sk    LGUI ___                     &kp     BKSP &kp LBRC &kp MINUS &kp UNDER &kp RBRC        ___  
+___          &kp   ESC         &kp   TAB &kp TILDE &kp   GRAVE ___                     &kp      DEL &kp LBKT &kp   SQT &kp   DQT &kp RBKT        ___  
+                                         &trans    &trans      &trans                  &kp      RET &trans   &trans
             >;
         };
         nav {
@@ -127,9 +127,9 @@ ___           ___    &kp LEFT &kp DOWN &kp RIGHT &kp PG_DN        ___    &sk LGU
         mov {
             label = "mov";
             bindings = <
-___          ___ ___ ___ &kp  LC(W) &kill_word           &kp    LA(LG(LEFT))  &kp    LA(LG(RIGHT))  &kp LA(LG(F)) ___       ___        ___  
-___          ___ ___ ___ &kp  LA(B) &kp  LA(F)           &kp LC(LA(LG(LEFT))) &kp LC(LA(LG(RIGHT))) ___           &kp LC(R) ___        ___  
-___          ___ ___ ___ &tmux_prev &tmux_next           &kp       LG(GRAVE)  &kp         LS(TAB)   &gtab         &ctab     ___        ___            
+___          ___ ___ ___ &kp  LC(W) &kill_word           &kp    LA(LG(LEFT))  &kp    LA(LG(RIGHT))  &kp LA(LG(F)) ___       ___                  ___  
+___          ___ ___ ___ &kp  LA(B) &kp  LA(F)           &kp LC(LA(LG(LEFT))) &kp LC(LA(LG(RIGHT))) ___           &kp LC(R) ___                  ___  
+___          ___ ___ ___ &tmux_prev &tmux_next           &kp    LS(LG(GRAVE)) &kp         LS(TAB)   &ctab         &gtab     &kp LG(GRAVE)        ___            
                      ___ ___        ___                  &trans               &trans                &trans
             >;
         };
