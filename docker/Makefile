@@ -1,3 +1,5 @@
+.PHONY: init update build
+
 init:
 	/docker/init.sh
 
