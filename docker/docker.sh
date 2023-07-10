@@ -1,16 +1,16 @@
 #! /bin/sh -ex
 
 # configure:
-ZBE_ID="ciz"
+ZBE_ID="rollow"
 ZBE_ZMK_VERSION="3.2" # what ZMK version to use
 ZBE_ENV="rgbj-ciz" # an informational tag about the ZMK build env
 ZBE_OUTPUT="${HOME}/Downloads/${ZBE_ID}" # where the artifacts end up
 # and either:
-ZBE_BOARD_left=corneish_zen_v2_left
-ZBE_BOARD_right=corneish_zen_v2_right
+#ZBE_BOARD_left=board_left
+#ZBE_BOARD_right=board_right
 # or:
-#ZBE_BOARD=board
-#ZBE_SHIELD=shield
+ZBE_BOARD=nice_nano_v2
+ZBE_SHIELD=rollow
 # end configure
 
 ZBE_ZMK_CONFIG_DIR="$(realpath $(dirname $0)/..)"
