@@ -1,11 +1,12 @@
-# ZMK keymap
+# ZMK config
 
-## boards
+target is 3x6 [Corne-ish Zen](https://lowprokb.ca/products/corne-ish-zen), using [caksoylar's ZMK](https://github.com/caksoylar/zmk)
 
-- [Corne-ish Zen](https://lowprokb.ca/products/corne-ish-zen), using [caksoylar's ZMK](https://github.com/caksoylar/zmk)
-- [Rollow](https://www.barbellboards.com/product/rollow), using [nickconway's ZMK](https://github.com/nickconway/zmk)
+## keymap
 
-## building
+![3x6 Corne-ish Zen layout](keymap-drawer/corneish_zen.svg)
+
+## build
 
 Ensure docker is available. On macos, see https://github.com/abiosoft/colima. Then:
 

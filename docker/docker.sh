@@ -1,13 +1,13 @@
 #! /bin/sh -ex
 
 # configure:
-ZBE_ID="kbd"
+ZBE_ID="ciz"
 ZBE_ZMK_VERSION="3.2" # what ZMK version to use
-ZBE_ENV="main" # an informational tag about the ZMK build env
+ZBE_ENV="caksoylar" # an informational tag about the ZMK build env
 ZBE_OUTPUT="${HOME}/Downloads/${ZBE_ID}" # where the artifacts end up
 # and either:
-#ZBE_BOARD_left=board_left
-#ZBE_BOARD_right=board_right
+ZBE_BOARD_left=corneish_zen_v2_left
+ZBE_BOARD_right=corneish_zen_v2_right
 # or:
 #ZBE_BOARD=board
 #ZBE_SHIELD=shield
