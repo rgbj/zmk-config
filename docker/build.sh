@@ -1,7 +1,12 @@
 #! /bin/sh -ex
 
 git config --global --add safe.directory /zmk-config
-BUILD_ID=$(cd /zmk-config && git rev-parse --abbrev-ref HEAD)_$(cd /zmk-config && git rev-parse --short HEAD)_$(date +%Y%m%d-%H%M%S)
+cd /zmk-config
+BUILD_ID="$(date +%Y%m%d-%H%M%S)_$(git rev-parse --abbrev-ref HEAD)_$(git rev-parse --short HEAD)"
+if test -n "$(git status --porcelain)"; then
+    BUILD_ID="${BUILD_ID}+"
+fi
+cd -
 
 west zephyr-export
 
