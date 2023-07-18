@@ -18,6 +18,9 @@
 
 #define ___ &none
 
+// see https://zmk.dev/docs/behaviors/hold-tap#example-use-cases
+#define MO_TOG(layer) &mo_tog layer layer   // Macro to apply momentary-layer-on-hold/toggle-layer-on-tap to a specific layer
+
 &sk {
     quick-release;
 };
@@ -43,6 +46,14 @@
 */
     };
     behaviors {
+        mo_tog: behavior_mo_tog {
+            compatible = "zmk,behavior-hold-tap";
+            label = "mo_tog";
+            #binding-cells = <2>;
+            flavor = "hold-preferred";
+            tapping-term-ms = <200>;
+            bindings = <&mo>, <&tog>;
+        };
         gtab: gtab {
             compatible = "zmk,behavior-tri-state";
             label = "GUI_TAB";
@@ -109,10 +120,10 @@
         sym {
             label = "sym";
             bindings = <
-___          &kp LS(LG(GRAVE)) &gtab     &ctab     &kp LS(TAB) &kp LG(GRAVE)           &kp LA(BKSP) &kp LPAR &kp  PIPE &kp  BSLH &kp RPAR        ___  
-___          &sk LSHFT         &sk LCTRL &sk  LALT &sk    LGUI ___                     &kp     BKSP &kp LBRC &kp MINUS &kp UNDER &kp RBRC        ___  
-___          &kp   ESC         &kp   TAB &kp TILDE &kp   GRAVE ___                     &kp      DEL &kp LBKT &kp   SQT &kp   DQT &kp RBKT        ___  
-                                         &trans    &trans      &trans                  &kp      RET &mo  NAV &trans
+___          &kp LS(LG(GRAVE)) &gtab     &ctab     &kp LS(TAB) &kp LG(GRAVE)           &kp LA(BKSP) &kp    LPAR &kp  PIPE &kp  BSLH &kp RPAR        ___  
+___          &sk LSHFT         &sk LCTRL &sk  LALT &sk    LGUI ___                     &kp     BKSP &kp    LBRC &kp MINUS &kp UNDER &kp RBRC        ___  
+___          &kp   ESC         &kp   TAB &kp TILDE &kp   GRAVE ___                     &kp      DEL &kp    LBKT &kp   SQT &kp   DQT &kp RBKT        ___  
+                                         &trans    &trans      &trans                  &kp      RET MO_TOG(NAV) &trans
             >;
         };
         nav {
@@ -121,7 +132,7 @@ ___          &kp   ESC         &kp   TAB &kp TILDE &kp   GRAVE ___              
 ___           ___    &kp HOME &kp   UP &kp   END &kp PG_UP        ___    ___      ___      ___       ___              ___  
 ___           ___    &kp LEFT &kp DOWN &kp RIGHT &kp PG_DN        ___    &sk LGUI &sk LALT &sk LCTRL &sk LSHFT        ___  
 &kp F1        &kp F2 &kp   F3 &kp   F4 &kp    F5 &kp    F6        &kp F7 &kp   F8 &kp   F9 &kp   F10 &kp   F11        &kp F12
-                              &trans   &trans    &trans           &trans &trans   &trans
+                              &trans   &trans    &trans           &trans &tog NAV &trans
             >;
         };
         mov {
