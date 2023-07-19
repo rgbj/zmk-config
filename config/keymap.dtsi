@@ -129,10 +129,10 @@ ___          &kp   ESC         &kp   TAB &kp TILDE &kp   GRAVE ___              
         nav {
             label = "nav";
             bindings = <
-___           ___    &kp HOME &kp   UP &kp   END &kp PG_UP        ___    ___      ___      ___       ___              ___  
-___           ___    &kp LEFT &kp DOWN &kp RIGHT &kp PG_DN        ___    &sk LGUI &sk LALT &sk LCTRL &sk LSHFT        ___  
-&kp F1        &kp F2 &kp   F3 &kp   F4 &kp    F5 &kp    F6        &kp F7 &kp   F8 &kp   F9 &kp   F10 &kp   F11        &kp F12
-                              &trans   &trans    &trans           &trans &tog NAV &trans
+___           ___    &kp HOME &kp   UP &kp   END &kp PG_UP        &kp LA(BKSP) &kp  DEL ___      ___       ___              ___  
+___           ___    &kp LEFT &kp DOWN &kp RIGHT &kp PG_DN        &kp     BKSP &sk LGUI &sk LALT &sk LCTRL &sk LSHFT        ___  
+&kp F1        &kp F2 &kp   F3 &kp   F4 &kp    F5 &kp    F6        &kp       F7 &kp   F8 &kp   F9 &kp   F10 &kp   F11        &kp F12
+                              &trans   &trans    &trans           &trans       &tog NAV &trans
             >;
         };
         mov {
