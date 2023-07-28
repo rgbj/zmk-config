@@ -10,7 +10,7 @@ cd -
 
 west zephyr-export
 
-for side in left right
+for side in ${ZBE_SIDES}
 do
     shield=""
     if [ -n "${ZBE_SHIELD}" ]; then

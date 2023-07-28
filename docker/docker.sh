@@ -24,4 +24,5 @@ docker run --name "zmk-build-${ZBE_ID}" --rm -it -w /wd \
     -e MAKEFILES=/docker/Makefile \
     -e ZBE_BOARD_left="${ZBE_BOARD_left}" -e ZBE_BOARD_right="${ZBE_BOARD_right}" \
     -e ZBE_BOARD="${ZBE_BOARD}" -e ZBE_SHIELD="${ZBE_SHIELD}" \
+    -e ZBE_SIDES="${ZBE_SIDES:-left}" \
     zmkfirmware/zmk-dev-arm:"${ZBE_ZMK_VERSION}" "$@"

@@ -14,3 +14,9 @@ $ docker/docker.sh make init|update|build
 ```
 
 The script will use a volume to store intermediate build state. `init` needs to be run once, `update` once or whenever dependencies need refreshing, `build` for building the firmware. 
+
+Only the left side image gets build by default. To build both sides, define `ZBE_SIDES="left right"` in the environment:
+
+```sh
+$ ZBE_SIDES="left right" docker/docker.sh make build
+```
