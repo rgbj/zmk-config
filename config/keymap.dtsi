@@ -66,14 +66,15 @@
             label = "GUI_TAB";
             #binding-cells = <0>;
             bindings = <&kt LGUI>, <&kp TAB>, <&kt LGUI>;
-            ignored-key-positions = <4>;
+            ignored-key-positions = <3>;
         };
-        ctab: ctab {
-            compatible = "zmk,behavior-tri-state";
-            label = "CTRL_TAB";
+        rgctab: rgctab {
+            compatible = "zmk,behavior-mod-morph";
+            label = "REVERSE_SWITCHER";
             #binding-cells = <0>;
-            bindings = <&kt LCTRL>, <&kp TAB>, <&kt LCTRL>;
-            ignored-key-positions = <4>;
+            bindings = <&kp LS(LC(TAB))>, <&kp LS(TAB)>;
+            mods = <MOD_LGUI>;
+            keep-mods = <MOD_LGUI>;
         };
     };
     macros {
@@ -120,10 +121,10 @@
         sym {
             label = "sym";
             bindings = <
-___          &kp LS(LG(GRAVE)) &gtab     &ctab     &kp LS(TAB) &kp LG(GRAVE)           &kp LA(BKSP) &kp    LPAR &kp  PIPE &kp  BSLH &kp RPAR        ___  
-___          &sk LSHFT         &sk LCTRL &sk  LALT &sk    LGUI ___                     &kp     BKSP &kp    LBRC &kp MINUS &kp UNDER &kp RBRC        ___  
-___          &kp   ESC         &kp   TAB &kp TILDE &kp   GRAVE ___                     &kp      DEL &kp    LBKT &kp   SQT &kp   DQT &kp RBKT        ___  
-                                         &trans    &trans      &trans                  &kp      RET MO_TOG(NAV) &trans
+___          &kp LS(LG(GRAVE)) &gtab     &rgctab   &kp LC(TAB) &kp LG(GRAVE)        &kp LA(BKSP) &kp    LPAR &kp  PIPE &kp  BSLH &kp RPAR        ___  
+___          &sk LSHFT         &sk LCTRL &sk  LALT &sk    LGUI ___                  &kp     BKSP &kp    LBRC &kp MINUS &kp UNDER &kp RBRC        ___  
+___          &kp   ESC         &kp   TAB &kp TILDE &kp   GRAVE ___                  &kp      DEL &kp    LBKT &kp   SQT &kp   DQT &kp RBKT        ___  
+                                         &trans    &trans      &trans               &kp      RET MO_TOG(NAV) &trans
             >;
         };
         nav {
