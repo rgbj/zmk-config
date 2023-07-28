@@ -54,6 +54,13 @@
             tapping-term-ms = <200>;
             bindings = <&mo>, <&tog>;
         };
+        shift: shift {
+            compatible = "zmk,behavior-mod-morph";
+            label = "SMART_SHIFT";
+            #binding-cells = <0>;
+            bindings = <&sk LSHFT>, <&caps_word>;
+            mods = <(MOD_LSFT)>;
+        };
         gtab: gtab {
             compatible = "zmk,behavior-tri-state";
             label = "GUI_TAB";
@@ -66,13 +73,6 @@
             label = "CTRL_TAB";
             #binding-cells = <0>;
             bindings = <&kt LCTRL>, <&kp TAB>, <&kt LCTRL>;
-        };
-        shift: shift {
-            compatible = "zmk,behavior-mod-morph";
-            label = "SMART_SHIFT";
-            #binding-cells = <0>;
-            bindings = <&sk LSHFT>, <&caps_word>;
-            mods = <(MOD_LSFT)>;
             ignored-key-positions = <4>;
         };
     };
