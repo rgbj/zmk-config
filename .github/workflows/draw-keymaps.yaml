@@ -2,14 +2,17 @@ name: Draw ZMK keymap
 on:
   workflow_dispatch:
   push:
+    branches:
+      - ciz
+      - rollow
     paths:
-      - 'config/*.keymap'
-      - 'config/*.dtsi'
+      - "config/*.keymap"
+      - "config/*.dtsi"
       - keymap_drawer.config.yaml
       - .github/workflows/draw-keymaps.yml
 
 jobs:
   draw:
     permissions:
-        contents: write
+      contents: write
     uses: caksoylar/keymap-drawer/.github/workflows/draw-zmk.yml@main
