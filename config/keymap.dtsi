@@ -66,13 +66,21 @@
             label = "GUI_TAB";
             #binding-cells = <0>;
             bindings = <&kt LGUI>, <&kp TAB>, <&kt LGUI>;
-            ignored-key-positions = <3>;
+            ignored-key-positions = <3 32>;
         };
-        rgctab: rgctab {
+        lrsw: lrsw {
             compatible = "zmk,behavior-mod-morph";
-            label = "REVERSE_SWITCHER";
+            label = "LEFT_REVERSE_SWITCHER";
             #binding-cells = <0>;
             bindings = <&kp LS(LC(TAB))>, <&kp LS(TAB)>;
+            mods = <MOD_LGUI>;
+            keep-mods = <MOD_LGUI>;
+        };
+        rrsw: rrsw {
+            compatible = "zmk,behavior-mod-morph";
+            label = "RIGHT_REVERSE_SWITCHER";
+            #binding-cells = <0>;
+            bindings = <&kp LC(TAB)>, <&kp LS(TAB)>;
             mods = <MOD_LGUI>;
             keep-mods = <MOD_LGUI>;
         };
@@ -121,7 +129,7 @@
         sym {
             label = "sym";
             bindings = <
-___          &kp LS(LG(GRAVE)) &gtab     &rgctab   &kp LC(TAB) &kp LG(GRAVE)        &kp LA(BKSP) &kp    LPAR &kp  PIPE &kp  BSLH &kp RPAR        ___  
+___          &kp LS(LG(GRAVE)) &gtab     &lrsw     &kp LC(TAB) &kp LG(GRAVE)        &kp LA(BKSP) &kp    LPAR &kp  PIPE &kp  BSLH &kp RPAR        ___  
 ___          &sk LSHFT         &sk LCTRL &sk  LALT &sk    LGUI ___                  &kp     BKSP &kp    LBRC &kp MINUS &kp UNDER &kp RBRC        ___  
 ___          &kp   ESC         &kp   TAB &kp TILDE &kp   GRAVE ___                  &kp      DEL &kp    LBKT &kp   SQT &kp   DQT &kp RBKT        ___  
                                          &trans    &trans      &trans               &kp      RET MO_TOG(NAV) &trans
@@ -139,9 +147,9 @@ ___           ___    &kp LEFT &kp DOWN &kp RIGHT &kp PG_DN        &kp     BKSP &
         mov {
             label = "mov";
             bindings = <
-___          ___ ___ ___ &kp  LC(W) &kill_word           &kp    LA(LG(LEFT))  &kp    LA(LG(RIGHT))  &kp LA(LG(F)) ___       ___        ___  
-___          ___ ___ ___ &kp  LA(B) &kp  LA(F)           &kp LC(LA(LG(LEFT))) &kp LC(LA(LG(RIGHT))) ___           &kp LC(R) ___        ___  
-___          ___ ___ ___ &tmux_prev &tmux_next           ___                  ___                   ___           ___       ___        ___            
+___          ___ ___ ___ &kp  LC(W) &kill_word           &kp    LA(LG(LEFT))  &kp    LA(LG(RIGHT))  &kp LA(LG(F)) ___       ___                  ___  
+___          ___ ___ ___ &kp  LA(B) &kp  LA(F)           &kp LC(LA(LG(LEFT))) &kp LC(LA(LG(RIGHT))) ___           &kp LC(R) ___                  ___  
+___          ___ ___ ___ &tmux_prev &tmux_next           &kp    LS(LG(GRAVE)) &kp LS(LC(TAB))       &rrsw         &gtab     &kp LG(GRAVE)        ___            
                      ___ ___        ___                  &trans               &trans                &trans
             >;
         };
