@@ -38,6 +38,18 @@
             layers = <DFT>;
             bindings = <&sl ACC>;
         };
+        combo_bt_clr_left {
+            timeout-ms = <50>;
+            key-positions = <1 5>;
+            layers = <ADJ>;
+            bindings = <&bt BT_CLR>;
+        };
+        combo_bt_clr_right {
+            timeout-ms = <50>;
+            key-positions = <6 10>;
+            layers = <ADJ>;
+            bindings = <&bt BT_CLR>;
+        };
 /*
   0     1   2   3   4   5     6   7   8   9  10    11
  12    13  14  15  16  17    18  19  20  21  22    23
@@ -165,7 +177,7 @@ ___          ___         ___   &kp      LA(C) ___    ___          &kp LA(N) ___ 
         adjust {
             label = "adj";
             bindings = <
-&to DFT      ___          &out OUT_USB &out     OUT_TOG &out      OUT_BLE &bt        BT_CLR        ___    ___    ___   ___        ___                ___   
+&to DFT      ___          &out OUT_USB &out     OUT_TOG &out      OUT_BLE ___                      ___    ___    ___   ___        ___                ___   
 ___          &bt BT_SEL 0 &bt BT_SEL 1 &bt     BT_SEL 2 &bt      BT_SEL 3 &bt      BT_SEL 4        ___    ___    ___   ___        ___                ___   
 ___          &bootloader  &sys_reset   &ext_power EP_ON &ext_power EP_TOG &ext_power EP_OFF        ___    ___    ___   &sys_reset &bootloader        &to MED
                                        &trans           &trans            &trans                   &trans &trans &trans
