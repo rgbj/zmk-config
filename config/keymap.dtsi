@@ -177,10 +177,10 @@ ___          ___         ___   &kp      LA(C) ___    ___          &kp LA(N) ___ 
         adjust {
             label = "adj";
             bindings = <
-&to DFT      ___          &out OUT_USB &out     OUT_TOG &out      OUT_BLE ___                      ___    ___    ___   ___        ___                ___   
-___          &bt BT_SEL 0 &bt BT_SEL 1 &bt     BT_SEL 2 &bt      BT_SEL 3 &bt      BT_SEL 4        ___    ___    ___   ___        ___                ___   
-___          &bootloader  &sys_reset   &ext_power EP_ON &ext_power EP_TOG &ext_power EP_OFF        ___    ___    ___   &sys_reset &bootloader        &to MED
-                                       &trans           &trans            &trans                   &trans &trans &trans
+&to DFT      ___          &out OUT_USB &out     OUT_TOG &out      OUT_BLE ___                      ___               &out      OUT_BLE &out     OUT_TOG &out OUT_USB ___                 ___   
+___          &bt BT_SEL 0 &bt BT_SEL 1 &bt     BT_SEL 2 &bt      BT_SEL 3 &bt      BT_SEL 4        &bt      BT_SEL 4 &bt      BT_SEL 3 &bt     BT_SEL 2 &bt BT_SEL 1 &bt BT_SEL 0        ___   
+___          &bootloader  &sys_reset   &ext_power EP_ON &ext_power EP_TOG &ext_power EP_OFF        &ext_power EP_OFF &ext_power EP_TOG &ext_power EP_ON &sys_reset   &bootloader         &to MED
+                                       &trans           &trans            &trans                   &trans            &trans            &trans
             >;
         };
         media {
