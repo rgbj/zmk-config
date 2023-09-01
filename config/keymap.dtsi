@@ -97,6 +97,48 @@
             mods = <MOD_LGUI>;
             keep-mods = <MOD_LGUI>;
         };
+        lpair2: lpair2 {
+            compatible = "zmk,behavior-mod-morph";
+            label = "LPAIR2";
+            #binding-cells = <0>;
+            bindings = <&kp LPAR>, <&kp LT>;
+            mods = <MOD_LCTL>;
+        };
+        lpair1: lpair1 {
+            compatible = "zmk,behavior-mod-morph";
+            label = "LPAIR1";
+            #binding-cells = <0>;
+            bindings = <&lpair2>, <&kp LBRC>;
+            mods = <MOD_LALT>;
+        };        
+        lpair: lpair {
+            compatible = "zmk,behavior-mod-morph";
+            label = "LPAIR";
+            #binding-cells = <0>;
+            bindings = <&lpair1>, <&kp LBKT>;
+            mods = <MOD_LGUI>;
+        };
+        rpair2: rpair2 {
+            compatible = "zmk,behavior-mod-morph";
+            label = "RPAIR2";
+            #binding-cells = <0>;
+            bindings = <&kp RPAR>, <&kp GT>;
+            mods = <MOD_LCTL>;
+        };
+        rpair1: rpair1 {
+            compatible = "zmk,behavior-mod-morph";
+            label = "RPAIR1";
+            #binding-cells = <0>;
+            bindings = <&rpair2>, <&kp RBRC>;
+            mods = <MOD_LALT>;
+        };        
+        rpair: rpair {
+            compatible = "zmk,behavior-mod-morph";
+            label = "RPAIR";
+            #binding-cells = <0>;
+            bindings = <&rpair1>, <&kp RBKT>;
+            mods = <MOD_LGUI>;
+        };
     };
     macros {
         kill_word: kill_word {
@@ -142,9 +184,9 @@
         sym {
             label = "sym";
             bindings = <
-___          &kp LS(LG(GRAVE)) &gtab     &lrsw     &kp LC(TAB) &kp LG(GRAVE)        &kp LA(BKSP) &kp    LPAR &kp  PIPE &kp  BSLH &kp RPAR        ___  
-___          &sk LSHFT         &sk LCTRL &sk  LALT &sk    LGUI ___                  &kp     BKSP &kp    LBRC &kp MINUS &kp UNDER &kp RBRC        ___  
-___          &kp   ESC         &kp   TAB &kp TILDE &kp   GRAVE ___                  &kp      DEL &kp    LBKT &kp   SQT &kp   DQT &kp RBKT        ___  
+___          &kp LS(LG(GRAVE)) &gtab     &lrsw     &kp LC(TAB) &kp LG(GRAVE)        &kp LA(BKSP) &lpair &kp  PIPE &kp  BSLH &rpair        ___  
+___          &sk LSHFT         &sk LCTRL &sk  LALT &sk    LGUI ___                  &kp     BKSP ___    &kp MINUS &kp UNDER ___           ___  
+___          &kp   ESC         &kp   TAB &kp TILDE &kp   GRAVE ___                  &kp      DEL ___    &kp   SQT &kp   DQT ___           ___  
                                          &trans    &trans      &trans               &kp      RET MO_TOG(NAV) &trans
             >;
         };
