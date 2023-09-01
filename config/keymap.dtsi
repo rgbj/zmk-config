@@ -170,7 +170,7 @@ ___        &kp F1 &kp F2  &kp F3  &kp F4  ___        ___ ___      ___      ___  
             label = "mov";
             bindings = <
 ___          ___ ___ ___ &kp  LC(W) &kill_word           &kp    LA(LG(LEFT))  &kp    LA(LG(RIGHT))  &kp LA(LG(F)) ___       ___                  ___  
-___          ___ ___ ___ &kp  LA(B) &kp  LA(F)           &kp LC(LA(LG(LEFT))) &kp LC(LA(LG(RIGHT))) ___           &kp LC(R) ___                  ___  
+___          ___ ___ ___ &kp  LA(B) &kp  LA(F)           &kp LC(LA(LG(LEFT))) &kp LC(LA(LG(RIGHT))) &kp LC(Q)     &kp LC(R) ___                  ___  
 ___          ___ ___ ___ &tmux_prev &tmux_next           &kp    LS(LG(GRAVE)) &kp LS(LC(TAB))       &rrsw         &gtab     &kp LG(GRAVE)        ___            
                      ___ ___        ___                  &trans               &trans                &trans
             >;
