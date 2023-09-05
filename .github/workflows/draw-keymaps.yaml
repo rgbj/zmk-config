@@ -3,7 +3,7 @@ on:
   workflow_dispatch:
   push:
     branches:
-      - "kd-*"
+      - pages
     paths:
       - "config/*.keymap"
       - "config/*.dtsi"
@@ -15,3 +15,5 @@ jobs:
     permissions:
       contents: write
     uses: caksoylar/keymap-drawer/.github/workflows/draw-zmk.yml@main
+    with:
+      output_folder: "docs/img"

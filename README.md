@@ -2,9 +2,9 @@
 
 target is 3x6 [Corne-ish Zen](https://lowprokb.ca/products/corne-ish-zen), using [caksoylar's ZMK](https://github.com/caksoylar/zmk)
 
-## keymap
+## docs
 
-![3x6 Corne-ish Zen layout](keymap-drawer/corneish_zen.svg)
+https://rgbj.github.io/zmk-config/
 
 ## build
 
