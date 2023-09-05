@@ -97,48 +97,12 @@
             mods = <MOD_LGUI>;
             keep-mods = <MOD_LGUI>;
         };
-        lpair2: lpair2 {
-            compatible = "zmk,behavior-mod-morph";
-            label = "LPAIR2";
-            #binding-cells = <0>;
-            bindings = <&kp LPAR>, <&kp LT>;
-            mods = <MOD_LCTL>;
-        };
-        lpair1: lpair1 {
-            compatible = "zmk,behavior-mod-morph";
-            label = "LPAIR1";
-            #binding-cells = <0>;
-            bindings = <&lpair2>, <&kp LBRC>;
-            mods = <MOD_LALT>;
-        };        
-        lpair: lpair {
-            compatible = "zmk,behavior-mod-morph";
-            label = "LPAIR";
-            #binding-cells = <0>;
-            bindings = <&lpair1>, <&kp LBKT>;
-            mods = <MOD_LGUI>;
-        };
-        rpair2: rpair2 {
-            compatible = "zmk,behavior-mod-morph";
-            label = "RPAIR2";
-            #binding-cells = <0>;
-            bindings = <&kp RPAR>, <&kp GT>;
-            mods = <MOD_LCTL>;
-        };
-        rpair1: rpair1 {
-            compatible = "zmk,behavior-mod-morph";
-            label = "RPAIR1";
-            #binding-cells = <0>;
-            bindings = <&rpair2>, <&kp RBRC>;
-            mods = <MOD_LALT>;
-        };        
-        rpair: rpair {
-            compatible = "zmk,behavior-mod-morph";
-            label = "RPAIR";
-            #binding-cells = <0>;
-            bindings = <&rpair1>, <&kp RBKT>;
-            mods = <MOD_LGUI>;
-        };
+        lpair: lpair { mods = <MOD_LCTL>; bindings = <&lpa_2  >, <&kp LT  >; label = "LPAIR"; compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; };
+        lpa_2: lpa_2 { mods = <MOD_LALT>; bindings = <&lpa_3  >, <&kp LBKT>; label = "LPA_2"; compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; };
+        lpa_3: lpa_3 { mods = <MOD_LGUI>; bindings = <&kp LPAR>, <&kp LBRC>; label = "LPA_3"; compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; };
+        rpair: rpair { mods = <MOD_LCTL>; bindings = <&rpa_2  >, <&kp GT  >; label = "RPAIR"; compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; };
+        rpa_2: rpa_2 { mods = <MOD_LALT>; bindings = <&rpa_3  >, <&kp RBKT>; label = "RPA_2"; compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; };
+        rpa_3: rpa_3 { mods = <MOD_LGUI>; bindings = <&kp RPAR>, <&kp RBRC>; label = "RPA_3"; compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; };
     };
     macros {
         kill_word: kill_word {
