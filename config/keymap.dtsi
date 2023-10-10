@@ -5,15 +5,14 @@
 #include <dt-bindings/zmk/ext_power.h>
 
 #define DFT 0
-
-#define NUM 1
-#define SYM 2
+#define SYM 1
+#define NUM 2
 #define NAV 3
 
-#define FUN 4
-#define ACC 5
-#define ADJ 6
+#define ADJ 4
 
+#define FUN 5
+#define ACC 6
 #define MED 7
 
 #define ___ &none
@@ -135,15 +134,6 @@
                              &shift    &mo SYM &kp SPACE        &mo NAV &mo NUM &shift
             >;
         };
-        num {
-            label = "num";
-            bindings = <
-&kp SEMI           &kp EXCL &kp AT &kp HASH &kp DLLR &kp PRCNT        &kp CARET &kp     AMPS &kp STAR &kp PLUS  &kp EQUAL        ___
-&kp MINUS          &kp   N1 &kp N2 &kp   N3 &kp   N4 &kp    N5        &kp  BKSP &sk     LGUI &sk LALT &sk LCTRL &sk LSHFT        ___
-&kp UNDER          &kp   N6 &kp N7 &kp   N8 &kp   N9 &kp    N0        &kp   DEL &kp LA(BKSP) &trans   &trans    &trans           ___
-                                   &trans   &shift   &trans           &trans    &trans       &trans
-            >;
-        };
         sym {
             label = "sym";
             bindings = <
@@ -153,13 +143,31 @@ ___          ___               ___       ___       ___        ___               
                                          &trans    &trans     &trans               &kp      RET MO_TOG(NUM) MO_TOG(NAV)
             >;
         };
+        num {
+            label = "num";
+            bindings = <
+&kp SEMI           &kp EXCL &kp AT &kp HASH &kp DLLR &kp PRCNT        &kp CARET &kp     AMPS &kp STAR &kp PLUS  &kp EQUAL        ___
+&kp MINUS          &kp   N1 &kp N2 &kp   N3 &kp   N4 &kp    N5        &kp  BKSP &sk     LGUI &sk LALT &sk LCTRL &sk LSHFT        ___
+&kp UNDER          &kp   N6 &kp N7 &kp   N8 &kp   N9 &kp    N0        &kp   DEL &kp LA(BKSP) &trans   &trans    &trans           ___
+                                   &trans   &trans   &trans           &trans    &tog NUM     &trans
+            >;
+        };
         nav {
             label = "nav";
             bindings = <
 ___        ___        &kp HOME   &kp   UP   &kp   END  &kp PG_UP        &kp    LA(LG(LEFT))  &kp    LA(LG(RIGHT))  &kp LA(LG(F)) &kp  LC(W) &kill_word        ___
 ___        ___        &kp LEFT   &kp DOWN   &kp RIGHT  &kp PG_DN        &kp LC(LA(LG(LEFT))) &kp LC(LA(LG(RIGHT))) &kp LC(Q)     &kp LC(R) ___                ___
 ___        &tmux_prev &tmux_next &kp  LA(B) &kp  LA(F) ___              ___                  ___                   ___           ___       ___                ___
-                                 &trans     &trans     &trans           &trans               &trans                &trans
+                                 &trans     &trans     &trans           &trans               &trans                &tog NAV
+            >;
+        };
+        adjust {
+            label = "adj";
+            bindings = <
+&to DFT      ___          &out OUT_USB &out     OUT_TOG &out      OUT_BLE ___                      ___               &out      OUT_BLE &out     OUT_TOG &out OUT_USB ___                 ___
+___          &bt BT_SEL 0 &bt BT_SEL 1 &bt     BT_SEL 2 &bt      BT_SEL 3 &bt      BT_SEL 4        &bt      BT_SEL 4 &bt      BT_SEL 3 &bt     BT_SEL 2 &bt BT_SEL 1 &bt BT_SEL 0        ___
+___          &bootloader  &sys_reset   &ext_power EP_ON &ext_power EP_TOG &ext_power EP_OFF        &ext_power EP_OFF &ext_power EP_TOG &ext_power EP_ON &sys_reset   &bootloader         &to MED
+                                       &trans           &trans            &trans                   &trans            &trans            &trans
             >;
         };
         fun {
@@ -178,15 +186,6 @@ ___          &kp LA(Q)   ___   &kp LS(LA(N2)) ___    ___          ___       &kp 
 ___          &kp LA(SQT) ___   ___            ___    ___          ___       &kp LA(E) &kp LA(GRAVE) ___   ___          ___
 ___          ___         ___   &kp      LA(C) ___    ___          &kp LA(N) ___       ___           ___   ___          ___
                                &trans         &trans &trans       &trans    &trans    &trans
-            >;
-        };
-        adjust {
-            label = "adj";
-            bindings = <
-&to DFT      ___          &out OUT_USB &out     OUT_TOG &out      OUT_BLE ___                      ___               &out      OUT_BLE &out     OUT_TOG &out OUT_USB ___                 ___
-___          &bt BT_SEL 0 &bt BT_SEL 1 &bt     BT_SEL 2 &bt      BT_SEL 3 &bt      BT_SEL 4        &bt      BT_SEL 4 &bt      BT_SEL 3 &bt     BT_SEL 2 &bt BT_SEL 1 &bt BT_SEL 0        ___
-___          &bootloader  &sys_reset   &ext_power EP_ON &ext_power EP_TOG &ext_power EP_OFF        &ext_power EP_OFF &ext_power EP_TOG &ext_power EP_ON &sys_reset   &bootloader         &to MED
-                                       &trans           &trans            &trans                   &trans            &trans            &trans
             >;
         };
         media {
