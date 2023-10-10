@@ -1,13 +1,11 @@
 manifest:
   remotes:
-    - name: zmk
-      url-base: https://github.com/zmkfirmware
-    - name: caksoylar
-      url-base: https://github.com/caksoylar
+    - name: rgbj
+      url-base: https://github.com/rgbj
   projects:
     - name: zmk
-      remote: caksoylar
-      revision: caksoylar/zen-8bit
+      remote: rgbj
+      revision: ciz
       import: app/west.yml
   self:
     path: config

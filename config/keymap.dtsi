@@ -74,6 +74,14 @@
             bindings = <&sk LSHFT>, <&caps_word>;
             mods = <(MOD_LSFT)>;
         };
+        num_word: behavior_num_word {
+            compatible = "zmk,behavior-caps-word";
+            label = "NUM_WORD";
+            #binding-cells = <0>;
+            layers = <NUM>;
+            continue-list = <BACKSPACE DELETE DOT COMMA>;
+            ignore-numbers;
+        };
         cs: cs {
             compatible = "zmk,behavior-mod-morph";
             label = "CS";
@@ -144,19 +152,19 @@
         alpha {
             label = "alpha";
             bindings = <
-&kp ESC          &kp Q &kp W &kp     E &kp   R &kp     T        &kp   Y &kp   U &kp   I &kp   O &kp    P        &sl ADJ
-&kp TAB          &kp A &kp S &kp     D &kp   F &kp     G        &kp   H &kp   J &kp   K &kp   L &kp  SQT        &sl FUN
-&kp GRAVE        &kp Z &kp X &kp     C &kp   V &kp     B        &kp   N &kp   M &cs     &dc     &kp FSLH        &kp LC(LG(SPACE))
-                             &shift    &mo SYM &kp SPACE        &mo NAV &mo NUM &mo NIL
+&kp ESC          &kp Q &kp W &kp  E &kp   R &kp     T        &kp   Y &kp   U &kp   I &kp O &kp    P        &sl ADJ
+&kp TAB          &kp A &kp S &kp  D &kp   F &kp     G        &kp   H &kp   J &kp   K &kp L &kp  SQT        &sl FUN
+&kp GRAVE        &kp Z &kp X &kp  C &kp   V &kp     B        &kp   N &kp   M &cs     &dc   &kp FSLH        &kp LC(LG(SPACE))
+                             &shift &mo SYM &kp SPACE        &mo NAV &mo NUM &mo NIL
             >;
         };
         sym {
             label = "sym";
             bindings = <
-&trans          &kp LS(LG(GRAVE)) &gtab     &lrsw    &kp LC(TAB) &kp LG(GRAVE)        &kp LA(BKSP) &lpair      &kp    PIPE &kp  BSLH &rpair        &trans
-&trans          &sk         LSHFT &sk LCTRL &sk LALT &sk    LGUI ___                  &kp     BKSP ___         &kp   MINUS &kp UNDER ___           &trans
-&trans          &kp          EXCL &kp    AT &kp HASH &kp    DLLR &kp PRCNT            &kp      DEL ___         ___         ___       ___           &trans
-                                            &trans    &trans     &trans               &kp      RET MO_TOG(NUM) MO_TOG(NAV)
+&trans          &kp LS(LG(GRAVE)) &gtab     &lrsw    &kp LC(TAB) &kp LG(GRAVE)        &kp LA(BKSP) &lpair    &kp    PIPE &kp  BSLH &rpair        &trans
+&trans          &sk         LSHFT &sk LCTRL &sk LALT &sk    LGUI ___                  &kp     BKSP ___       &kp   MINUS &kp UNDER ___           &trans
+&trans          &kp          EXCL &kp    AT &kp HASH &kp    DLLR &kp PRCNT            &kp      DEL ___       ___         ___       ___           &trans
+                                            &trans    &trans     &trans               &kp      RET &num_word MO_TOG(NAV)
             >;
         };
         num {
@@ -165,7 +173,7 @@
 &trans        &kp UNDER &kp N7 &kp N8 &kp N9 ___         &kp CARET &kp     AMPS &kp STAR &kp PLUS  &kp EQUAL        &trans  
 &trans        &kp MINUS &kp N4 &kp N5 &kp N6 ___         &kp  BKSP &sk     LGUI &sk LALT &sk LCTRL &sk LSHFT        &trans  
 &trans        ___       &kp N1 &kp N2 &kp N3 ___         &kp   DEL &kp LA(BKSP) &trans   &trans    &trans           &trans  
-                               &trans &kp N0 &trans      &trans    &tog NUM     &trans
+                            &num_word &kp N0 &trans      &trans    &tog NUM     &trans
             >;
         };
         nav {
