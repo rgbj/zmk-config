@@ -172,7 +172,7 @@
 &trans        ___        &kp HOME   &kp   UP   &kp   END  &kp PG_UP        &kp    LA(LG(LEFT))  &kp    LA(LG(RIGHT))  &kp LA(LG(F)) &kp  LC(W) &kill_word        &trans
 &trans        ___        &kp LEFT   &kp DOWN   &kp RIGHT  &kp PG_DN        &kp LC(LA(LG(LEFT))) &kp LC(LA(LG(RIGHT))) &kp LC(Q)     &kp LC(R) ___                &trans
 &trans        &tmux_prev &tmux_next &kp  LA(B) &kp  LA(F) ___              ___                  ___                   ___           ___       ___                &trans
-                                    &trans     &trans     &trans           &trans               &trans                &tog NAV
+                                    &trans     &trans     &shift           &trans               &trans                &tog NAV
             >;
         };
         adjust {
