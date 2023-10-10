@@ -9,9 +9,9 @@
 #define NUM 1
 #define SYM 2
 #define NAV 3
-#define FUN 4
+#define MOV 4
 
-#define MOV 5
+#define FUN 5
 #define ACC 6
 #define ADJ 7
 
@@ -130,8 +130,8 @@
         alpha {
             label = "alpha";
             bindings = <
-&kp ESC        &kp Q &kp W &kp     E &kp   R &kp     T        &kp   Y &kp   U &kp     I &kp   O &kp    P        &sl ADJ
-&kp TAB        &kp A &kp S &kp     D &kp   F &kp     G        &kp   H &kp   J &kp     K &kp   L &kp SEMI        &sl FUN
+&kp ESC          &kp Q &kp W &kp     E &kp   R &kp     T        &kp   Y &kp   U &kp     I &kp   O &kp    P        &sl ADJ
+&kp TAB          &kp A &kp S &kp     D &kp   F &kp     G        &kp   H &kp   J &kp     K &kp   L &kp SEMI        &sl FUN
 &kp GRAVE        &kp Z &kp X &kp     C &kp   V &kp     B        &kp   N &kp   M &kp COMMA &kp DOT &kp FSLH        &kp LC(LG(SPACE))
                              &shift    &mo SYM &kp SPACE        &mo MOV &mo NUM &mo   NAV
             >;
@@ -163,15 +163,6 @@ ___        ___ ___      ___      ___       ___              &kp      DEL ___    
                         &trans   &trans    &trans           &trans       &tog NAV &trans
             >;
         };
-        fun {
-            label = "fun";
-            bindings = <
-___        &kp F9 &kp F10 &kp F11 &kp F12 ___        ___ ___      ___      ___       ___              ___
-___        &kp F5 &kp F6  &kp F7  &kp F8  ___        ___ &sk LGUI &sk LALT &sk LCTRL &sk LSHFT        ___
-___        &kp F1 &kp F2  &kp F3  &kp F4  ___        ___ ___      ___      ___       ___              ___
-                          ___     ___     ___        ___ ___ ___
-            >;
-        };
         mov {
             label = "mov";
             bindings = <
@@ -179,6 +170,15 @@ ___          ___ ___ ___ &kp  LC(W) &kill_word           &kp    LA(LG(LEFT))  &k
 ___          ___ ___ ___ &kp  LA(B) &kp  LA(F)           &kp LC(LA(LG(LEFT))) &kp LC(LA(LG(RIGHT))) &kp LC(Q)     &kp LC(R) ___                  ___  
 ___          ___ ___ ___ &tmux_prev &tmux_next           &kp    LS(LG(GRAVE)) &kp LS(LC(TAB))       &rrsw         &gtab     &kp LG(GRAVE)        ___            
                      ___ ___        ___                  &trans               &trans                &trans
+            >;
+        };
+        fun {
+            label = "fun";
+            bindings = <
+___        &kp F9 &kp F10 &kp F11 &kp F12 ___        ___ ___      ___      ___       ___              ___
+___        &kp F5 &kp F6  &kp F7  &kp F8  ___        ___ &sk LGUI &sk LALT &sk LCTRL &sk LSHFT        ___
+___        &kp F1 &kp F2  &kp F3  &kp F4  ___        ___ ___      ___      ___       ___              ___
+                          ___     ___     ___        ___ ___ ___
             >;
         };
         accents {
