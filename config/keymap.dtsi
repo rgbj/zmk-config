@@ -148,10 +148,10 @@
         sym {
             label = "sym";
             bindings = <
-___          &kp LS(LG(GRAVE)) &gtab     &lrsw     &kp LC(TAB) &kp LG(GRAVE)        &kp LA(BKSP) &lpair &kp  PIPE &kp  BSLH &rpair        ___  
-___          &sk LSHFT         &sk LCTRL &sk  LALT &sk    LGUI ___                  &kp     BKSP ___    &kp MINUS &kp UNDER ___           ___  
-___          &kp   ESC         &kp   TAB &kp TILDE &kp   GRAVE ___                  &kp      DEL ___    &kp   SQT &kp   DQT ___           ___  
-                                         &trans    &trans      &trans               &kp      RET MO_TOG(NAV) &trans
+___          &kp LS(LG(GRAVE)) &gtab     &lrsw     &kp LC(TAB) &kp LG(GRAVE)        &kp LA(BKSP) &lpair      &kp  PIPE   &kp  BSLH &rpair        ___  
+___          &sk LSHFT         &sk LCTRL &sk  LALT &sk    LGUI ___                  &kp     BKSP ___         &kp MINUS   &kp UNDER ___           ___  
+___          &kp   ESC         &kp   TAB &kp TILDE &kp   GRAVE ___                  &kp      DEL ___         &kp   SQT   &kp   DQT ___           ___  
+                                         &trans    &trans      &trans               &kp      RET MO_TOG(NUM) MO_TOG(NAV)
             >;
         };
         nav {
