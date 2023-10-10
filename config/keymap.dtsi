@@ -132,8 +132,8 @@
             bindings = <
 &kp ESC        &kp Q &kp W &kp     E &kp   R &kp     T        &kp   Y &kp   U &kp     I &kp   O &kp    P        &sl ADJ
 &kp TAB        &kp A &kp S &kp     D &kp   F &kp     G        &kp   H &kp   J &kp     K &kp   L &kp SEMI        &sl FUN
-&sl ACC        &kp Z &kp X &kp     C &kp   V &kp     B        &kp   N &kp   M &kp COMMA &kp DOT &kp FSLH        &kp LC(LG(SPACE))
-                           &shift    &mo SYM &kp SPACE        &mo MOV &mo NUM &mo   NAV
+&kp GRAVE        &kp Z &kp X &kp     C &kp   V &kp     B        &kp   N &kp   M &kp COMMA &kp DOT &kp FSLH        &kp LC(LG(SPACE))
+                             &shift    &mo SYM &kp SPACE        &mo MOV &mo NUM &mo   NAV
             >;
         };
         num {
@@ -148,10 +148,10 @@
         sym {
             label = "sym";
             bindings = <
-___          &kp LS(LG(GRAVE)) &gtab     &lrsw     &kp LC(TAB) &kp LG(GRAVE)        &kp LA(BKSP) &lpair      &kp  PIPE   &kp  BSLH &rpair        ___  
-___          &sk LSHFT         &sk LCTRL &sk  LALT &sk    LGUI ___                  &kp     BKSP ___         &kp MINUS   &kp UNDER ___           ___  
-___          &kp   ESC         &kp   TAB &kp TILDE &kp   GRAVE ___                  &kp      DEL ___         &kp   SQT   &kp   DQT ___           ___  
-                                         &trans    &trans      &trans               &kp      RET MO_TOG(NUM) MO_TOG(NAV)
+___          &kp LS(LG(GRAVE)) &gtab     &lrsw    &kp LC(TAB) &kp LG(GRAVE)        &kp LA(BKSP) &lpair      &kp  PIPE   &kp  BSLH &rpair        ___  
+___          &sk LSHFT         &sk LCTRL &sk LALT &sk    LGUI ___                  &kp     BKSP ___         &kp MINUS   &kp UNDER ___           ___  
+___          ___               ___       ___       ___        ___                  &kp      DEL ___         &kp   SQT   &kp   DQT ___           ___  
+                                         &trans    &trans     &trans               &kp      RET MO_TOG(NUM) MO_TOG(NAV)
             >;
         };
         nav {
