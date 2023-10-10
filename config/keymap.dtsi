@@ -161,8 +161,8 @@
             label = "num";
             bindings = <
 &trans        &kp UNDER &kp N7 &kp N8 &kp N9 &kp LA(BKSP)        &kp CARET &kp     AMPS &kp STAR &kp PLUS  &kp EQUAL        &trans  
-&trans        &kp MINUS &kp N4 &kp N5 &kp N6 &kp     BKSP        ___       &sk     LGUI &sk LALT &sk LCTRL &sk LSHFT        &trans  
-&trans        &kp SEMI  &kp N1 &kp N2 &kp N3 &kp      DEL        ___       ___          &trans   &trans    &trans           &trans  
+&trans        &kp MINUS &kp N4 &kp N5 &kp N6 &kp     BKSP        &kp  BKSP &sk     LGUI &sk LALT &sk LCTRL &sk LSHFT        &trans  
+&trans        &kp SEMI  &kp N1 &kp N2 &kp N3 &kp      DEL        &kp   DEL &kp LA(BKSP) &trans   &trans    &trans           &trans  
                                &trans &kp N0 &trans              &trans    &tog NUM     &trans
             >;
         };
