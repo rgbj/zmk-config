@@ -5,7 +5,7 @@ manifest:
   projects:
     - name: zmk
       remote: rgbj
-      revision: ciz
+      revision: rollow
       import: app/west.yml
   self:
     path: config
