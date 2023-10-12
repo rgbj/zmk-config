@@ -1,0 +1,107 @@
+# configuration for https://github.com/caksoylar/keymap-drawer
+parse_config:
+  sticky_label: ' '
+  raw_binding_map:
+    '&bootloader': Boot
+    '&sys_reset': Reset
+
+    '&out OUT_USB': Out USB
+    '&out OUT_BLE': Out BLE
+    '&out OUT_TOG': Out TOG
+
+    '&bt BT_SEL 0': BT 1
+    '&bt BT_SEL 1': BT 2
+    '&bt BT_SEL 2': BT 3
+    '&bt BT_SEL 3': BT 4
+    '&bt BT_SEL 4': BT 5
+
+    '&kp LC(LG(SPACE))': 🐯
+
+    '&lpair': '<[{('
+    '&rpair': ')}]>'
+    '&caps_word': cw
+    '&num_word': nw
+    
+  zmk_keycode_map:
+    LSHFT: ⇧
+    LCTRL: ⌃
+    LALT: ⌥
+    LGUI: ⌘
+
+    ESC: Esc
+    SPACE: ␣
+    BKSP: ⌫
+    RET: ⏎
+    TAB: ⇥
+    DEL: ⌦
+
+    UP: ↑
+    DOWN: ↓
+    LEFT: ←
+    RIGHT: →
+
+    # defaults
+    AMPERSAND: '&'
+    AMPS: '&'
+    APOS: .
+    APOSTROPHE: <
+    ASTERISK: '*'
+    ASTRK: '*'
+    AT: '@'
+    AT_SIGN: '@'
+    BACKSLASH: \
+    BSLH: \
+    CARET: ^
+    COLON: ':'
+    COMMA: ','
+    DLLR: $
+    DOLLAR: $
+    DOT: .
+    DOUBLE_QUOTES: '"'
+    DQT: '"'
+    EQUAL: '='
+    EXCL: '!'
+    EXCLAMATION: '!'
+    FSLH: /
+    GRAVE: '`'
+    GREATER_THAN: '>'
+    GT: '>'
+    HASH: '#'
+    LBKT: '['
+    LBRC: '{'
+    LEFT_BRACE: '{'
+    LEFT_BRACKET: '['
+    LEFT_PARENTHESIS: (
+    LESS_THAN: <
+    LPAR: (
+    LT: <
+    MINUS: '-'
+    NON_US_BACKSLASH: \
+    NON_US_BSLH: '|'
+    NON_US_HASH: '#'
+    NUHS: '#'
+    PERCENT: '%'
+    PERIOD: .
+    PIPE: '|'
+    PIPE2: '|'
+    PLUS: +
+    POUND: '#'
+    PRCNT: '%'
+    QMARK: '?'
+    QUESTION: '?'
+    RBKT: ']'
+    RBRC: '}'
+    RIGHT_BRACE: '}'
+    RIGHT_BRACKET: ']'
+    RIGHT_PARENTHESIS: )
+    RPAR: )
+    SEMI: ;
+    SEMICOLON: ;
+    SINGLE_QUOTE: ''''
+    SLASH: /
+    SQT: ''''
+    STAR: '*'
+    TILDE: '~'
+    TILDE2: '~'
+    UNDER: _
+    UNDERSCORE: _
