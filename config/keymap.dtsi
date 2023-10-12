@@ -161,27 +161,27 @@
         sym {
             label = "sym";
             bindings = <
-&trans          &kp LS(LG(GRAVE)) &gtab     &lrsw    &kp LC(TAB) &kp LG(GRAVE)        &kp LA(BKSP) &lpair    &kp    PIPE &kp  BSLH &rpair        &trans
-&trans          &sk         LSHFT &sk LCTRL &sk LALT &sk    LGUI ___                  &kp     BKSP ___       &kp   MINUS &kp UNDER ___           &trans
-&trans          &kp          EXCL &kp    AT &kp HASH &kp    DLLR &kp PRCNT            &kp      DEL ___       ___         ___       ___           &trans
+&trans          &kp LS(LG(GRAVE)) &gtab     &lrsw    &kp LC(TAB) &kp LG(GRAVE)        &kp LA(BKSP) &kp  EXCL &kp    AT &kp  HASH &kp  DLLR        &trans
+&trans          &sk         LSHFT &sk LCTRL &sk LALT &sk    LGUI ___                  &kp     BKSP &kp MINUS &kp UNDER &kp PRCNT &kp CARET        &trans
+&trans          ___               ___       ___      ___         ___                  &kp      DEL &kp  AMPS &kp  STAR &lpair    &rpair           &trans
                                             &trans    &trans     &trans               &kp      RET &num_word MO_TOG(NAV)
             >;
         };
         num {
             label = "num";
             bindings = <
-&trans        &kp UNDER &kp N7 &kp N8 &kp N9 ___         &kp CARET &kp     AMPS &kp STAR &kp PLUS  &kp EQUAL        &trans  
-&trans        &kp MINUS &kp N4 &kp N5 &kp N6 ___         &kp  BKSP &sk     LGUI &sk LALT &sk LCTRL &sk LSHFT        &trans  
-&trans        ___       &kp N1 &kp N2 &kp N3 ___         &kp   DEL &kp LA(BKSP) &trans   &trans    &trans           &trans  
-                            &num_word &kp N0 &trans      &trans    &tog NUM     &trans
+&trans        &kp UNDER &kp N7 &kp N8 &kp N9 &kp EQUAL         &kp LA(BKSP) ___      ___      ___       ___              &trans  
+&trans        &kp MINUS &kp N4 &kp N5 &kp N6 &kp  PLUS         &kp  BKSP    &sk LGUI &sk LALT &sk LCTRL &sk LSHFT        &trans  
+&trans        ___       &kp N1 &kp N2 &kp N3 ___               &kp   DEL    &trans   &trans   &trans    &trans           &trans  
+                            &num_word &kp N0 &trans            &trans       &tog NUM &trans
             >;
         };
         nav {
             label = "nav";
             bindings = <
-&trans        ___        &kp HOME   &kp   UP   &kp   END  &kp PG_UP        &kp    LA(LG(LEFT))  &kp    LA(LG(RIGHT))  &kp LA(LG(F)) &kp  LC(W) &kill_word        &trans
-&trans        ___        &kp LEFT   &kp DOWN   &kp RIGHT  &kp PG_DN        &kp LC(LA(LG(LEFT))) &kp LC(LA(LG(RIGHT))) &kp LC(Q)     &kp LC(R) ___                &trans
-&trans        &tmux_prev &tmux_next &kp  LA(B) &kp  LA(F) ___              ___                  ___                   ___           ___       ___                &trans
+&trans        ___        &kp HOME   &kp   UP   &kp   END  &kp PG_UP        &kp    LA(LG(LEFT))  &kp    LA(LG(RIGHT))  &kp LA(LG(F)) &kp LC(W) &kill_word        &trans
+&trans        ___        &kp LEFT   &kp DOWN   &kp RIGHT  &kp PG_DN        &kp LC(LA(LG(LEFT))) &kp LC(LA(LG(RIGHT))) &kp LC(Q)     &kp LC(R) ___               &trans
+&trans        &tmux_prev &tmux_next &kp  LA(B) &kp  LA(F) ___              ___                  ___                   ___           ___       ___               &trans
                                     &trans     &trans     &shift           &trans               &trans                &tog NAV
             >;
         };
