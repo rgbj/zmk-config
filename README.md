@@ -1,10 +1,10 @@
 # ZMK config
 
-target is 3x6 [Corne-ish Zen](https://lowprokb.ca/products/corne-ish-zen), using [caksoylar's ZMK](https://github.com/caksoylar/zmk)
+for 3x6 [Corne-ish Zen](https://lowprokb.ca/products/corne-ish-zen)
 
 ## keymap
 
-![3x6 Corne-ish Zen layout](keymap-drawer/keymap.svg)
+![3x6 Corne-ish Zen keymap](keymap-drawer/keymap.svg)
 
 ## build
 
