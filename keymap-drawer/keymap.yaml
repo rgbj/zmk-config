@@ -1,0 +1,358 @@
+layout: {qmk_keyboard: corne_rotated, qmk_layout: LAYOUT_split_3x6_3}
+layers:
+  alpha:
+  - Esc
+  - Q
+  - W
+  - E
+  - R
+  - T
+  - Y
+  - U
+  - I
+  - O
+  - P
+  - {t: adj, h: ' '}
+  - ⇥
+  - A
+  - S
+  - D
+  - F
+  - G
+  - H
+  - J
+  - K
+  - L
+  - ''''
+  - {t: fun, h: ' '}
+  - '`'
+  - Z
+  - X
+  - C
+  - V
+  - B
+  - N
+  - M
+  - {t: ',', s: ;}
+  - {t: ., s: ':'}
+  - /
+  - 🐯
+  - {t: ⇧, h: ' ', s: cw}
+  - sym
+  - ␣
+  - nav
+  - num
+  - nil
+  sym:
+  - {t: ▽, type: trans}
+  - LS(LG(GRAVE))
+  - '&gtab'
+  - {t: LS(LC(TAB)), s: LS(TAB)}
+  - LC(TAB)
+  - LG(GRAVE)
+  - LA(BKSP)
+  - '!'
+  - '@'
+  - '#'
+  - $
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ⇧, h: ' '}
+  - {t: ⌃, h: ' '}
+  - {t: ⌥, h: ' '}
+  - {t: ⌘, h: ' '}
+  - ''
+  - ⌫
+  - '-'
+  - _
+  - '%'
+  - ^
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ⌦
+  - '&'
+  - '*'
+  - <[{(
+  - )}]>
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {type: held}
+  - {t: ▽, type: trans}
+  - ⏎
+  - nw
+  - {t: nav, h: nav}
+  num:
+  - {t: ▽, type: trans}
+  - _
+  - '7'
+  - '8'
+  - '9'
+  - '='
+  - LA(BKSP)
+  - ''
+  - ''
+  - ''
+  - ''
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - '-'
+  - '4'
+  - '5'
+  - '6'
+  - +
+  - ⌫
+  - {t: ⌘, h: ' '}
+  - {t: ⌥, h: ' '}
+  - {t: ⌃, h: ' '}
+  - {t: ⇧, h: ' '}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - ''
+  - '1'
+  - '2'
+  - '3'
+  - ''
+  - ⌦
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - nw
+  - '0'
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: num, type: held}
+  - {t: ▽, type: trans}
+  nav:
+  - {t: ▽, type: trans}
+  - ''
+  - HOME
+  - ↑
+  - END
+  - PG UP
+  - LA(LG(LEFT))
+  - LA(LG(RIGHT))
+  - LA(LG(F))
+  - LC(W)
+  - '&kill_word'
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - ''
+  - ←
+  - ↓
+  - →
+  - PG DN
+  - LC(LA(LG(LEFT)))
+  - LC(LA(LG(RIGHT)))
+  - LC(Q)
+  - LC(R)
+  - ''
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - '&tmux_prev'
+  - '&tmux_next'
+  - LA(B)
+  - LA(F)
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ⇧, h: ' ', s: cw}
+  - {type: held}
+  - {t: ▽, type: trans}
+  - nav
+  adj:
+  - alpha
+  - ''
+  - Out USB
+  - Out TOG
+  - Out BLE
+  - ''
+  - ''
+  - Out BLE
+  - Out TOG
+  - Out USB
+  - ''
+  - {type: held}
+  - ''
+  - BT 1
+  - BT 2
+  - BT 3
+  - BT 4
+  - BT 5
+  - BT 5
+  - BT 4
+  - BT 3
+  - BT 2
+  - BT 1
+  - ''
+  - ''
+  - Boot
+  - Reset
+  - EP ON
+  - EP TOG
+  - EP OFF
+  - EP OFF
+  - EP TOG
+  - EP ON
+  - Reset
+  - Boot
+  - media
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  fun:
+  - ''
+  - F9
+  - F10
+  - F11
+  - F12
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - F5
+  - F6
+  - F7
+  - F8
+  - ''
+  - ''
+  - {t: ⌘, h: ' '}
+  - {t: ⌥, h: ' '}
+  - {t: ⌃, h: ' '}
+  - {t: ⇧, h: ' '}
+  - {type: held}
+  - ''
+  - F1
+  - F2
+  - F3
+  - F4
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  acc:
+  - ''
+  - LA(Q)
+  - ''
+  - LS(LA(2))
+  - ''
+  - ''
+  - ''
+  - LA(U)
+  - LA(I)
+  - ''
+  - ''
+  - ''
+  - ''
+  - LA(SQT)
+  - ''
+  - {type: held}
+  - {type: held}
+  - ''
+  - ''
+  - LA(E)
+  - LA(GRAVE)
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - LA(C)
+  - ''
+  - ''
+  - LA(N)
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  media: [I, O, LG(W), '', ↑, VOL UP, VOL UP, ↑, '', LG(W), I, O, J, K, '', '', ↓, VOL DN, VOL DN, ↓, '', '', J, K, ←, →, '', '', alpha, MUTE, MUTE, alpha, '', '',
+    ←, →, Esc, ⏎, ␣, ␣, ⏎, Esc]
+  nil:
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - {type: held}
+combos:
+- p: [15, 16]
+  k: {t: acc, h: ' '}
+  l: [alpha]
+- p: [1, 5]
+  k: BT CLR
+  l: [adj]
+- p: [6, 10]
+  k: BT CLR
+  l: [adj]
