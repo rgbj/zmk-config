@@ -20,7 +20,7 @@
 #define ___ &none
 
 // see https://zmk.dev/docs/behaviors/hold-tap#example-use-cases
-#define MO_TOG(layer) &mo_tog layer layer   // Macro to apply momentary-layer-on-hold/toggle-layer-on-tap to a specific layer
+#define MOTOG(layer) &mo_tog layer layer   // Macro to apply momentary-layer-on-hold/toggle-layer-on-tap to a specific layer
 
 #define BINDINGS(...) __VA_ARGS__
 #define MOD_MORPH(NAME, MODS, BINDINGS) NAME: NAME { mods = <MODS>; bindings = BINDINGS; label = "NAME"; #binding-cells = <0>; compatible = "zmk,behavior-mod-morph"; };
@@ -154,8 +154,8 @@
         alpha {
             label = "alpha";
             bindings = <
-&kp ESC          &kp Q &kp W &kp  E &kp   R &kp     T        &kp   Y &kp      U &kp      I &kp O &kp    P        &sl ADJ
-&kp TAB          &kp A &kp S &kp  D &kp   F &kp     G        &kp   H &kp      J &kp      K &kp L &kp  SQT        &sl FUN
+&kp ESC          &kp Q &kp W &kp  E &kp   R &kp     T        &kp   Y &kp      U &kp      I &kp O &kp    P        &sl         ADJ
+&kp TAB          &kp A &kp S &kp  D &kp   F &kp     G        &kp   H &kp      J &kp      K &kp L &kp  SQT        &sl         FUN
 &kp GRAVE        &kp Z &kp X &kp  C &kp   V &kp     B        &kp   N &kp      M &cs        &dc   &kp FSLH        &kp LC(LG(SPACE))
                              &shift &mo SYM &kp SPACE        &mo NAV &num NUM 0 &caps_word
             >;
@@ -164,27 +164,27 @@
             label = "sym";
             bindings = <
 &trans          &kp LS(LG(GRAVE)) &gtab     &lrsw    &kp LC(TAB) &kp LG(GRAVE)        &kp LA(BKSP) &kp  EXCL &kp    AT &kp  HASH &kp  DLLR        &trans
-&trans          &sk         LSHFT &sk LCTRL &sk LALT &sk    LGUI ___                  &kp    BKSP  &kp MINUS &kp UNDER &kp PRCNT &kp CARET        &trans
+&trans          &sk       LSHFT   &sk LCTRL &sk LALT &sk   LGUI  ___                  &kp    BKSP  &kp MINUS &kp UNDER &kp PRCNT &kp CARET        &trans
 &trans          ___               ___       ___      ___         ___                  &kp     DEL  &kp  AMPS &kp  STAR &lpair    &rpair           &trans
-                                            &trans    &trans     &trans               &kp     RET  &trans    MO_TOG(NAV)
+                                            &trans    &trans     &trans               &kp     RET  &trans    MOTOG(NAV)
             >;
         };
         num {
             label = "num";
             bindings = <
-&trans        &kp UNDER &kp N7 &kp N8 &kp N9 &s_eq             &kp LA(BKSP) ___      &kp PIPE &kp  BSLH ___              &trans  
-&trans        &kp MINUS &kp N4 &kp N5 &kp N6 &kp  PLUS         &kp    BKSP  &sk LGUI &sk LALT &sk LCTRL &sk LSHFT        &trans  
-&trans        &kp    N0 &kp N1 &kp N2 &kp N3 &kp    N0         &kp     DEL  &trans   &trans   &trans    &trans           &trans  
-                               &trans &kp N0 &trans            &trans       &tog NUM &trans
+&trans        &kp UNDER &kp N7 &kp N8 &kp N9 &s_eq            &kp LA(BKSP) ___      &kp PIPE &kp  BSLH ___              &trans  
+&trans        &kp MINUS &kp N4 &kp N5 &kp N6 &kp PLUS         &kp    BKSP  &sk LGUI &sk LALT &sk LCTRL &sk LSHFT        &trans  
+&trans        &kp    N0 &kp N1 &kp N2 &kp N3 &kp   N0         &kp     DEL  &trans   &trans   &trans    &trans           &trans  
+                               &trans &kp N0 &trans           &trans       &tog NUM &trans
             >;
         };
         nav {
             label = "nav";
             bindings = <
-&trans        ___        &kp HOME   &kp   UP   &kp   END  &kp PG_UP        &kp    LA(LG(LEFT))  &kp    LA(LG(RIGHT))  &kp LA(LG(F)) &kp LC(W) &kill_word        &trans
-&trans        ___        &kp LEFT   &kp DOWN   &kp RIGHT  &kp PG_DN        &kp LC(LA(LG(LEFT))) &kp LC(LA(LG(RIGHT))) &kp LC(Q)     &kp LC(R) ___               &trans
-&trans        &tmux_prev &tmux_next &kp  LA(B) &kp  LA(F) ___              ___                  ___                   ___           ___       ___               &trans
-                                    &trans     &trans     &shift           &trans               &trans                &tog NAV
+&trans        ___        &kp   HOME &kp   UP  &kp   END &kp PG_UP        &kp    LA(LG(LEFT))  &kp    LA(LG(RIGHT))  &kp LA(LG(F)) &kp LC(W) &kill_word        &trans
+&trans        ___        &kp   LEFT &kp DOWN  &kp RIGHT &kp PG_DN        &kp LC(LA(LG(LEFT))) &kp LC(LA(LG(RIGHT))) &kp    LC(Q)  &kp LC(R) ___               &trans
+&trans        &tmux_prev &tmux_next &kp LA(B) &kp LA(F) ___              ___                  &sk           LGUI    &sk    LALT   &sk LCTRL &sk LSHFT         &trans
+                                    &trans     &trans   &shift           &trans               &trans                &tog    NAV
             >;
         };
         adjust {
@@ -210,7 +210,7 @@ ___        &kp F1 &kp F2  &kp F3  &kp F4  ___        ___ ___      ___      ___  
             bindings = <
 ___          &kp LA(Q)   ___   &kp LS(LA(N2)) ___    ___          ___       &kp LA(U) &kp     LA(I) ___   ___          ___
 ___          &kp LA(SQT) ___   ___            ___    ___          ___       &kp LA(E) &kp LA(GRAVE) ___   ___          ___
-___          ___         ___   &kp      LA(C) ___    ___          &kp LA(N) ___       ___           ___   ___          ___
+___          ___         ___   &kp     LA(C)  ___    ___          &kp LA(N) ___       ___           ___   ___          ___
                                &trans         &trans &trans       &trans    &trans    &trans
             >;
         };
