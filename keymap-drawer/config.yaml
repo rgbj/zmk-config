@@ -21,7 +21,29 @@ parse_config:
     '&rpair': ')}]>'
     '&caps_word': cw
     '&num_word': nw
+
+    '&kp LS(LG(GRAVE))': '⇧⌘`'
+    '&gtab': '⌘⇥'
+    '&lrsw': '⌃⇧⇥'
+    '&kp LC(TAB)': '⌃⇥'
+    '&kp LG(GRAVE)': '⌘`'
+
+    '&kp LA(BKSP)': '⌥⌫'
     
+    '&kp LA(LG(LEFT))': '⌥⌘←'
+    '&kp LA(LG(RIGHT))': '⌥⌘→'
+    '&kp LA(LG(F))': '⌥⌘F'
+    '&kp LC(W)': '⌥W'
+    '&kill_word': 'Esc+D'
+    '&kp LC(LA(LG(LEFT)))': '⌃⌥⌘←'
+    '&kp LC(LA(LG(RIGHT)))': '⌃⌥⌘→'
+    '&kp LC(Q)': '⌃Q'
+    '&kp LC(R)': '⌃R'
+    '&tmux_prev': '⌃QP'
+    '&tmux_next': '⌃QN'
+    '&kp LA(B)': '⌥B'
+    '&kp LA(F)': '⌥F'
+
   zmk_keycode_map:
     LSHFT: ⇧
     LCTRL: ⌃
@@ -39,6 +61,11 @@ parse_config:
     DOWN: ↓
     LEFT: ←
     RIGHT: →
+
+    HOME: ⤒
+    END: ⤓
+    PG_UP: ⇞
+    PG_DN: ⇟
 
     # defaults
     AMPERSAND: '&'

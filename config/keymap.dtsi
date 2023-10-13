@@ -22,12 +22,21 @@
 // see https://zmk.dev/docs/behaviors/hold-tap#example-use-cases
 #define MO_TOG(layer) &mo_tog layer layer   // Macro to apply momentary-layer-on-hold/toggle-layer-on-tap to a specific layer
 
+#define BINDINGS(...) __VA_ARGS__
+#define MOD_MORPH(NAME, MODS, BINDINGS) NAME: NAME { mods = <MODS>; bindings = BINDINGS; label = "NAME"; #binding-cells = <0>; compatible = "zmk,behavior-mod-morph"; };
+#define MACRO(NAME, BINDINGS) NAME: NAME { bindings = BINDINGS; label = "NAME"; #binding-cells = <0>; compatible = "zmk,behavior-macro"; };
+
 &sk {
     quick-release;
 };
 
 &caps_word {
     continue-list = <MINUS UNDER BSPC DEL>;
+};
+
+&num_word {
+    layers = <NUM>;
+    continue-list = <BACKSPACE DELETE DOT COMMA>;
 };
 
 / {
@@ -59,7 +68,7 @@
 */
     };
     behaviors {
-        mo_tog: behavior_mo_tog {
+        mo_tog: mo_tog {
             compatible = "zmk,behavior-hold-tap";
             label = "mo_tog";
             #binding-cells = <2>;
@@ -69,51 +78,43 @@
         };
         shift: shift {
             compatible = "zmk,behavior-mod-morph";
-            label = "SMART_SHIFT";
+            label = "shift";
             #binding-cells = <0>;
             bindings = <&sk LSHFT>, <&caps_word>;
-            mods = <(MOD_LSFT)>;
+            mods = <MOD_LSFT>;
         };
-        num: behavior_num {
+        num: num {
             compatible = "zmk,behavior-hold-tap";
-            label = "NUM";
+            label = "num";
             #binding-cells = <2>;
             flavor = "tap-preferred";
             tapping-term-ms = <200>;
             bindings = <&mo>, <&num_word>;
         };
-        num_word: behavior_num_word {
-            compatible = "zmk,behavior-caps-word";
-            label = "NUM_WORD";
-            #binding-cells = <0>;
-            layers = <NUM>;
-            continue-list = <BACKSPACE DELETE DOT COMMA>;
-            ignore-numbers;
-        };
         cs: cs {
             compatible = "zmk,behavior-mod-morph";
-            label = "CS";
+            label = "cs";
             #binding-cells = <0>;
             bindings = <&kp COMMA>, <&kp SEMICOLON>;
-            mods = <(MOD_LSFT)>;
+            mods = <MOD_LSFT>;
         };
         dc: dc {
             compatible = "zmk,behavior-mod-morph";
-            label = "DC";
+            label = "dc";
             #binding-cells = <0>;
             bindings = <&kp DOT>, <&kp COLON>;
-            mods = <(MOD_LSFT)>;
+            mods = <MOD_LSFT>;
         };
         gtab: gtab {
             compatible = "zmk,behavior-tri-state";
-            label = "GUI_TAB";
+            label = "gtab";
             #binding-cells = <0>;
             bindings = <&kt LGUI>, <&kp TAB>, <&kt LGUI>;
             ignored-key-positions = <3 32>;
         };
         lrsw: lrsw {
             compatible = "zmk,behavior-mod-morph";
-            label = "LEFT_REVERSE_SWITCHER";
+            label = "lrsw";
             #binding-cells = <0>;
             bindings = <&kp LS(LC(TAB))>, <&kp LS(TAB)>;
             mods = <MOD_LGUI>;
@@ -121,60 +122,31 @@
         };
         rrsw: rrsw {
             compatible = "zmk,behavior-mod-morph";
-            label = "RIGHT_REVERSE_SWITCHER";
+            label = "rrsw";
             #binding-cells = <0>;
             bindings = <&kp LC(TAB)>, <&kp LS(TAB)>;
             mods = <MOD_LGUI>;
             keep-mods = <MOD_LGUI>;
         };
-        lpair: lpair { mods = <MOD_LCTL>; bindings = <&lpa_2  >, <&kp LT  >; label = "LPAIR"; #binding-cells = <0>; compatible = "zmk,behavior-mod-morph"; };
-        lpa_2: lpa_2 { mods = <MOD_LALT>; bindings = <&lpa_3  >, <&kp LBKT>; label = "LPA_2"; #binding-cells = <0>; compatible = "zmk,behavior-mod-morph"; };
-        lpa_3: lpa_3 { mods = <MOD_LGUI>; bindings = <&kp LPAR>, <&kp LBRC>; label = "LPA_3"; #binding-cells = <0>; compatible = "zmk,behavior-mod-morph"; };
-        rpair: rpair { mods = <MOD_LCTL>; bindings = <&rpa_2  >, <&kp GT  >; label = "RPAIR"; #binding-cells = <0>; compatible = "zmk,behavior-mod-morph"; };
-        rpa_2: rpa_2 { mods = <MOD_LALT>; bindings = <&rpa_3  >, <&kp RBKT>; label = "RPA_2"; #binding-cells = <0>; compatible = "zmk,behavior-mod-morph"; };
-        rpa_3: rpa_3 { mods = <MOD_LGUI>; bindings = <&kp RPAR>, <&kp RBRC>; label = "RPA_3"; #binding-cells = <0>; compatible = "zmk,behavior-mod-morph"; };
 
-        s_eq: s_eq { mods = <MOD_LGUI>; bindings = <&s_e2    >, <&col_eq >; label = "s_eq"; #binding-cells = <0>; compatible = "zmk,behavior-mod-morph"; };
-        s_e2: s_e2 { mods = <MOD_LALT>; bindings = <&s_e3    >, <&excl_eq>; label = "s_e2"; #binding-cells = <0>; compatible = "zmk,behavior-mod-morph"; };
-        s_e3: s_e3 { mods = <MOD_LCTL>; bindings = <&kp EQUAL>, <&eq_eq  >; label = "s_e3"; #binding-cells = <0>; compatible = "zmk,behavior-mod-morph"; };
+        MOD_MORPH(lpair, MOD_LCTL, BINDINGS(<&lpa_2  >, <&kp LT  >))
+        MOD_MORPH(lpa_2, MOD_LALT, BINDINGS(<&lpa_3  >, <&kp LBKT>))
+        MOD_MORPH(lpa_3, MOD_LGUI, BINDINGS(<&kp LPAR>, <&kp LBRC>))
+        MOD_MORPH(rpair, MOD_LCTL, BINDINGS(<&rpa_2  >, <&kp GT  >))
+        MOD_MORPH(rpa_2, MOD_LALT, BINDINGS(<&rpa_3  >, <&kp RBKT>))
+        MOD_MORPH(rpa_3, MOD_LGUI, BINDINGS(<&kp RPAR>, <&kp RBRC>))
+
+        MOD_MORPH(s_eq, MOD_LGUI, BINDINGS(<&s_e2    >, <&col_eq >))
+        MOD_MORPH(s_e2, MOD_LALT, BINDINGS(<&s_e3    >, <&excl_eq>))
+        MOD_MORPH(s_e3, MOD_LCTL, BINDINGS(<&kp EQUAL>, <&eq_eq  >))
     };
     macros {
-        kill_word: kill_word {
-            label = "kill_word";
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&macro_tap &kp ESC &kp D>;
-        };
-        tmux_prev: tmux_prev {
-            label = "tmux_prev";
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&macro_tap &kp LC(Q) &kp P>;
-        };
-        tmux_next: tmux_next {
-            label = "tmux_next";
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&macro_tap &kp LC(Q) &kp N>;
-        };
-        col_eq: col_eq {
-            label = "col_eq";
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&macro_tap &kp COLON &kp EQUAL>;
-        };
-        eq_eq: eq_eq {
-            label = "eq_eq";
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&macro_tap &kp EQUAL &kp EQUAL>;
-        };
-        excl_eq: excl_eq {
-            label = "excl_eq";
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&macro_tap &kp EXCL &kp EQUAL>;
-        };
+        MACRO(kill_word, BINDINGS(<&macro_tap &kp ESC &kp D>))
+        MACRO(tmux_prev, BINDINGS(<&macro_tap &kp LC(Q) &kp P>))
+        MACRO(tmux_next, BINDINGS(<&macro_tap &kp LC(Q) &kp N>))
+        MACRO(col_eq   , BINDINGS(<&macro_tap &kp COLON &kp EQUAL>))
+        MACRO(eq_eq    , BINDINGS(<&macro_tap &kp EQUAL &kp EQUAL>))
+        MACRO(excl_eq  , BINDINGS(<&macro_tap &kp EXCL  &kp EQUAL>))
     };
     keymap {
         compatible = "zmk,keymap";
@@ -249,15 +221,6 @@ ___          ___         ___   &kp      LA(C) ___    ___          &kp LA(N) ___ 
 &kp    J        &kp     K ___        ___     &kp DOWN &kp C_VOL_DN        &kp C_VOL_DN &kp DOWN ___     ___       &kp    J        &kp     K 
 &kp LEFT        &kp RIGHT ___        ___     &to  DFT &kp   C_MUTE        &kp   C_MUTE &to  DFT ___     ___       &kp LEFT        &kp RIGHT 
                                      &kp ESC &kp  RET &kp    SPACE        &kp    SPACE &kp  RET &kp ESC
-            >;
-        };
-        nil {
-            label = "nil";
-            bindings = <
-___        ___ ___ ___ ___ ___        ___ ___ ___ ___ ___        ___
-___        ___ ___ ___ ___ ___        ___ ___ ___ ___ ___        ___
-___        ___ ___ ___ ___ ___        ___ ___ ___ ___ ___        ___
-                   ___ ___ ___        ___ ___ ___
             >;
         };
     };

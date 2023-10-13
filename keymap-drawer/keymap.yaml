@@ -45,12 +45,12 @@ layers:
   - cw
   sym:
   - {t: ▽, type: trans}
-  - LS(LG(GRAVE))
-  - '&gtab'
-  - {t: LS(LC(TAB)), s: LS(TAB)}
-  - LC(TAB)
-  - LG(GRAVE)
-  - LA(BKSP)
+  - ⇧⌘`
+  - ⌘⇥
+  - ⌃⇧⇥
+  - ⌃⇥
+  - ⌘`
+  - ⌥⌫
   - '!'
   - '@'
   - '#'
@@ -93,7 +93,7 @@ layers:
   - '8'
   - '9'
   - {t: '=', s: '&col_eq'}
-  - LA(BKSP)
+  - ⌥⌫
   - ''
   - '|'
   - \
@@ -132,33 +132,33 @@ layers:
   nav:
   - {t: ▽, type: trans}
   - ''
-  - HOME
+  - ⤒
   - ↑
-  - END
-  - PG UP
-  - LA(LG(LEFT))
-  - LA(LG(RIGHT))
-  - LA(LG(F))
-  - LC(W)
-  - '&kill_word'
+  - ⤓
+  - ⇞
+  - ⌥⌘←
+  - ⌥⌘→
+  - ⌥⌘F
+  - ⌥W
+  - Esc+D
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - ''
   - ←
   - ↓
   - →
-  - PG DN
-  - LC(LA(LG(LEFT)))
-  - LC(LA(LG(RIGHT)))
-  - LC(Q)
-  - LC(R)
+  - ⇟
+  - ⌃⌥⌘←
+  - ⌃⌥⌘→
+  - ⌃Q
+  - ⌃R
   - ''
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - '&tmux_prev'
-  - '&tmux_next'
-  - LA(B)
-  - LA(F)
+  - ⌃QP
+  - ⌃QN
+  - ⌥B
+  - ⌥F
   - ''
   - ''
   - ''
@@ -303,8 +303,6 @@ layers:
   - {t: ▽, type: trans}
   media: [I, O, LG(W), '', ↑, VOL UP, VOL UP, ↑, '', LG(W), I, O, J, K, '', '', ↓, VOL DN, VOL DN, ↓, '', '', J, K, ←, →, '', '', alpha, MUTE, MUTE, alpha, '', '',
     ←, →, Esc, ⏎, ␣, ␣, ⏎, Esc]
-  nil: ['', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '',
-    '', '', '']
 combos:
 - p: [15, 16]
   k: {t: acc, h: ' '}
