@@ -41,7 +41,7 @@ layers:
   - sym
   - ␣
   - nav
-  - num
+  - {t: '&num_word', h: num}
   - nil
   sym:
   - {t: ▽, type: trans}
@@ -84,7 +84,7 @@ layers:
   - {type: held}
   - {t: ▽, type: trans}
   - ⏎
-  - nw
+  - {t: ▽, type: trans}
   - {t: nav, h: nav}
   num:
   - {t: ▽, type: trans}

@@ -74,6 +74,14 @@
             bindings = <&sk LSHFT>, <&caps_word>;
             mods = <(MOD_LSFT)>;
         };
+        num: behavior_num {
+            compatible = "zmk,behavior-hold-tap";
+            label = "NUM";
+            #binding-cells = <2>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <200>;
+            bindings = <&mo>, <&num_word>;
+        };
         num_word: behavior_num_word {
             compatible = "zmk,behavior-caps-word";
             label = "NUM_WORD";
@@ -152,19 +160,19 @@
         alpha {
             label = "alpha";
             bindings = <
-&kp ESC          &kp Q &kp W &kp  E &kp   R &kp     T        &kp   Y &kp   U &kp   I &kp O &kp    P        &sl ADJ
-&kp TAB          &kp A &kp S &kp  D &kp   F &kp     G        &kp   H &kp   J &kp   K &kp L &kp  SQT        &sl FUN
-&kp GRAVE        &kp Z &kp X &kp  C &kp   V &kp     B        &kp   N &kp   M &cs     &dc   &kp FSLH        &kp LC(LG(SPACE))
-                             &shift &mo SYM &kp SPACE        &mo NAV &mo NUM &mo NIL
+&kp ESC          &kp Q &kp W &kp  E &kp   R &kp     T        &kp   Y &kp   U    &kp   I &kp O &kp    P        &sl ADJ
+&kp TAB          &kp A &kp S &kp  D &kp   F &kp     G        &kp   H &kp   J    &kp   K &kp L &kp  SQT        &sl FUN
+&kp GRAVE        &kp Z &kp X &kp  C &kp   V &kp     B        &kp   N &kp   M    &cs     &dc   &kp FSLH        &kp LC(LG(SPACE))
+                             &shift &mo SYM &kp SPACE        &mo NAV &num NUM 0 &mo NIL
             >;
         };
         sym {
             label = "sym";
             bindings = <
 &trans          &kp LS(LG(GRAVE)) &gtab     &lrsw    &kp LC(TAB) &kp LG(GRAVE)        &kp LA(BKSP) &kp  EXCL &kp    AT &kp  HASH &kp  DLLR        &trans
-&trans          &sk         LSHFT &sk LCTRL &sk LALT &sk    LGUI ___                  &kp     BKSP &kp MINUS &kp UNDER &kp PRCNT &kp CARET        &trans
-&trans          ___               ___       ___      ___         ___                  &kp      DEL &kp  AMPS &kp  STAR &lpair    &rpair           &trans
-                                            &trans    &trans     &trans               &kp      RET &num_word MO_TOG(NAV)
+&trans          &sk         LSHFT &sk LCTRL &sk LALT &sk    LGUI ___                  &kp    BKSP  &kp MINUS &kp UNDER &kp PRCNT &kp CARET        &trans
+&trans          ___               ___       ___      ___         ___                  &kp     DEL  &kp  AMPS &kp  STAR &lpair    &rpair           &trans
+                                            &trans    &trans     &trans               &kp     RET  &trans    MO_TOG(NAV)
             >;
         };
         num {
