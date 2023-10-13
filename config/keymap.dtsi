@@ -127,12 +127,16 @@
             mods = <MOD_LGUI>;
             keep-mods = <MOD_LGUI>;
         };
-        lpair: lpair { mods = <MOD_LCTL>; bindings = <&lpa_2  >, <&kp LT  >; label = "LPAIR"; compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; };
-        lpa_2: lpa_2 { mods = <MOD_LALT>; bindings = <&lpa_3  >, <&kp LBKT>; label = "LPA_2"; compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; };
-        lpa_3: lpa_3 { mods = <MOD_LGUI>; bindings = <&kp LPAR>, <&kp LBRC>; label = "LPA_3"; compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; };
-        rpair: rpair { mods = <MOD_LCTL>; bindings = <&rpa_2  >, <&kp GT  >; label = "RPAIR"; compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; };
-        rpa_2: rpa_2 { mods = <MOD_LALT>; bindings = <&rpa_3  >, <&kp RBKT>; label = "RPA_2"; compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; };
-        rpa_3: rpa_3 { mods = <MOD_LGUI>; bindings = <&kp RPAR>, <&kp RBRC>; label = "RPA_3"; compatible = "zmk,behavior-mod-morph"; #binding-cells = <0>; };
+        lpair: lpair { mods = <MOD_LCTL>; bindings = <&lpa_2  >, <&kp LT  >; label = "LPAIR"; #binding-cells = <0>; compatible = "zmk,behavior-mod-morph"; };
+        lpa_2: lpa_2 { mods = <MOD_LALT>; bindings = <&lpa_3  >, <&kp LBKT>; label = "LPA_2"; #binding-cells = <0>; compatible = "zmk,behavior-mod-morph"; };
+        lpa_3: lpa_3 { mods = <MOD_LGUI>; bindings = <&kp LPAR>, <&kp LBRC>; label = "LPA_3"; #binding-cells = <0>; compatible = "zmk,behavior-mod-morph"; };
+        rpair: rpair { mods = <MOD_LCTL>; bindings = <&rpa_2  >, <&kp GT  >; label = "RPAIR"; #binding-cells = <0>; compatible = "zmk,behavior-mod-morph"; };
+        rpa_2: rpa_2 { mods = <MOD_LALT>; bindings = <&rpa_3  >, <&kp RBKT>; label = "RPA_2"; #binding-cells = <0>; compatible = "zmk,behavior-mod-morph"; };
+        rpa_3: rpa_3 { mods = <MOD_LGUI>; bindings = <&kp RPAR>, <&kp RBRC>; label = "RPA_3"; #binding-cells = <0>; compatible = "zmk,behavior-mod-morph"; };
+
+        s_eq: s_eq { mods = <MOD_LGUI>; bindings = <&s_e2    >, <&col_eq >; label = "s_eq"; #binding-cells = <0>; compatible = "zmk,behavior-mod-morph"; };
+        s_e2: s_e2 { mods = <MOD_LALT>; bindings = <&s_e3    >, <&excl_eq>; label = "s_e2"; #binding-cells = <0>; compatible = "zmk,behavior-mod-morph"; };
+        s_e3: s_e3 { mods = <MOD_LCTL>; bindings = <&kp EQUAL>, <&eq_eq  >; label = "s_e3"; #binding-cells = <0>; compatible = "zmk,behavior-mod-morph"; };
     };
     macros {
         kill_word: kill_word {
@@ -152,6 +156,24 @@
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&macro_tap &kp LC(Q) &kp N>;
+        };
+        col_eq: col_eq {
+            label = "col_eq";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_tap &kp COLON &kp EQUAL>;
+        };
+        eq_eq: eq_eq {
+            label = "eq_eq";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_tap &kp EQUAL &kp EQUAL>;
+        };
+        excl_eq: excl_eq {
+            label = "excl_eq";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_tap &kp EXCL &kp EQUAL>;
         };
     };
     keymap {
@@ -178,7 +200,7 @@
         num {
             label = "num";
             bindings = <
-&trans        &kp UNDER &kp N7 &kp N8 &kp N9 &kp EQUAL         &kp LA(BKSP) ___      &kp PIPE &kp  BSLH ___              &trans  
+&trans        &kp UNDER &kp N7 &kp N8 &kp N9 &s_eq             &kp LA(BKSP) ___      &kp PIPE &kp  BSLH ___              &trans  
 &trans        &kp MINUS &kp N4 &kp N5 &kp N6 &kp  PLUS         &kp    BKSP  &sk LGUI &sk LALT &sk LCTRL &sk LSHFT        &trans  
 &trans        &kp    N0 &kp N1 &kp N2 &kp N3 &kp    N0         &kp     DEL  &trans   &trans   &trans    &trans           &trans  
                                &trans &kp N0 &trans            &trans       &tog NUM &trans
