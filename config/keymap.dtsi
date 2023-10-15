@@ -22,9 +22,8 @@
 // see https://zmk.dev/docs/behaviors/hold-tap#example-use-cases
 #define MOTOG(layer) &mo_tog layer layer   // Macro to apply momentary-layer-on-hold/toggle-layer-on-tap to a specific layer
 
-#define BINDINGS(...) __VA_ARGS__
-#define MOD_MORPH(NAME, MODS, BINDINGS) NAME: NAME { mods = <MODS>; bindings = BINDINGS; label = "NAME"; #binding-cells = <0>; compatible = "zmk,behavior-mod-morph"; };
-#define MACRO(NAME, BINDINGS) NAME: NAME { bindings = BINDINGS; label = "NAME"; #binding-cells = <0>; compatible = "zmk,behavior-macro"; };
+#define MOD_MORPH(NAME, MODS, ...) NAME: NAME { mods = <MODS>; bindings = __VA_ARGS__; label = #NAME; #binding-cells = <0>; compatible = "zmk,behavior-mod-morph"; };
+#define MACRO(NAME, ...) NAME: NAME { bindings = __VA_ARGS__; label = #NAME; #binding-cells = <0>; compatible = "zmk,behavior-macro"; };
 
 &sk {
     quick-release;
@@ -129,24 +128,25 @@
             keep-mods = <MOD_LGUI>;
         };
 
-        MOD_MORPH(lpair, MOD_LCTL, BINDINGS(<&lpa_2  >, <&kp LT  >))
-        MOD_MORPH(lpa_2, MOD_LALT, BINDINGS(<&lpa_3  >, <&kp LBKT>))
-        MOD_MORPH(lpa_3, MOD_LGUI, BINDINGS(<&kp LPAR>, <&kp LBRC>))
-        MOD_MORPH(rpair, MOD_LCTL, BINDINGS(<&rpa_2  >, <&kp GT  >))
-        MOD_MORPH(rpa_2, MOD_LALT, BINDINGS(<&rpa_3  >, <&kp RBKT>))
-        MOD_MORPH(rpa_3, MOD_LGUI, BINDINGS(<&kp RPAR>, <&kp RBRC>))
-
-        MOD_MORPH(s_eq, MOD_LGUI, BINDINGS(<&s_e2    >, <&col_eq >))
-        MOD_MORPH(s_e2, MOD_LALT, BINDINGS(<&s_e3    >, <&excl_eq>))
-        MOD_MORPH(s_e3, MOD_LCTL, BINDINGS(<&kp EQUAL>, <&eq_eq  >))
+        MOD_MORPH(lpair, MOD_LCTL, <&lpa_2  >, <&kp LT  >)
+        MOD_MORPH(lpa_2, MOD_LALT, <&lpa_3  >, <&kp LBKT>)
+        MOD_MORPH(lpa_3, MOD_LGUI, <&kp LPAR>, <&kp LBRC>)
+        MOD_MORPH(rpair, MOD_LCTL, <&rpa_2  >, <&kp GT  >)
+        MOD_MORPH(rpa_2, MOD_LALT, <&rpa_3  >, <&kp RBKT>)
+        MOD_MORPH(rpa_3, MOD_LGUI, <&kp RPAR>, <&kp RBRC>)
+ 
+        MOD_MORPH(s_eq, MOD_LGUI, <&s_e2    >, <&col_eq >)
+        MOD_MORPH(s_e2, MOD_LALT, <&s_e3    >, <&excl_eq>)
+        MOD_MORPH(s_e3, MOD_LCTL, <&kp EQUAL>, <&eq_eq  >)
     };
     macros {
-        MACRO(kill_word, BINDINGS(<&macro_tap &kp ESC &kp D>))
-        MACRO(tmux_prev, BINDINGS(<&macro_tap &kp LC(Q) &kp P>))
-        MACRO(tmux_next, BINDINGS(<&macro_tap &kp LC(Q) &kp N>))
-        MACRO(col_eq   , BINDINGS(<&macro_tap &kp COLON &kp EQUAL>))
-        MACRO(eq_eq    , BINDINGS(<&macro_tap &kp EQUAL &kp EQUAL>))
-        MACRO(excl_eq  , BINDINGS(<&macro_tap &kp EXCL  &kp EQUAL>))
+        MACRO(kill_word, <&macro_tap &kp ESC   &kp D>)
+        MACRO(tmux_prev, <&macro_tap &kp LC(Q) &kp P>)
+        MACRO(tmux_next, <&macro_tap &kp LC(Q) &kp N>)
+
+        MACRO( col_eq, <&macro_tap &kp COLON &kp EQUAL>)
+        MACRO(excl_eq, <&macro_tap &kp EXCL  &kp EQUAL>)
+        MACRO(  eq_eq, <&macro_tap &kp EQUAL &kp EQUAL>)
     };
     keymap {
         compatible = "zmk,keymap";
