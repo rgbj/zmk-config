@@ -30,12 +30,12 @@
 };
 
 &caps_word {
-    continue-list = <MINUS UNDER BSPC DEL>;
+    continue-list = <BACKSPACE MINUS UNDER>;
 };
 
 &num_word {
     layers = <NUM>;
-    continue-list = <BACKSPACE DELETE DOT COMMA>;
+    continue-list = <BACKSPACE DOT COMMA MINUS>;
 };
 
 / {
