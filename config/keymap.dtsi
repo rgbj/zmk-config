@@ -5,8 +5,8 @@
 #include <dt-bindings/zmk/ext_power.h>
 
 #define DFT 0
-#define SYM 1
-#define NUM 2
+#define NUM 1
+#define SYM 2
 #define NAV 3
 
 #define ADJ 4
@@ -160,15 +160,6 @@
                              &shift &mo SYM &kp SPACE        &mo NAV &num NUM 0 &caps_word
             >;
         };
-        sym {
-            label = "sym";
-            bindings = <
-&trans          &kp LS(LG(GRAVE)) &gtab     &lrsw    &kp LC(TAB) &kp LG(GRAVE)        &kp LA(BKSP) &kp  EXCL &kp    AT &kp  HASH &kp  DLLR        &trans
-&trans          &sk       LSHFT   &sk LCTRL &sk LALT &sk   LGUI  ___                  &kp    BKSP  &kp MINUS &kp UNDER &kp PRCNT &kp CARET        &trans
-&trans          ___               ___       ___      ___         ___                  &kp     DEL  &kp  AMPS &kp  STAR &lpair    &rpair           &trans
-                                            &trans    &trans     &trans               &kp     RET  &trans    MOTOG(NAV)
-            >;
-        };
         num {
             label = "num";
             bindings = <
@@ -176,6 +167,15 @@
 &trans        &kp MINUS &kp N4 &kp N5 &kp N6 &kp PLUS         &kp    BKSP  &sk LGUI &sk LALT &sk LCTRL &sk LSHFT        &trans  
 &trans        &kp    N0 &kp N1 &kp N2 &kp N3 &kp   N0         &kp     DEL  &trans   &trans   &trans    &trans           &trans  
                                &trans &trans &trans           &trans       &tog NUM &trans
+            >;
+        };
+        sym {
+            label = "sym";
+            bindings = <
+&trans          &kp LS(LG(GRAVE)) &gtab     &lrsw    &kp LC(TAB) &kp LG(GRAVE)        &kp LA(BKSP) &kp  EXCL &kp    AT &kp  HASH &kp  DLLR        &trans
+&trans          &sk       LSHFT   &sk LCTRL &sk LALT &sk   LGUI  ___                  &kp    BKSP  &kp MINUS &kp UNDER &kp PRCNT &kp CARET        &trans
+&trans          ___               ___       ___      ___         ___                  &kp     DEL  &kp  AMPS &kp  STAR &lpair    &rpair           &trans
+                                            &trans    &trans     &trans               &kp     RET  &trans    MOTOG(NAV)
             >;
         };
         nav {
