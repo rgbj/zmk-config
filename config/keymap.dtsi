@@ -192,7 +192,7 @@
             bindings = <
 &to DFT      ___          &out OUT_USB &out     OUT_TOG &out      OUT_BLE ___                      ___               &out      OUT_BLE &out     OUT_TOG &out OUT_USB ___                 ___
 ___          &bt BT_SEL 0 &bt BT_SEL 1 &bt     BT_SEL 2 &bt      BT_SEL 3 &bt      BT_SEL 4        &bt      BT_SEL 4 &bt      BT_SEL 3 &bt     BT_SEL 2 &bt BT_SEL 1 &bt BT_SEL 0        ___
-___          &bootloader  &sys_reset   &ext_power EP_ON &ext_power EP_TOG &ext_power EP_OFF        &ext_power EP_OFF &ext_power EP_TOG &ext_power EP_ON &sys_reset   &bootloader         &to MED
+___          &bootloader  &sys_reset   &ext_power EP_ON &ext_power EP_TOG &ext_power EP_OFF        &ext_power EP_OFF &ext_power EP_TOG &ext_power EP_ON &sys_reset   &bootloader         &tog MED
                                        &trans           &trans            &trans                   &trans            &trans            &trans
             >;
         };
@@ -219,7 +219,7 @@ ___          ___         ___   &kp     LA(C)  ___    ___          &kp LA(N) ___ 
             bindings = <
 &kp    I        &kp     O &kp LG(W)  ___     &kp   UP &kp C_VOL_UP        &kp C_VOL_UP &kp   UP ___     &kp LG(W) &kp    I        &kp     O
 &kp    J        &kp     K ___        ___     &kp DOWN &kp C_VOL_DN        &kp C_VOL_DN &kp DOWN ___     ___       &kp    J        &kp     K 
-&kp LEFT        &kp RIGHT ___        ___     &to  DFT &kp   C_MUTE        &kp   C_MUTE &to  DFT ___     ___       &kp LEFT        &kp RIGHT 
+&kp LEFT        &kp RIGHT ___        ___     &tog MED &kp   C_MUTE        &kp   C_MUTE &tog MED ___     ___       &kp LEFT        &kp RIGHT 
                                      &kp ESC &kp  RET &kp    SPACE        &kp    SPACE &kp  RET &kp ESC
             >;
         };
