@@ -30,9 +30,11 @@ parse_config:
 
     '&kp LA(BKSP)': '⌥⌫'
     
-    '&kp LA(LG(LEFT))': '⌥⌘←'
-    '&kp LA(LG(RIGHT))': '⌥⌘→'
-    '&kp LA(LG(F))': '⌥⌘F'
+    '&kp LC(LA(UP))': '⌃⌥↑'
+    '&kp LC(LA(DOWN))': '⌃⌥↓'
+    '&kp LC(LA(LEFT))': '⌃⌥←'
+    '&kp LC(LA(RIGHT))': '⌃⌥→'
+    '&kp LC(LA(RET))': '⌃⌥⏎'
     '&kp LC(W)': '⌥W'
     '&kill_word': 'Esc+D'
     '&kp LC(LA(LG(LEFT)))': '⌃⌥⌘←'

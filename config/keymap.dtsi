@@ -190,10 +190,10 @@
         nav {
             label = "nav";
             bindings = <
-&trans        ___        &kp   HOME &kp   UP  &kp   END &kp PG_UP        &kp    LA(LG(LEFT))  &kp    LA(LG(RIGHT))  &kp LA(LG(F)) &kp LC(W) &kill_word        &trans
-&trans        ___        &kp   LEFT &kp DOWN  &kp RIGHT &kp PG_DN        &kp LC(LA(LG(LEFT))) &kp LC(LA(LG(RIGHT))) &kp    LC(Q)  &kp LC(R) ___               &trans
-&trans        &tmux_prev &tmux_next &kp LA(B) &kp LA(F) ___              ___                  &sk           LGUI    &sk    LALT   &sk LCTRL &sk LSHFT         &trans
-                                    &trans     &trans   &shift           &trans               &trans                &tog    NAV
+&trans        ___        &kp   HOME &kp   UP  &kp   END &kp PG_UP        &kp LC(LA(UP))   &kp LC(LA(LG(LEFT))) &kp LC(LA(LG(RIGHT))) &kp LC(W) &kill_word        &trans
+&trans        ___        &kp   LEFT &kp DOWN  &kp RIGHT &kp PG_DN        &kp LC(LA(LEFT)) &kp   LC(LA(RIGHT))  &kp    LC(LA(RET))    &kp LC(R) &kp  LC(Q)        &trans
+&trans        &tmux_prev &tmux_next &kp LA(B) &kp LA(F) ___              &kp LC(LA(DOWN)) &sk          LGUI    &sk          LALT     &sk LCTRL &sk  LSHFT        &trans
+                                    &trans     &trans   &shift           &trans           &trans               &tog    NAV
             >;
         };
         adjust {
