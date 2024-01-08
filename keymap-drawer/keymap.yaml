@@ -1,6 +1,6 @@
 layout: {qmk_keyboard: corne_rotated, qmk_layout: LAYOUT_split_3x6_3}
 layers:
-  alpha:
+  qwerty:
   - Esc
   - Q
   - W
@@ -12,7 +12,7 @@ layers:
   - I
   - O
   - P
-  - {t: adj, h: ' '}
+  - {t: adjust, h: ' '}
   - ⇥
   - A
   - S
@@ -37,12 +37,98 @@ layers:
   - {t: ., s: ':'}
   - /
   - 🐯
-  - {t: ⇧, h: ' ', s: cw}
+  - {t: RSHFT, h: ' ', s: cw}
   - sym
   - ␣
   - nav
   - {t: '&num_word', h: num}
   - cw
+  colemak:
+  - {t: ▽, type: trans}
+  - Q
+  - W
+  - F
+  - P
+  - B
+  - K
+  - L
+  - U
+  - Y
+  - ''''
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - A
+  - R
+  - S
+  - T
+  - G
+  - M
+  - N
+  - E
+  - I
+  - O
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - Z
+  - X
+  - C
+  - D
+  - V
+  - J
+  - H
+  - {t: ',', s: ;}
+  - {t: ., s: ':'}
+  - /
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  num:
+  - {t: ▽, type: trans}
+  - _
+  - '7'
+  - '8'
+  - '9'
+  - {t: '=', s: '&col_eq'}
+  - ⌥⌫
+  - ''
+  - '|'
+  - \
+  - ''
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - '-'
+  - '4'
+  - '5'
+  - '6'
+  - +
+  - ⌫
+  - {t: ⌘, h: ' '}
+  - {t: ⌥, h: ' '}
+  - {t: ⌃, h: ' '}
+  - {t: ⇧, h: ' '}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - '0'
+  - '1'
+  - '2'
+  - '3'
+  - '0'
+  - ⌦
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: num, h: toggle, type: held}
+  - {t: ▽, type: trans}
   sym:
   - {t: ▽, type: trans}
   - ⇧⌘`
@@ -86,49 +172,6 @@ layers:
   - ⏎
   - {t: ▽, type: trans}
   - {t: nav, h: nav}
-  num:
-  - {t: ▽, type: trans}
-  - _
-  - '7'
-  - '8'
-  - '9'
-  - {t: '=', s: '&col_eq'}
-  - ⌥⌫
-  - ''
-  - '|'
-  - \
-  - ''
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - '-'
-  - '4'
-  - '5'
-  - '6'
-  - +
-  - ⌫
-  - {t: ⌘, h: ' '}
-  - {t: ⌥, h: ' '}
-  - {t: ⌃, h: ' '}
-  - {t: ⇧, h: ' '}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - '0'
-  - '1'
-  - '2'
-  - '3'
-  - '0'
-  - ⌦
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - '0'
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: num, type: held}
-  - {t: ▽, type: trans}
   nav:
   - {t: ▽, type: trans}
   - ''
@@ -168,12 +211,12 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: ⇧, h: ' ', s: cw}
+  - {t: RSHFT, h: ' ', s: cw}
   - {type: held}
   - {t: ▽, type: trans}
-  - nav
-  adj:
-  - alpha
+  - {t: nav, h: toggle}
+  adjust:
+  - {t: qwerty, h: toggle}
   - ''
   - Out USB
   - Out TOG
@@ -185,7 +228,7 @@ layers:
   - Out USB
   - ''
   - {type: held}
-  - ''
+  - {t: colemak, h: toggle}
   - BT 1
   - BT 2
   - BT 3
@@ -208,7 +251,7 @@ layers:
   - EP ON
   - Reset
   - Boot
-  - media
+  - {t: media, h: toggle}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -258,7 +301,7 @@ layers:
   - ''
   - ''
   - ''
-  acc:
+  accents:
   - ''
   - LA(Q)
   - ''
@@ -301,15 +344,56 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  media: [I, O, LG(W), '', ↑, VOL UP, VOL UP, ↑, '', LG(W), I, O, J, K, '', '', ↓, VOL DN, VOL DN, ↓, '', '', J, K, ←, →, '', '', alpha, MUTE, MUTE, alpha, '', '',
-    ←, →, Esc, ⏎, ␣, ␣, ⏎, Esc]
+  media:
+  - I
+  - O
+  - LG(W)
+  - ''
+  - ↑
+  - VOL UP
+  - VOL UP
+  - ↑
+  - ''
+  - LG(W)
+  - I
+  - O
+  - J
+  - K
+  - ''
+  - ''
+  - ↓
+  - VOL DN
+  - VOL DN
+  - ↓
+  - ''
+  - ''
+  - J
+  - K
+  - ←
+  - →
+  - ''
+  - ''
+  - {t: media, h: toggle}
+  - MUTE
+  - MUTE
+  - {t: media, h: toggle}
+  - ''
+  - ''
+  - ←
+  - →
+  - Esc
+  - ⏎
+  - ␣
+  - ␣
+  - ⏎
+  - Esc
 combos:
 - p: [15, 16]
-  k: {t: acc, h: ' '}
-  l: [alpha]
+  k: {t: accents, h: ' '}
+  l: [qwerty, colemak]
 - p: [1, 5]
   k: BT CLR
-  l: [adj]
+  l: [adjust]
 - p: [6, 10]
   k: BT CLR
-  l: [adj]
+  l: [adjust]

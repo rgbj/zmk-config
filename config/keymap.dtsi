@@ -4,18 +4,18 @@
 #include <dt-bindings/zmk/outputs.h>
 #include <dt-bindings/zmk/ext_power.h>
 
-#define DFT 0
-#define NUM 1
-#define SYM 2
-#define NAV 3
+#define QWE 0
+#define CDH 1
 
-#define ADJ 4
+#define NUM 2
+#define SYM 3
+#define NAV 4
 
-#define FUN 5
-#define ACC 6
-#define MED 7
+#define ADJ 5
 
-#define NIL 8
+#define FUN 6
+#define ACC 7
+#define MED 8
 
 #define ___ &none
 
@@ -44,7 +44,7 @@
         combo_acc {
             timeout-ms = <50>;
             key-positions = <15 16>;
-            layers = <DFT>;
+            layers = <QWE CDH>;
             bindings = <&sl ACC>;
         };
         combo_bt_clr_left {
@@ -151,13 +151,22 @@
     keymap {
         compatible = "zmk,keymap";
 
-        alpha {
-            label = "alpha";
+        qwerty {
+            label = "qwerty";
             bindings = <
 &kp ESC          &kp Q &kp W &kp  E &kp   R &kp     T        &kp   Y &kp      U &kp      I &kp O &kp    P        &sl         ADJ
 &kp TAB          &kp A &kp S &kp  D &kp   F &kp     G        &kp   H &kp      J &kp      K &kp L &kp  SQT        &sl         FUN
 &kp GRAVE        &kp Z &kp X &kp  C &kp   V &kp     B        &kp   N &kp      M &cs        &dc   &kp FSLH        &kp LC(LG(SPACE))
                              &shift &mo SYM &kp SPACE        &mo NAV &num NUM 0 &caps_word
+            >;
+        };
+        colemak {
+            label = "colemak";
+            bindings = <
+&trans        &kp Q &kp W &kp  F &kp  P &kp  B        &kp  J &kp  L &kp  U &kp Y &kp  SQT        &trans
+&trans        &kp A &kp R &kp  S &kp  T &kp  G        &kp  M &kp  N &kp  E &kp I &kp    O        &trans
+&trans        &kp Z &kp X &kp  C &kp  D &kp  V        &kp  K &kp  H &cs    &dc   &kp FSLH        &trans
+                          &trans &trans &trans        &trans &trans &trans
             >;
         };
         num {
@@ -190,8 +199,8 @@
         adjust {
             label = "adj";
             bindings = <
-&to DFT      ___          &out OUT_USB &out     OUT_TOG &out      OUT_BLE ___                      ___               &out      OUT_BLE &out     OUT_TOG &out OUT_USB ___                 ___
-___          &bt BT_SEL 0 &bt BT_SEL 1 &bt     BT_SEL 2 &bt      BT_SEL 3 &bt      BT_SEL 4        &bt      BT_SEL 4 &bt      BT_SEL 3 &bt     BT_SEL 2 &bt BT_SEL 1 &bt BT_SEL 0        ___
+&to QWE      ___          &out OUT_USB &out     OUT_TOG &out      OUT_BLE ___                      ___               &out      OUT_BLE &out     OUT_TOG &out OUT_USB ___                 ___
+&to CDH      &bt BT_SEL 0 &bt BT_SEL 1 &bt     BT_SEL 2 &bt      BT_SEL 3 &bt      BT_SEL 4        &bt      BT_SEL 4 &bt      BT_SEL 3 &bt     BT_SEL 2 &bt BT_SEL 1 &bt BT_SEL 0        ___
 ___          &bootloader  &sys_reset   &ext_power EP_ON &ext_power EP_TOG &ext_power EP_OFF        &ext_power EP_OFF &ext_power EP_TOG &ext_power EP_ON &sys_reset   &bootloader         &tog MED
                                        &trans           &trans            &trans                   &trans            &trans            &trans
             >;
