@@ -163,10 +163,10 @@
         colemak {
             label = "colemak";
             bindings = <
-&trans        &kp Q &kp W &kp  F &kp  P &kp  B        &kp  J &kp  L &kp  U &kp Y &kp  SQT        &trans
-&trans        &kp A &kp R &kp  S &kp  T &kp  G        &kp  M &kp  N &kp  E &kp I &kp    O        &trans
-&trans        &kp Z &kp X &kp  C &kp  D &kp  V        &kp  K &kp  H &cs    &dc   &kp FSLH        &trans
-                          &trans &trans &trans        &trans &trans &trans
+&kp ESC          &kp Q &kp W &kp  F &kp   P &kp     B        &kp   J &kp      L &kp      U &kp Y &kp  SQT        &sl         ADJ
+&kp TAB          &kp A &kp R &kp  S &kp   T &kp     G        &kp   M &kp      N &kp      E &kp I &kp    O        &sl         FUN
+&kp GRAVE        &kp Z &kp X &kp  C &kp   D &kp     V        &kp   K &kp      H &cs        &dc   &kp FSLH        &kp LC(LG(SPACE))
+                             &shift &mo SYM &kp SPACE        &mo NAV &num NUM 0 &caps_word
             >;
         };
         num {
