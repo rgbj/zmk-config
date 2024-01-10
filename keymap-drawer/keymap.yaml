@@ -1,5 +1,48 @@
 layout: {qmk_keyboard: corne_rotated, qmk_layout: LAYOUT_split_3x6_3}
 layers:
+  colemak:
+  - Esc
+  - Q
+  - W
+  - F
+  - P
+  - B
+  - J
+  - L
+  - U
+  - Y
+  - ''''
+  - {t: adjust, h: ' '}
+  - ⇥
+  - A
+  - R
+  - S
+  - T
+  - G
+  - M
+  - N
+  - E
+  - I
+  - O
+  - {t: fun, h: ' '}
+  - '`'
+  - Z
+  - X
+  - C
+  - D
+  - V
+  - K
+  - H
+  - {t: ',', s: ;}
+  - {t: ., s: ':'}
+  - /
+  - 🐯
+  - {t: RSHFT, h: ' ', s: cw}
+  - sym
+  - ␣
+  - nav
+  - {t: '&num_word', h: num}
+  - cw
   qwerty:
   - Esc
   - Q
@@ -43,49 +86,6 @@ layers:
   - nav
   - {t: '&num_word', h: num}
   - cw
-  colemak:
-  - {t: ▽, type: trans}
-  - Q
-  - W
-  - F
-  - P
-  - B
-  - K
-  - L
-  - U
-  - Y
-  - ''''
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - A
-  - R
-  - S
-  - T
-  - G
-  - M
-  - N
-  - E
-  - I
-  - O
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - Z
-  - X
-  - C
-  - D
-  - V
-  - J
-  - H
-  - {t: ',', s: ;}
-  - {t: ., s: ':'}
-  - /
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
   num:
   - {t: ▽, type: trans}
   - _
@@ -216,7 +216,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: nav, h: toggle}
   adjust:
-  - {t: qwerty, h: toggle}
+  - {t: colemak, h: toggle}
   - ''
   - Out USB
   - Out TOG
@@ -228,7 +228,7 @@ layers:
   - Out USB
   - ''
   - {type: held}
-  - {t: colemak, h: toggle}
+  - {t: qwerty, h: toggle}
   - BT 1
   - BT 2
   - BT 3
@@ -390,7 +390,7 @@ layers:
 combos:
 - p: [15, 16]
   k: {t: accents, h: ' '}
-  l: [qwerty, colemak]
+  l: [colemak, qwerty]
 - p: [1, 5]
   k: BT CLR
   l: [adjust]

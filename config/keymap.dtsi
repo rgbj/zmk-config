@@ -4,8 +4,8 @@
 #include <dt-bindings/zmk/outputs.h>
 #include <dt-bindings/zmk/ext_power.h>
 
-#define QWE 0
-#define CDH 1
+#define COL 0
+#define QWE 1
 
 #define NUM 2
 #define SYM 3
@@ -44,7 +44,7 @@
         combo_acc {
             timeout-ms = <50>;
             key-positions = <15 16>;
-            layers = <QWE CDH>;
+            layers = <COL QWE>;
             bindings = <&sl ACC>;
         };
         combo_bt_clr_left {
@@ -151,21 +151,21 @@
     keymap {
         compatible = "zmk,keymap";
 
-        qwerty {
-            label = "qwerty";
-            bindings = <
-&kp ESC          &kp Q &kp W &kp  E &kp   R &kp     T        &kp   Y &kp      U &kp      I &kp O &kp    P        &sl         ADJ
-&kp TAB          &kp A &kp S &kp  D &kp   F &kp     G        &kp   H &kp      J &kp      K &kp L &kp  SQT        &sl         FUN
-&kp GRAVE        &kp Z &kp X &kp  C &kp   V &kp     B        &kp   N &kp      M &cs        &dc   &kp FSLH        &kp LC(LG(SPACE))
-                             &shift &mo SYM &kp SPACE        &mo NAV &num NUM 0 &caps_word
-            >;
-        };
         colemak {
             label = "colemak";
             bindings = <
 &kp ESC          &kp Q &kp W &kp  F &kp   P &kp     B        &kp   J &kp      L &kp      U &kp Y &kp  SQT        &sl         ADJ
 &kp TAB          &kp A &kp R &kp  S &kp   T &kp     G        &kp   M &kp      N &kp      E &kp I &kp    O        &sl         FUN
 &kp GRAVE        &kp Z &kp X &kp  C &kp   D &kp     V        &kp   K &kp      H &cs        &dc   &kp FSLH        &kp LC(LG(SPACE))
+                             &shift &mo SYM &kp SPACE        &mo NAV &num NUM 0 &caps_word
+            >;
+        };
+        qwerty {
+            label = "qwerty";
+            bindings = <
+&kp ESC          &kp Q &kp W &kp  E &kp   R &kp     T        &kp   Y &kp      U &kp      I &kp O &kp    P        &sl         ADJ
+&kp TAB          &kp A &kp S &kp  D &kp   F &kp     G        &kp   H &kp      J &kp      K &kp L &kp  SQT        &sl         FUN
+&kp GRAVE        &kp Z &kp X &kp  C &kp   V &kp     B        &kp   N &kp      M &cs        &dc   &kp FSLH        &kp LC(LG(SPACE))
                              &shift &mo SYM &kp SPACE        &mo NAV &num NUM 0 &caps_word
             >;
         };
@@ -199,8 +199,8 @@
         adjust {
             label = "adj";
             bindings = <
-&to QWE      ___          &out OUT_USB &out     OUT_TOG &out      OUT_BLE ___                      ___               &out      OUT_BLE &out     OUT_TOG &out OUT_USB ___                 ___
-&to CDH      &bt BT_SEL 0 &bt BT_SEL 1 &bt     BT_SEL 2 &bt      BT_SEL 3 &bt      BT_SEL 4        &bt      BT_SEL 4 &bt      BT_SEL 3 &bt     BT_SEL 2 &bt BT_SEL 1 &bt BT_SEL 0        ___
+&to COL      ___          &out OUT_USB &out     OUT_TOG &out      OUT_BLE ___                      ___               &out      OUT_BLE &out     OUT_TOG &out OUT_USB ___                 ___
+&to QWE      &bt BT_SEL 0 &bt BT_SEL 1 &bt     BT_SEL 2 &bt      BT_SEL 3 &bt      BT_SEL 4        &bt      BT_SEL 4 &bt      BT_SEL 3 &bt     BT_SEL 2 &bt BT_SEL 1 &bt BT_SEL 0        ___
 ___          &bootloader  &sys_reset   &ext_power EP_ON &ext_power EP_TOG &ext_power EP_OFF        &ext_power EP_OFF &ext_power EP_TOG &ext_power EP_ON &sys_reset   &bootloader         &tog MED
                                        &trans           &trans            &trans                   &trans            &trans            &trans
             >;
