@@ -2,9 +2,9 @@
 
 git config --global --add safe.directory /zmk-config
 cd /zmk-config
-BUILD_ID="$(date +%Y%m%d-%H%M%S)_$(git rev-parse --abbrev-ref HEAD)_$(git rev-parse --short HEAD)"
+BUILD_ID="$(git rev-parse --short HEAD)"
 if test -n "$(git status --porcelain)"; then
-    BUILD_ID="${BUILD_ID}+"
+    BUILD_ID="${BUILD_ID}+$(date +%Y%m%d-%H%M%S)"
 fi
 cd -
 
