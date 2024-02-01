@@ -1,10 +1,10 @@
 # ZMK config
 
-for 3x6 [Rollow](https://www.barbellboards.com/product/rollow)
+for 3x6 [Corne-ish Zen](https://lowprokb.ca/products/corne-ish-zen) and 3x6 [Rollow](https://www.barbellboards.com/product/rollow)
 
 ## keymap
 
-![3x6 Rollow keymap](keymap-drawer/keymap.svg)
+![3x6 keymap](keymap-drawer/keymap.svg)
 
 ## build
 

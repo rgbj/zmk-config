@@ -44,19 +44,19 @@ layers:
   - {t: '&num_word', h: num}
   - cw
   colemak:
-  - {t: ▽, type: trans}
+  - Esc
   - Q
   - W
   - F
   - P
   - B
-  - K
+  - J
   - L
   - U
   - Y
   - ''''
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - {t: adjust, h: ' '}
+  - ⇥
   - A
   - R
   - S
@@ -67,25 +67,25 @@ layers:
   - E
   - I
   - O
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - {t: fun, h: ' '}
+  - '`'
   - Z
   - X
   - C
   - D
   - V
-  - J
+  - K
   - H
   - {t: ',', s: ;}
   - {t: ., s: ':'}
   - /
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - 🐯
+  - {t: RSHFT, h: ' ', s: cw}
+  - sym
+  - ␣
+  - nav
+  - {t: '&num_word', h: num}
+  - cw
   num:
   - {t: ▽, type: trans}
   - _
@@ -141,7 +141,7 @@ layers:
   - '@'
   - '#'
   - $
-  - {t: ▽, type: trans}
+  - '&wptt'
   - {t: ▽, type: trans}
   - {t: ⇧, h: ' '}
   - {t: ⌃, h: ' '}
@@ -153,7 +153,7 @@ layers:
   - _
   - '%'
   - ^
-  - {t: ▽, type: trans}
+  - '&wtalk'
   - {t: ▽, type: trans}
   - ''
   - ''
@@ -165,7 +165,7 @@ layers:
   - '*'
   - <[{(
   - )}]>
-  - {t: ▽, type: trans}
+  - '&wmute'
   - {t: ▽, type: trans}
   - {type: held}
   - {t: ▽, type: trans}
@@ -222,23 +222,23 @@ layers:
   - Out TOG
   - Out BLE
   - ''
-  - ''
-  - Out BLE
-  - Out TOG
-  - Out USB
-  - ''
+  - '&btd0'
+  - '&btd1'
+  - '&btd2'
+  - '&btd3'
+  - '&btd4'
   - {type: held}
   - {t: colemak, h: toggle}
-  - BT 1
-  - BT 2
-  - BT 3
-  - BT 4
-  - BT 5
-  - BT 5
-  - BT 4
-  - BT 3
-  - BT 2
-  - BT 1
+  - '&btx0'
+  - '&btx1'
+  - '&btx2'
+  - '&btx3'
+  - '&btx4'
+  - '&bts0'
+  - '&bts1'
+  - '&bts2'
+  - '&bts3'
+  - '&bts4'
   - ''
   - ''
   - Boot
@@ -246,9 +246,9 @@ layers:
   - EP ON
   - EP TOG
   - EP OFF
-  - EP OFF
-  - EP TOG
-  - EP ON
+  - ''
+  - ''
+  - ''
   - Reset
   - Boot
   - {t: media, h: toggle}
@@ -397,3 +397,5 @@ combos:
 - p: [6, 10]
   k: BT CLR
   l: [adjust]
+- p: [10, 11]
+  k: '&wptt'
