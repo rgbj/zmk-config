@@ -3,7 +3,7 @@
 # configure:
 ZBE_ID="ciz"
 ZBE_ZMK_VERSION="3.2" # what ZMK version to use
-ZBE_ENV="caksoylar" # an informational tag about the ZMK build env
+ZBE_ENV="rgbj-ciz" # an informational tag about the ZMK build env
 ZBE_OUTPUT="${HOME}/Downloads/${ZBE_ID}" # where the artifacts end up
 # and either:
 ZBE_BOARD_left=corneish_zen_v2_left
