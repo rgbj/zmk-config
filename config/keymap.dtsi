@@ -30,12 +30,12 @@
 };
 
 &caps_word {
-    continue-list = <BACKSPACE MINUS UNDER>;
+    continue-list = <BACKSPACE DELETE UNDERSCORE MINUS>;
 };
 
 &num_word {
     layers = <NUM>;
-    continue-list = <BACKSPACE DOT COMMA MINUS>;
+    continue-list = <BACKSPACE DELETE DOT COMMA MINUS>;
 };
 
 / {
@@ -156,6 +156,24 @@
         MACRO(wptt, <&bt BT_SEL 3>, <&macro_press &kp SPACE>, <&macro_pause_for_release>, <&macro_release &kp SPACE>, <&macro_tap>, <&bt BT_SEL 4>)
         MACRO(wtalk, <&bt BT_SEL 3>, <&macro_press &kp SPACE>, <&bt BT_SEL 4>)
         MACRO(wmute, <&bt BT_SEL 3>, <&macro_release &kp SPACE>, <&macro_tap>, <&bt BT_SEL 4>)
+
+        MACRO(bts0, <&bt BT_SEL 0>)
+        MACRO(bts1, <&bt BT_SEL 1>)
+        MACRO(bts2, <&bt BT_SEL 2>)
+        MACRO(bts3, <&bt BT_SEL 3>)
+        MACRO(bts4, <&bt BT_SEL 4>)
+
+        MACRO(btd0, <&bt BT_DISC 0>)
+        MACRO(btd1, <&bt BT_DISC 1>)
+        MACRO(btd2, <&bt BT_DISC 2>)
+        MACRO(btd3, <&bt BT_DISC 3>)
+        MACRO(btd4, <&bt BT_DISC 4>)
+
+        MACRO(btx0, <&bt BT_SEL 0>, <&bt BT_DISC 1>, <&bt BT_DISC 2>, <&bt BT_DISC 3>, <&bt BT_DISC 4>)
+        MACRO(btx1, <&bt BT_SEL 1>, <&bt BT_DISC 0>, <&bt BT_DISC 2>, <&bt BT_DISC 3>, <&bt BT_DISC 4>)
+        MACRO(btx2, <&bt BT_SEL 2>, <&bt BT_DISC 0>, <&bt BT_DISC 1>, <&bt BT_DISC 3>, <&bt BT_DISC 4>)
+        MACRO(btx3, <&bt BT_SEL 3>, <&bt BT_DISC 0>, <&bt BT_DISC 1>, <&bt BT_DISC 2>, <&bt BT_DISC 4>)
+        MACRO(btx4, <&bt BT_SEL 4>, <&bt BT_DISC 0>, <&bt BT_DISC 1>, <&bt BT_DISC 2>, <&bt BT_DISC 3>)
     };
     keymap {
         compatible = "zmk,keymap";
@@ -208,10 +226,10 @@
         adjust {
             label = "adj";
             bindings = <
-&to QWE      ___          &out OUT_USB &out     OUT_TOG &out      OUT_BLE ___                      ___               &out      OUT_BLE &out     OUT_TOG &out OUT_USB ___                 ___
-&to CDH      &bt BT_SEL 0 &bt BT_SEL 1 &bt     BT_SEL 2 &bt      BT_SEL 3 &bt      BT_SEL 4        &bt      BT_SEL 4 &bt      BT_SEL 3 &bt     BT_SEL 2 &bt BT_SEL 1 &bt BT_SEL 0        ___
-___          &bootloader  &sys_reset   &ext_power EP_ON &ext_power EP_TOG &ext_power EP_OFF        &ext_power EP_OFF &ext_power EP_TOG &ext_power EP_ON &sys_reset   &bootloader         &tog MED
-                                       &trans           &trans            &trans                   &trans            &trans            &trans
+&to QWE      ___         &out OUT_USB &out     OUT_TOG &out      OUT_BLE ___                      &btd0  &btd1  &btd2  &btd3      &btd4              ___
+&to CDH      &btx0       &btx1        &btx2            &btx3             &btx4                    &bts0  &bts1  &bts2  &bts3      &bts4              ___
+___          &bootloader &sys_reset   &ext_power EP_ON &ext_power EP_TOG &ext_power EP_OFF        ___    ___    ___    &sys_reset &bootloader        &tog MED
+                                       &trans           &trans            &trans                  &trans &trans &trans
             >;
         };
         fun {
