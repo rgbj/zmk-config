@@ -143,6 +143,25 @@
         MOD_MORPH(s_eq, MOD_LGUI, <&s_e2    >, <&col_eq >)
         MOD_MORPH(s_e2, MOD_LALT, <&s_e3    >, <&excl_eq>)
         MOD_MORPH(s_e3, MOD_LCTL, <&kp EQUAL>, <&eq_eq  >)
+
+        etabs: etabs {
+            compatible = "zmk,behavior-sensor-rotate";
+            label = "ENCODER_TAB_SWITCHER";
+            #sensor-binding-cells = <0>;
+            bindings = <&kp LC(TAB) &kp LS(LC(TAB))>;
+        };
+        egtab: egtab {
+            compatible = "zmk,behavior-tri-state";
+            label = "E_GUI_TAB";
+            #binding-cells = <0>;
+            bindings = <&kt LGUI>, <&kp TAB>, <&kt LGUI>;
+        };
+        ewins: ewins {
+            compatible = "zmk,behavior-sensor-rotate";
+            label = "ENCODER_WIN_SWITCHER";
+            #sensor-binding-cells = <0>;
+            bindings = <&egtab &kp LS(TAB)>;
+        };
     };
     macros {
         MACRO(kill_word, <&macro_tap &kp ESC   &kp D>)
@@ -185,6 +204,8 @@
 &kp TAB          &kp A &kp S &kp  D &kp   F &kp     G        &kp   H &kp      J &kp      K &kp L &kp  SQT        &sl         FUN
 &kp GRAVE        &kp Z &kp X &kp  C &kp   V &kp     B        &kp   N &kp      M &cs        &dc   &kp FSLH        &kp LC(LG(SPACE))
                              &shift &mo SYM &kp SPACE        &mo NAV &num NUM 0 &caps_word
+            >; sensor-bindings = <
+                                               &etabs           &ewins
             >;
         };
         colemak {
