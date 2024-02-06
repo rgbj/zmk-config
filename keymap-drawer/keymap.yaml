@@ -40,7 +40,7 @@ layers:
   - {t: RSHFT, h: ' ', s: cw}
   - sym
   - ␣
-  - nav
+  - '&tdnav'
   - {t: '&num_word', h: num}
   - cw
   num:
@@ -167,9 +167,52 @@ layers:
   - {t: ⇧, h: ' '}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: RSHFT, h: ' ', s: cw}
   - {type: held}
+  - {t: RSHFT, h: ' ', s: cw}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: nav, h: toggle, type: held}
+  mouse:
+  - {t: ▽, type: trans}
+  - ''
+  - '&msc SCRL_LEFT'
+  - '&mmv MOVE_UP'
+  - '&msc SCRL_RIGHT'
+  - '&msc SCRL_UP'
+  - ⌃⌥↑
+  - ⌃⌥⌘←
+  - ⌃⌥⌘→
+  - ⌥W
+  - Esc+D
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - ''
+  - '&mmv MOVE_LEFT'
+  - '&mmv MOVE_DOWN'
+  - '&mmv MOVE_RIGHT'
+  - '&msc SCRL_DOWN'
+  - ⌃⌥←
+  - ⌃⌥→
+  - ⌃⌥⏎
+  - ⌃R
+  - ⌃Q
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - '&mkp MB4'
+  - '&mkp LCLK'
+  - '&mkp MCLK'
+  - '&mkp RCLK'
+  - '&mkp MB5'
+  - ⌃⌥↓
+  - {t: ⌘, h: ' '}
+  - {t: ⌥, h: ' '}
+  - {t: ⌃, h: ' '}
+  - {t: ⇧, h: ' '}
+  - {t: ▽, type: trans}
+  - '&mkp LCLK'
+  - '&mkp MCLK'
+  - '&mkp RCLK'
+  - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: nav, h: toggle}
   adj:

@@ -4,17 +4,35 @@
 #include <dt-bindings/zmk/outputs.h>
 #include <dt-bindings/zmk/ext_power.h>
 
+#define ZMK_MOUSE_DEFAULT_MOVE_VAL 1500  // 600
+#define ZMK_MOUSE_DEFAULT_SCRL_VAL 20    // 10
+
+#include <dt-bindings/zmk/mouse.h>
+
+&mmv {
+    acceleration-exponent = <1>;      // 1
+    time-to-max-speed-ms = <500>;     // 300
+    delay-ms = <0>;                   // 0
+};
+
+&msc {
+    acceleration-exponent = <1>;      // 0
+    time-to-max-speed-ms = <40>;      // 300
+    delay-ms = <0>;                   // 0
+};
+
 #define QWE 0
 
 #define NUM 1
 #define SYM 2
 #define NAV 3
+#define MOU 4
 
-#define ADJ 4
+#define ADJ 5
 
-#define FUN 5
-#define ACC 6
-#define MED 7
+#define FUN 6
+#define ACC 7
+#define MED 8
 
 #define ___ &none
 
@@ -66,7 +84,13 @@
 */
     };
     behaviors {
-        mo_tog: mo_tog {
+        tdnav: tdnav {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&mo NAV>, <&mo MOU>;
+        };
+       mo_tog: mo_tog {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = "hold-preferred";
@@ -186,7 +210,7 @@
 &kp ESC          &kp Q &kp W &kp  E &kp   R &kp     T        &kp   Y &kp      U &kp      I &kp O &kp    P        &sl         ADJ
 &kp TAB          &kp A &kp S &kp  D &kp   F &kp     G        &kp   H &kp      J &kp      K &kp L &kp  SQT        &sl         FUN
 &kp GRAVE        &kp Z &kp X &kp  C &kp   V &kp     B        &kp   N &kp      M &cs        &dc   &kp FSLH        &kp LC(LG(SPACE))
-                             &shift &mo SYM &kp SPACE        &mo NAV &num NUM 0 &caps_word
+                             &shift &mo SYM &kp SPACE        &tdnav  &num NUM 0 &caps_word
             >; sensor-bindings = <
                                                &etabs           &ewins
             >;
@@ -216,6 +240,15 @@
 &trans        ___        &kp   LEFT &kp DOWN  &kp RIGHT &kp PG_DN        &kp LC(LA(LEFT)) &kp   LC(LA(RIGHT))  &kp    LC(LA(RET))    &kp LC(R) &kp  LC(Q)        &trans
 &trans        &tmux_prev &tmux_next &kp LA(B) &kp LA(F) ___              &kp LC(LA(DOWN)) &sk          LGUI    &sk          LALT     &sk LCTRL &sk  LSHFT        &trans
                                     &trans     &trans   &shift           &trans           &trans               &tog    NAV
+            >;
+        };
+        mou {
+            display-name = "mouse";
+            bindings = <
+&trans        ___      &msc SCRL_LEFT &mmv MOVE_UP   &msc SCRL_RIGHT &msc SCRL_UP          &kp LC(LA(UP))   &kp LC(LA(LG(LEFT))) &kp LC(LA(LG(RIGHT))) &kp LC(W) &kill_word        &trans
+&trans        ___      &mmv MOVE_LEFT &mmv MOVE_DOWN &mmv MOVE_RIGHT &msc SCRL_DOWN        &kp LC(LA(LEFT)) &kp   LC(LA(RIGHT))  &kp    LC(LA(RET))    &kp LC(R) &kp  LC(Q)        &trans
+&trans        &mkp MB4 &mkp LCLK      &mkp MCLK      &mkp RCLK       &mkp MB5              &kp LC(LA(DOWN)) &sk          LGUI    &sk          LALT     &sk LCTRL &sk  LSHFT        &trans
+                                      &mkp LCLK      &mkp MCLK       &mkp RCLK             &trans           &trans               &tog    NAV
             >;
         };
         adjust {
