@@ -43,49 +43,6 @@ layers:
   - nav
   - {t: '&num_word', h: num}
   - cw
-  colemak:
-  - Esc
-  - Q
-  - W
-  - F
-  - P
-  - B
-  - J
-  - L
-  - U
-  - Y
-  - ''''
-  - {t: adj, h: ' '}
-  - ⇥
-  - A
-  - R
-  - S
-  - T
-  - G
-  - M
-  - N
-  - E
-  - I
-  - O
-  - {t: fun, h: ' '}
-  - '`'
-  - Z
-  - X
-  - C
-  - D
-  - V
-  - K
-  - H
-  - {t: ',', s: ;}
-  - {t: ., s: ':'}
-  - /
-  - 🐯
-  - {t: RSHFT, h: ' ', s: cw}
-  - sym
-  - ␣
-  - nav
-  - {t: '&num_word', h: num}
-  - cw
   num:
   - {t: ▽, type: trans}
   - _
@@ -216,7 +173,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: nav, h: toggle}
   adj:
-  - {t: qwerty, h: toggle}
+  - ''
   - ''
   - Out USB
   - Out TOG
@@ -228,7 +185,7 @@ layers:
   - '&btd3'
   - '&btd4'
   - {type: held}
-  - {t: colemak, h: toggle}
+  - ''
   - '&bts0'
   - '&bts1'
   - '&bts2'
@@ -390,7 +347,7 @@ layers:
 combos:
 - p: [15, 16]
   k: {t: acc, h: ' '}
-  l: [qwerty, colemak]
+  l: [qwerty]
 - p: [1, 5]
   k: BT CLR
   l: [adj]
