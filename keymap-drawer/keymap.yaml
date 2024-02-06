@@ -12,7 +12,7 @@ layers:
   - I
   - O
   - P
-  - {t: adjust, h: ' '}
+  - {t: adj, h: ' '}
   - ⇥
   - A
   - S
@@ -55,7 +55,7 @@ layers:
   - U
   - Y
   - ''''
-  - {t: adjust, h: ' '}
+  - {t: adj, h: ' '}
   - ⇥
   - A
   - R
@@ -215,7 +215,7 @@ layers:
   - {type: held}
   - {t: ▽, type: trans}
   - {t: nav, h: toggle}
-  adjust:
+  adj:
   - {t: qwerty, h: toggle}
   - ''
   - Out USB
@@ -229,16 +229,16 @@ layers:
   - '&btd4'
   - {type: held}
   - {t: colemak, h: toggle}
-  - '&btx0'
-  - '&btx1'
-  - '&btx2'
-  - '&btx3'
-  - '&btx4'
   - '&bts0'
   - '&bts1'
   - '&bts2'
   - '&bts3'
   - '&bts4'
+  - '&btx0'
+  - '&btx1'
+  - '&btx2'
+  - '&btx3'
+  - '&btx4'
   - ''
   - ''
   - Boot
@@ -301,7 +301,7 @@ layers:
   - ''
   - ''
   - ''
-  accents:
+  acc:
   - ''
   - LA(Q)
   - ''
@@ -389,13 +389,11 @@ layers:
   - Esc
 combos:
 - p: [15, 16]
-  k: {t: accents, h: ' '}
+  k: {t: acc, h: ' '}
   l: [qwerty, colemak]
 - p: [1, 5]
   k: BT CLR
-  l: [adjust]
+  l: [adj]
 - p: [6, 10]
   k: BT CLR
-  l: [adjust]
-- p: [10, 11]
-  k: '&wptt'
+  l: [adj]
