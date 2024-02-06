@@ -5,16 +5,17 @@
 #include <dt-bindings/zmk/ext_power.h>
 
 #define QWE 0
+#define CDH 1
 
-#define NUM 1
-#define SYM 2
-#define NAV 3
+#define NUM 2
+#define SYM 3
+#define NAV 4
 
-#define ADJ 4
+#define ADJ 5
 
-#define FUN 5
-#define ACC 6
-#define MED 7
+#define FUN 6
+#define ACC 7
+#define MED 8
 
 #define ___ &none
 
@@ -43,7 +44,7 @@
         combo_acc {
             timeout-ms = <50>;
             key-positions = <15 16>;
-            layers = <QWE>;
+            layers = <QWE CDH>;
             bindings = <&sl ACC>;
         };
         combo_bt_clr_left {
@@ -191,6 +192,15 @@
                                                &etabs           &ewins
             >;
         };
+        colemak {
+            display-name = "colemak";
+            bindings = <
+&kp ESC          &kp Q &kp W &kp  F &kp   P &kp     B        &kp   J &kp      L &kp      U &kp Y &kp  SQT        &sl         ADJ
+&kp TAB          &kp A &kp R &kp  S &kp   T &kp     G        &kp   M &kp      N &kp      E &kp I &kp    O        &sl         FUN
+&kp GRAVE        &kp Z &kp X &kp  C &kp   D &kp     V        &kp   K &kp      H &cs        &dc   &kp FSLH        &kp LC(LG(SPACE))
+                             &shift &mo SYM &kp SPACE        &mo NAV &num NUM 0 &caps_word
+            >;
+        };
         num {
             display-name = "num";
             bindings = <
@@ -221,8 +231,8 @@
         adjust {
             display-name = "adj";
             bindings = <
-___          ___         &out OUT_USB &out     OUT_TOG &out      OUT_BLE ___                      &btd0  &btd1  &btd2  &btd3      &btd4              ___
-___          &bts0       &bts1        &bts2            &bts3             &bts4                    &btx0  &btx1  &btx2  &btx3      &btx4              ___
+&to QWE      ___         &out OUT_USB &out     OUT_TOG &out      OUT_BLE ___                      &btd0  &btd1  &btd2  &btd3      &btd4              ___
+&to CDH      &bts0       &bts1        &bts2            &bts3             &bts4                    &btx0  &btx1  &btx2  &btx3      &btx4              ___
 ___          &bootloader &sys_reset   &ext_power EP_ON &ext_power EP_TOG &ext_power EP_OFF        ___    ___    ___    &sys_reset &bootloader        &tog MED
                                        &trans          &trans            &trans                   &trans &trans &trans
             >;
