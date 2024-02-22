@@ -29,10 +29,12 @@
 #define MOU 4
 
 #define ADJ 5
+#define ADJX 6
+#define ADJD 7
 
-#define FUN 6
-#define ACC 7
-#define MED 8
+#define FUN 8
+#define ACC 9
+#define MED 10
 
 #define ___ &none
 
@@ -260,10 +262,28 @@
         adjust {
             display-name = "adj";
             bindings = <
-___          ___         &out OUT_USB &out     OUT_TOG &out      OUT_BLE ___                      &btd0  &btd1  &btd2  &btd3      &btd4              ___
-___          &bts0       &bts1        &bts2            &bts3             &bts4                    &btx0  &btx1  &btx2  &btx3      &btx4              ___
-___          &bootloader &sys_reset   &ext_power EP_ON &ext_power EP_TOG &ext_power EP_OFF        ___    ___    ___    &sys_reset &bootloader        &tog MED
-                                       &trans          &trans            &trans                   &trans &trans &trans
+___        ___         &out OUT_USB &out     OUT_TOG &out      OUT_BLE ___                      ___               &out      OUT_BLE &out     OUT_TOG &out OUT_USB ___                ___
+___        &bts0       &bts1        &bts2            &bts3             &bts4                    &bts4             &bts3             &bts2            &bts1        &btx0              ___
+___        &bootloader &sys_reset   &ext_power EP_ON &ext_power EP_TOG &ext_power EP_OFF        &ext_power EP_OFF &ext_power EP_TOG &ext_power EP_ON &sys_reset   &bootloader        &tog MED
+                                    ___              &sl          ADJD &sl          ADJX        &sl          ADJX &sl          ADJD ___
+            >;
+        };
+        adjust_x {
+            display-name = "adjx";
+            bindings = <
+___        ___   ___   ___   ___   ___          ___   ___   ___   ___   ___          ___
+___        &btx0 &btx1 &btx2 &btx3 &btx4        &btx4 &btx3 &btx2 &btx1 &btx0        ___
+___        ___   ___   ___   ___   ___          ___   ___   ___   ___   ___          ___
+                       ___   ___   ___          ___   ___   ___
+            >;
+        };
+        adjust_d {
+            display-name = "adjd";
+            bindings = <
+___        ___   ___   ___   ___   ___          ___   ___   ___   ___   ___          ___
+___        &btd0 &btd1 &btd2 &btd3 &btd4        &btd0 &btd1 &btd2 &btd3 &btd4        ___
+___        ___   ___   ___   ___   ___          ___   ___   ___   ___   ___          ___
+                       ___   ___   ___          ___   ___   ___
             >;
         };
         fun {
