@@ -167,12 +167,17 @@
             #sensor-binding-cells = <0>;
             bindings = <&kp LC(TAB) &kp LS(LC(TAB))>;
         };
+        ewins: ewins {
+            compatible = "zmk,behavior-sensor-rotate";
+            #sensor-binding-cells = <0>;
+            bindings = <&kp LG() &kp LS(LG())>;
+        };
         egtab: egtab {
             compatible = "zmk,behavior-tri-state";
             #binding-cells = <0>;
             bindings = <&kt LGUI>, <&kp TAB>, <&kt LGUI>;
         };
-        ewins: ewins {
+        eapps: eapps {
             compatible = "zmk,behavior-sensor-rotate";
             #sensor-binding-cells = <0>;
             bindings = <&egtab &kp LS(TAB)>;
@@ -220,7 +225,7 @@
 &kp GRAVE        &kp Z &kp X &kp  C &kp   V &kp     B        &kp   N &kp      M &cs        &dc   &kp FSLH        &kp LC(LG(SPACE))
                              &shift &mo SYM &kp SPACE        &tdnav  &num NUM 0 &caps_word
             >; sensor-bindings = <
-                                               &etabs           &ewins
+                                               &etabs           &eapps
             >;
         };
         num {
@@ -248,6 +253,9 @@
 &trans        ___        &kp   LEFT &kp DOWN  &kp RIGHT &kp PG_DN        &kp LC(LA(LEFT)) &kp   LC(LA(RIGHT))  &kp    LC(LA(RET))    &kp LC(R) &kp  LC(Q)        &trans
 &trans        &tmux_prev &tmux_next &kp LA(B) &kp LA(F) ___              &kp LC(LA(DOWN)) &sk          LGUI    &sk          LALT     &sk LCTRL &sk  LSHFT        &trans
                                     &trans     &trans   &shift           &trans           &trans               &tog    NAV
+            >;
+            >; sensor-bindings = <
+                                                        &ewins           &eapps
             >;
         };
         mou {
