@@ -188,8 +188,7 @@
         MACRO(  eq_eq, <&macro_tap &kp EQUAL &kp EQUAL>)
 
         MACRO(wptt, <&bt BT_SEL 3>, <&macro_press &kp SPACE>, <&macro_pause_for_release>, <&macro_release &kp SPACE>, <&macro_tap>, <&bt BT_SEL 4>)
-        MACRO(wtalk, <&bt BT_SEL 3>, <&macro_press &kp SPACE>, <&bt BT_SEL 4>)
-        MACRO(wmute, <&bt BT_SEL 3>, <&macro_release &kp SPACE>, <&macro_tap>, <&bt BT_SEL 4>)
+        MACRO(wtt, <&bt BT_SEL 3>, <&macro_tap &kp SPACE>, <&bt BT_SEL 4>)
 
         MACRO(bts0, <&bt BT_SEL 0>)
         MACRO(bts1, <&bt BT_SEL 1>)
@@ -236,8 +235,8 @@
             display-name = "sym";
             bindings = <
 &trans          &kp LS(LG(GRAVE)) &gtab     &lrsw    &kp LC(TAB) &kp LG(GRAVE)        &kp LA(BKSP) &kp  EXCL &kp    AT &kp  HASH &kp  DLLR        &wptt
-&trans          &sk       LSHFT   &sk LCTRL &sk LALT &sk   LGUI  ___                  &kp    BKSP  &kp MINUS &kp UNDER &kp PRCNT &kp CARET        &wtalk
-&trans          ___               ___       ___      ___         ___                  &kp     DEL  &kp  AMPS &kp  STAR &lpair    &rpair           &wmute
+&trans          &sk       LSHFT   &sk LCTRL &sk LALT &sk   LGUI  ___                  &kp    BKSP  &kp MINUS &kp UNDER &kp PRCNT &kp CARET        &wtt
+&trans          ___               ___       ___      ___         ___                  &kp     DEL  &kp  AMPS &kp  STAR &lpair    &rpair           &trans
                                             &trans    &trans     &trans               &kp     RET  &trans    MOTOG(NAV)
             >;
         };
