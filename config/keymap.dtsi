@@ -72,15 +72,9 @@
             layers = <SYM>;
             bindings = <&sl ADJ>;
         };
-        combo_bt_clr_left {
+        combo_bt_clr {
             timeout-ms = <50>;
             key-positions = <1 5>;
-            layers = <ADJ>;
-            bindings = <&bt BT_CLR>;
-        };
-        combo_bt_clr_right {
-            timeout-ms = <50>;
-            key-positions = <6 10>;
             layers = <ADJ>;
             bindings = <&bt BT_CLR>;
         };

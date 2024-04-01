@@ -110,7 +110,7 @@ layers:
   - _
   - '%'
   - ^
-  - '&wtalk'
+  - '&wtt'
   - {t: ▽, type: trans}
   - ''
   - ''
@@ -122,7 +122,7 @@ layers:
   - '*'
   - <[{(
   - )}]>
-  - '&wmute'
+  - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {type: held}
   - {t: ▽, type: trans}
@@ -222,11 +222,11 @@ layers:
   - Out TOG
   - Out BLE
   - ''
-  - '&btd0'
-  - '&btd1'
-  - '&btd2'
-  - '&btd3'
-  - '&btd4'
+  - ''
+  - Out BLE
+  - Out TOG
+  - Out USB
+  - ''
   - {type: held}
   - ''
   - '&bts0'
@@ -234,11 +234,11 @@ layers:
   - '&bts2'
   - '&bts3'
   - '&bts4'
+  - '&bts4'
+  - '&bts3'
+  - '&bts2'
+  - '&bts1'
   - '&btx0'
-  - '&btx1'
-  - '&btx2'
-  - '&btx3'
-  - '&btx4'
   - ''
   - ''
   - Boot
@@ -246,18 +246,104 @@ layers:
   - EP ON
   - EP TOG
   - EP OFF
-  - ''
-  - ''
-  - ''
+  - EP OFF
+  - EP TOG
+  - EP ON
   - Reset
   - Boot
   - {t: media, h: toggle}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - ''
+  - {t: adjd, h: ' '}
+  - {t: adjx, h: ' '}
+  - {t: adjx, h: ' '}
+  - {t: adjd, h: ' '}
+  - ''
+  adjx:
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - {type: held}
+  - ''
+  - '&btx0'
+  - '&btx1'
+  - '&btx2'
+  - '&btx3'
+  - '&btx4'
+  - '&btx4'
+  - '&btx3'
+  - '&btx2'
+  - '&btx1'
+  - '&btx0'
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - {type: held}
+  - ''
+  - ''
+  - ''
+  adjd:
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - {type: held}
+  - ''
+  - '&btd0'
+  - '&btd1'
+  - '&btd2'
+  - '&btd3'
+  - '&btd4'
+  - '&btd0'
+  - '&btd1'
+  - '&btd2'
+  - '&btd3'
+  - '&btd4'
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - {type: held}
+  - ''
+  - ''
+  - ''
+  - ''
   fun:
   - ''
   - F9
@@ -391,9 +477,9 @@ combos:
 - p: [15, 16]
   k: {t: acc, h: ' '}
   l: [qwerty]
+- p: [0, 5]
+  k: {t: adj, h: ' '}
+  l: [sym]
 - p: [1, 5]
-  k: BT CLR
-  l: [adj]
-- p: [6, 10]
   k: BT CLR
   l: [adj]
